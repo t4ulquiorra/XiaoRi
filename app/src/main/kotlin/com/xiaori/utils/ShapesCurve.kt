@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.utils
+package com.xiaori.utils
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ListItemColors

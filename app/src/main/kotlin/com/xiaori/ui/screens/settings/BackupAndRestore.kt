@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -35,21 +35,21 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.Material3SettingsGroup
-import t4ulquiorra.xiaori.ui.component.Material3SettingsItem
-import t4ulquiorra.xiaori.ui.menu.AddToPlaylistDialogOnline
-import t4ulquiorra.xiaori.ui.menu.CsvColumnMappingDialog
-import t4ulquiorra.xiaori.ui.menu.CsvImportProgressDialog
-import t4ulquiorra.xiaori.ui.menu.LoadingScreen
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.viewmodels.BackupRestoreViewModel
-import t4ulquiorra.xiaori.viewmodels.ConvertedSongLog
-import t4ulquiorra.xiaori.viewmodels.CsvImportState
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.db.entities.Song
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.Material3SettingsGroup
+import com.xiaori.ui.component.Material3SettingsItem
+import com.xiaori.ui.menu.AddToPlaylistDialogOnline
+import com.xiaori.ui.menu.CsvColumnMappingDialog
+import com.xiaori.ui.menu.CsvImportProgressDialog
+import com.xiaori.ui.menu.LoadingScreen
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.viewmodels.BackupRestoreViewModel
+import com.xiaori.viewmodels.ConvertedSongLog
+import com.xiaori.viewmodels.CsvImportState
+import com.xiaori.utils.rememberPreference
 import android.app.backup.BackupManager
 import android.content.Intent
 import android.provider.Settings

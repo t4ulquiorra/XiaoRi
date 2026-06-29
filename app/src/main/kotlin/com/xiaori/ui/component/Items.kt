@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.component
+package com.xiaori.ui.component
 
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
@@ -91,33 +91,33 @@ import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.YTItem
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalDownloadUtil
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.CropAlbumArtKey
-import t4ulquiorra.xiaori.constants.GridItemSize
-import t4ulquiorra.xiaori.constants.GridItemsSizeKey
-import t4ulquiorra.xiaori.constants.GridThumbnailHeight
-import t4ulquiorra.xiaori.constants.ListItemHeight
-import t4ulquiorra.xiaori.constants.ListThumbnailSize
-import t4ulquiorra.xiaori.constants.SmallGridThumbnailHeight
-import t4ulquiorra.xiaori.constants.SwipeToSongKey
-import t4ulquiorra.xiaori.constants.ThumbnailCornerRadius
-import t4ulquiorra.xiaori.db.entities.Album
-import t4ulquiorra.xiaori.db.entities.Artist
-import t4ulquiorra.xiaori.db.entities.Playlist
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.extensions.toMediaItem
-import t4ulquiorra.xiaori.models.MediaMetadata
-import t4ulquiorra.xiaori.playback.queues.LocalAlbumRadio
-import t4ulquiorra.xiaori.ui.utils.resize
-import t4ulquiorra.xiaori.utils.isLocalMediaId
-import t4ulquiorra.xiaori.utils.joinByBullet
-import t4ulquiorra.xiaori.utils.makeTimeString
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.utils.reportException
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalDownloadUtil
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.CropAlbumArtKey
+import com.xiaori.constants.GridItemSize
+import com.xiaori.constants.GridItemsSizeKey
+import com.xiaori.constants.GridThumbnailHeight
+import com.xiaori.constants.ListItemHeight
+import com.xiaori.constants.ListThumbnailSize
+import com.xiaori.constants.SmallGridThumbnailHeight
+import com.xiaori.constants.SwipeToSongKey
+import com.xiaori.constants.ThumbnailCornerRadius
+import com.xiaori.db.entities.Album
+import com.xiaori.db.entities.Artist
+import com.xiaori.db.entities.Playlist
+import com.xiaori.db.entities.Song
+import com.xiaori.extensions.toMediaItem
+import com.xiaori.models.MediaMetadata
+import com.xiaori.playback.queues.LocalAlbumRadio
+import com.xiaori.ui.utils.resize
+import com.xiaori.utils.isLocalMediaId
+import com.xiaori.utils.joinByBullet
+import com.xiaori.utils.makeTimeString
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.utils.rememberPreference
+import com.xiaori.utils.reportException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -1033,7 +1033,7 @@ fun MediaMetadataListItem(
             )
         },
         badges = {
-            if (mediaMetadata.source == t4ulquiorra.xiaori.models.QueueItemSource.XIAORI_BRAIN) {
+            if (mediaMetadata.source == com.xiaori.models.QueueItemSource.XIAORI_BRAIN) {
                 Icon.EchoBrain()
             }
             if (mediaMetadata.explicit) Icon.Explicit()
@@ -1857,7 +1857,7 @@ fun rememberQobuzMatch(
     artist: String,
     title: String,
     durationMs: Long?,
-    audioQuality: t4ulquiorra.xiaori.constants.AudioQuality,
+    audioQuality: com.xiaori.constants.AudioQuality,
     cachedFlac: Boolean
 ): androidx.compose.runtime.State<Boolean?> {
     return androidx.compose.runtime.produceState<Boolean?>(initialValue = if (cachedFlac) true else null, id) {
@@ -1866,13 +1866,13 @@ fun rememberQobuzMatch(
             return@produceState
         }
         kotlinx.coroutines.delay(300) // Debounce fast scrolling
-        val qobuzClient = t4ulquiorra.xiaori.utils.qobuz.QobuzApiClient()
+        val qobuzClient = com.xiaori.utils.qobuz.QobuzApiClient()
         var found = false
-        for (term in t4ulquiorra.xiaori.utils.qobuzSearchTerms(artist, title)) {
+        for (term in com.xiaori.utils.qobuzSearchTerms(artist, title)) {
             val searchResult = runCatching { qobuzClient.search(term) }.getOrNull() ?: continue
             val candidates = searchResult.tracks?.items.orEmpty()
             if (candidates.isEmpty()) continue
-            val scored = candidates.map { it to t4ulquiorra.xiaori.utils.confidence(artist, title, durationMs, it) }
+            val scored = candidates.map { it to com.xiaori.utils.confidence(artist, title, durationMs, it) }
             val match = scored.filter { it.second >= 0.5f }.maxByOrNull { it.second }
             if (match != null) {
                 found = true

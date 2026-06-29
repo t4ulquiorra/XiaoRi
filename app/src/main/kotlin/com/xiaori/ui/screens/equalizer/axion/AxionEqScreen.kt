@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.screens.equalizer.axion
+package com.xiaori.ui.screens.equalizer.axion
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
@@ -29,11 +29,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.eq.data.SavedEQProfile
-import t4ulquiorra.xiaori.ui.component.Material3SettingsGroup
-import t4ulquiorra.xiaori.ui.component.Material3SettingsItem
-import t4ulquiorra.xiaori.ui.utils.backToMain
+import com.xiaori.R
+import com.xiaori.eq.data.SavedEQProfile
+import com.xiaori.ui.component.Material3SettingsGroup
+import com.xiaori.ui.component.Material3SettingsItem
+import com.xiaori.ui.utils.backToMain
 import kotlin.math.abs
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 
@@ -52,7 +52,7 @@ fun AxionEqScreen(
             TopAppBar(
                 title = { Text(stringResource(R.string.echo_equalizer)) },
                 navigationIcon = {
-                    t4ulquiorra.xiaori.ui.component.IconButton(
+                    com.xiaori.ui.component.IconButton(
                         onClick = onBackClick,
                         onLongClick = {}
                     ) {

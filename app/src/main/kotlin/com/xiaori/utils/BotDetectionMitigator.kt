@@ -1,13 +1,13 @@
 
 
-package t4ulquiorra.xiaori.utils
+package com.xiaori.utils
 
 import androidx.datastore.preferences.core.edit
 import com.music.innertube.YouTube
-import t4ulquiorra.xiaori.constants.VisitorDataKey
-import t4ulquiorra.xiaori.utils.cipher.CipherDeobfuscator
-import t4ulquiorra.xiaori.utils.PlaybackLogManager
-import t4ulquiorra.xiaori.utils.PlaybackLogLevel
+import com.xiaori.constants.VisitorDataKey
+import com.xiaori.utils.cipher.CipherDeobfuscator
+import com.xiaori.utils.PlaybackLogManager
+import com.xiaori.utils.PlaybackLogLevel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import timber.log.Timber

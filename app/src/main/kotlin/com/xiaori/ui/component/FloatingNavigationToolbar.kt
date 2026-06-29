@@ -2,7 +2,7 @@
 
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package t4ulquiorra.xiaori.ui.component
+package com.xiaori.ui.component
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
@@ -73,8 +73,8 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.ui.screens.Screens
+import com.xiaori.R
+import com.xiaori.ui.screens.Screens
 
 @Composable
 fun FloatingNavigationToolbar(

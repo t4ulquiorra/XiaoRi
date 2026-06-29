@@ -6,9 +6,9 @@
         android:shortcutId="search"
         android:shortcutShortLabel="@string/search">
         <intent
-            android:action="t4ulquiorra.xiaori.action.SEARCH"
-            android:targetClass="t4ulquiorra.xiaori.MainActivity"
-            android:targetPackage="t4ulquiorra.xiaori" />
+            android:action="com.xiaori.action.SEARCH"
+            android:targetClass="com.xiaori.MainActivity"
+            android:targetPackage="com.xiaori" />
     </shortcut>
     <shortcut
         android:enabled="true"
@@ -16,8 +16,8 @@
         android:shortcutId="library"
         android:shortcutShortLabel="@string/filter_library">
         <intent
-            android:action="t4ulquiorra.xiaori.action.LIBRARY"
-            android:targetClass="t4ulquiorra.xiaori.MainActivity"
-            android:targetPackage="t4ulquiorra.xiaori" />
+            android:action="com.xiaori.action.LIBRARY"
+            android:targetClass="com.xiaori.MainActivity"
+            android:targetPackage="com.xiaori" />
     </shortcut>
 </shortcuts>

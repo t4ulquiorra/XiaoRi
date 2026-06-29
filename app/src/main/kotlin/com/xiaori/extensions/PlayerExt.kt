@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.extensions
+package com.xiaori.extensions
 
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
@@ -10,7 +10,7 @@ import androidx.media3.common.Player.REPEAT_MODE_OFF
 import androidx.media3.common.Player.REPEAT_MODE_ONE
 import androidx.media3.common.Timeline
 import androidx.media3.common.TrackSelectionParameters
-import t4ulquiorra.xiaori.models.MediaMetadata
+import com.xiaori.models.MediaMetadata
 import java.util.ArrayDeque
 
 fun Player.togglePlayPause() {

@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.component
+package com.xiaori.ui.component
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -25,12 +25,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import com.music.innertube.YouTube
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.InnerTubeCookieKey
-import t4ulquiorra.xiaori.db.entities.PlaylistEntity
-import t4ulquiorra.xiaori.extensions.isSyncEnabled
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.LocalDatabase
+import com.xiaori.R
+import com.xiaori.constants.InnerTubeCookieKey
+import com.xiaori.db.entities.PlaylistEntity
+import com.xiaori.extensions.isSyncEnabled
+import com.xiaori.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

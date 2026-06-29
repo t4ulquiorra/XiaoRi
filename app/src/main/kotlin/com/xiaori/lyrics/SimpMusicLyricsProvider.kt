@@ -1,11 +1,11 @@
 
 
-package t4ulquiorra.xiaori.lyrics
+package com.xiaori.lyrics
 
 import android.content.Context
-import t4ulquiorra.xiaori.constants.EnableSimpMusicKey
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
+import com.xiaori.constants.EnableSimpMusicKey
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
 import com.music.simpmusic.SimpMusicLyrics
 
 object SimpMusicLyricsProvider : LyricsProvider {

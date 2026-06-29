@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.component
+package com.xiaori.ui.component
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -34,8 +34,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.media3.exoplayer.offline.Download
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.utils.makeTimeString
+import com.xiaori.R
+import com.xiaori.utils.makeTimeString
 
 val GridMenuItemHeight = 108.dp
 

@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.utils.potoken
+package com.xiaori.utils.potoken
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonNull

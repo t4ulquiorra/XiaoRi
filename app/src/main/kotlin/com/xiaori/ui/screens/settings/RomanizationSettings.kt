@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 
@@ -29,28 +29,28 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.LyricsRomanizeAsMainKey
-import t4ulquiorra.xiaori.constants.LyricsRomanizeBelarusianKey
-import t4ulquiorra.xiaori.constants.LyricsRomanizeBulgarianKey
-import t4ulquiorra.xiaori.constants.LyricsRomanizeChineseKey
-import t4ulquiorra.xiaori.constants.LyricsRomanizeHindiKey
-import t4ulquiorra.xiaori.constants.LyricsRomanizePunjabiKey
-import t4ulquiorra.xiaori.constants.LyricsRomanizeCyrillicByLineKey
-import t4ulquiorra.xiaori.constants.LyricsRomanizeJapaneseKey
-import t4ulquiorra.xiaori.constants.LyricsRomanizeKoreanKey
-import t4ulquiorra.xiaori.constants.LyricsRomanizeKyrgyzKey
-import t4ulquiorra.xiaori.constants.LyricsRomanizeMacedonianKey
-import t4ulquiorra.xiaori.constants.LyricsRomanizeRussianKey
-import t4ulquiorra.xiaori.constants.LyricsRomanizeSerbianKey
-import t4ulquiorra.xiaori.constants.LyricsRomanizeUkrainianKey
-import t4ulquiorra.xiaori.ui.component.ActionPromptDialog
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.Material3SettingsGroup
-import t4ulquiorra.xiaori.ui.component.Material3SettingsItem
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.constants.LyricsRomanizeAsMainKey
+import com.xiaori.constants.LyricsRomanizeBelarusianKey
+import com.xiaori.constants.LyricsRomanizeBulgarianKey
+import com.xiaori.constants.LyricsRomanizeChineseKey
+import com.xiaori.constants.LyricsRomanizeHindiKey
+import com.xiaori.constants.LyricsRomanizePunjabiKey
+import com.xiaori.constants.LyricsRomanizeCyrillicByLineKey
+import com.xiaori.constants.LyricsRomanizeJapaneseKey
+import com.xiaori.constants.LyricsRomanizeKoreanKey
+import com.xiaori.constants.LyricsRomanizeKyrgyzKey
+import com.xiaori.constants.LyricsRomanizeMacedonianKey
+import com.xiaori.constants.LyricsRomanizeRussianKey
+import com.xiaori.constants.LyricsRomanizeSerbianKey
+import com.xiaori.constants.LyricsRomanizeUkrainianKey
+import com.xiaori.ui.component.ActionPromptDialog
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.Material3SettingsGroup
+import com.xiaori.ui.component.Material3SettingsItem
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

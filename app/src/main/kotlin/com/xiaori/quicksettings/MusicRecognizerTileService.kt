@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.quicksettings
+package com.xiaori.quicksettings
 
 import android.app.PendingIntent
 import android.content.Intent
@@ -6,8 +6,8 @@ import android.graphics.drawable.Icon
 import android.os.Build
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.recognition.RecognitionLaunchActivity
+import com.xiaori.R
+import com.xiaori.recognition.RecognitionLaunchActivity
 
 class MusicRecognizerTileService : TileService() {
     override fun onStartListening() {

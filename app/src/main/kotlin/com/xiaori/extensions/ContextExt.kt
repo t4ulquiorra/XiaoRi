@@ -1,15 +1,15 @@
 
 
-package t4ulquiorra.xiaori.extensions
+package com.xiaori.extensions
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import com.music.innertube.utils.parseCookieString
-import t4ulquiorra.xiaori.constants.InnerTubeCookieKey
-import t4ulquiorra.xiaori.constants.YtmSyncKey
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
+import com.xiaori.constants.InnerTubeCookieKey
+import com.xiaori.constants.YtmSyncKey
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
 import kotlinx.coroutines.runBlocking
 
 fun Context.isSyncEnabled(): Boolean {

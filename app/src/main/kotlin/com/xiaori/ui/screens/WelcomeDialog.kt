@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.screens
+package com.xiaori.ui.screens
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
@@ -33,8 +33,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import t4ulquiorra.xiaori.BuildConfig
-import t4ulquiorra.xiaori.R
+import com.xiaori.BuildConfig
+import com.xiaori.R
 
 @Composable
 fun WelcomeDialog(

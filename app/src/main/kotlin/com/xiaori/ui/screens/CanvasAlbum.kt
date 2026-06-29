@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens
+package com.xiaori.ui.screens
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -8,11 +8,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import t4ulquiorra.xiaori.applecanvas.AppleMusicCanvasProvider
-import t4ulquiorra.xiaori.xiaoricanvas.xiaoriCanvasProvider
-import t4ulquiorra.xiaori.canvas.CanvasArtwork
-import t4ulquiorra.xiaori.canvas.TidalCanvasProvider
-import t4ulquiorra.xiaori.ui.player.CanvasArtworkPlaybackCache
+import com.xiaori.applecanvas.AppleMusicCanvasProvider
+import com.xiaori.xiaoricanvas.xiaoriCanvasProvider
+import com.xiaori.canvas.CanvasArtwork
+import com.xiaori.canvas.TidalCanvasProvider
+import com.xiaori.ui.player.CanvasArtworkPlaybackCache
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.util.Locale

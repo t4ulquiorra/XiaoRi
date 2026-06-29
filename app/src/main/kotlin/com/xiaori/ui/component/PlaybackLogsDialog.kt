@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.component
+package com.xiaori.ui.component
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Box
@@ -33,9 +33,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.utils.PlaybackLogEntry
-import t4ulquiorra.xiaori.utils.PlaybackLogLevel
+import com.xiaori.R
+import com.xiaori.utils.PlaybackLogEntry
+import com.xiaori.utils.PlaybackLogLevel
 
 @Composable
 fun PlaybackLogsDialog(

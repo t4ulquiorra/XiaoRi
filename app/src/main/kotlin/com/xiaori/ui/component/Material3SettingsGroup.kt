@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.component
+package com.xiaori.ui.component
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
@@ -35,7 +35,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 
 
-import t4ulquiorra.xiaori.ui.utils.scrollToOnHighlight
+import com.xiaori.ui.utils.scrollToOnHighlight
 import androidx.compose.foundation.ScrollState
 
 @Composable

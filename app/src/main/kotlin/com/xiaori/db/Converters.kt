@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.db
+package com.xiaori.db
 
 import androidx.room.TypeConverter
 import java.time.Instant

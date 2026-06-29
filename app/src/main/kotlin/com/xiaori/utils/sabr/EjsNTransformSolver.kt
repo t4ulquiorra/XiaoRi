@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.utils.sabr
+package com.xiaori.utils.sabr
 
 import android.content.Context
 import android.net.Uri
@@ -6,8 +6,8 @@ import android.webkit.ConsoleMessage
 import android.webkit.JavascriptInterface
 import android.webkit.WebChromeClient
 import android.webkit.WebView
-import t4ulquiorra.xiaori.utils.cipher.CipherDeobfuscator
-import t4ulquiorra.xiaori.utils.cipher.PlayerJsFetcher
+import com.xiaori.utils.cipher.CipherDeobfuscator
+import com.xiaori.utils.cipher.PlayerJsFetcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.suspendCancellableCoroutine

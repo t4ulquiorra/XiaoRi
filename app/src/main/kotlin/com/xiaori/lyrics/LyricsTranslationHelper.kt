@@ -1,16 +1,16 @@
 
 
-package t4ulquiorra.xiaori.lyrics
-import t4ulquiorra.xiaori.R
+package com.xiaori.lyrics
+import com.xiaori.R
 
 import android.content.Context
-import t4ulquiorra.xiaori.api.DeepLService
-import t4ulquiorra.xiaori.api.MistralService
-import t4ulquiorra.xiaori.api.OpenRouterService
-import t4ulquiorra.xiaori.api.OpenRouterStreamingService
-import t4ulquiorra.xiaori.constants.LanguageCodeToName
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.db.entities.LyricsEntity
+import com.xiaori.api.DeepLService
+import com.xiaori.api.MistralService
+import com.xiaori.api.OpenRouterService
+import com.xiaori.api.OpenRouterStreamingService
+import com.xiaori.constants.LanguageCodeToName
+import com.xiaori.db.MusicDatabase
+import com.xiaori.db.entities.LyricsEntity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -234,12 +234,12 @@ object LyricsTranslationHelper {
                 
                 val effectiveApiKey = if (provider == "DeepL") deeplApiKey else apiKey
                 if (effectiveApiKey.isBlank()) {
-                    _status.value = TranslationStatus.Error(context.getString(t4ulquiorra.xiaori.R.string.ai_error_api_key_required))
+                    _status.value = TranslationStatus.Error(context.getString(com.xiaori.R.string.ai_error_api_key_required))
                     return@launch
                 }
 
                 if (lyrics.isEmpty()) {
-                    _status.value = TranslationStatus.Error(context.getString(t4ulquiorra.xiaori.R.string.ai_error_no_lyrics))
+                    _status.value = TranslationStatus.Error(context.getString(com.xiaori.R.string.ai_error_no_lyrics))
                     return@launch
                 }
 
@@ -249,7 +249,7 @@ object LyricsTranslationHelper {
                 }
 
                 if (nonEmptyEntries.isEmpty()) {
-                    _status.value = TranslationStatus.Error(context.getString(t4ulquiorra.xiaori.R.string.ai_error_lyrics_empty))
+                    _status.value = TranslationStatus.Error(context.getString(com.xiaori.R.string.ai_error_lyrics_empty))
                     return@launch
                 }
 
@@ -300,7 +300,7 @@ object LyricsTranslationHelper {
 
                 
                 if (targetLanguage.isBlank()) {
-                    _status.value = TranslationStatus.Error(context.getString(t4ulquiorra.xiaori.R.string.ai_error_language_required))
+                    _status.value = TranslationStatus.Error(context.getString(com.xiaori.R.string.ai_error_language_required))
                     return@launch
                 }
 
@@ -447,7 +447,7 @@ object LyricsTranslationHelper {
                             _status.value = TranslationStatus.Success
                         }
                         else -> {
-                            _status.value = TranslationStatus.Error(context.getString(t4ulquiorra.xiaori.R.string.ai_error_unexpected))
+                            _status.value = TranslationStatus.Error(context.getString(com.xiaori.R.string.ai_error_unexpected))
                         }
                     }
 
@@ -461,12 +461,12 @@ object LyricsTranslationHelper {
                         return@onFailure
                     }
 
-                    val errorMessage = error.message ?: context.getString(t4ulquiorra.xiaori.R.string.ai_error_unknown)
+                    val errorMessage = error.message ?: context.getString(com.xiaori.R.string.ai_error_unknown)
                     _status.value = TranslationStatus.Error(errorMessage)
                 }
             } catch (e: Exception) {
                 if (e !is kotlinx.coroutines.CancellationException && isCompositionActive) {
-                    val errorMessage = e.message ?: context.getString(t4ulquiorra.xiaori.R.string.ai_error_translation_failed)
+                    val errorMessage = e.message ?: context.getString(com.xiaori.R.string.ai_error_translation_failed)
                     _status.value = TranslationStatus.Error(errorMessage)
                 }
             }

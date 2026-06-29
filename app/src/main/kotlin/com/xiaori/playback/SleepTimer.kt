@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.playback
+package com.xiaori.playback
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableLongStateOf

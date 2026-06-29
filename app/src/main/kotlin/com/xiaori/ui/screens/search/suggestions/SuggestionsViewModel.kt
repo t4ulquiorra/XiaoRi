@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.search.suggestions
+package com.xiaori.ui.screens.search.suggestions
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -19,8 +19,8 @@ import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.WatchEndpoint
-import t4ulquiorra.xiaori.playback.PlayerConnection
-import t4ulquiorra.xiaori.playback.queues.YouTubeQueue
+import com.xiaori.playback.PlayerConnection
+import com.xiaori.playback.queues.YouTubeQueue
 import androidx.navigation.NavController
 
 @HiltViewModel

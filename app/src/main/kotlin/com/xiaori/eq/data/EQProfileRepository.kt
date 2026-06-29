@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.eq.data
+package com.xiaori.eq.data
 
 import android.content.Context
 import android.content.SharedPreferences

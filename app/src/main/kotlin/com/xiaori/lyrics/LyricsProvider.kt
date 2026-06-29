@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.lyrics
+package com.xiaori.lyrics
 
 import android.content.Context
 

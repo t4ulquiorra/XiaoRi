@@ -10,14 +10,14 @@ of the Flow project. Any use of this code in other projects must
 explicitly credit "Flow Android Client" and link back to the original repository.
 */
 
-package t4ulquiorra.xiaori.engine.brain
+package com.xiaori.engine.brain
 
 import android.content.Context
 import javax.inject.Inject
 import javax.inject.Singleton
 import dagger.hilt.android.qualifiers.ApplicationContext
 import android.util.Log
-import t4ulquiorra.xiaori.models.MediaMetadata
+import com.xiaori.models.MediaMetadata
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

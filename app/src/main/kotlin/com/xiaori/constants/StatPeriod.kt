@@ -1,8 +1,8 @@
 
 
-package t4ulquiorra.xiaori.constants
+package com.xiaori.constants
 
-import t4ulquiorra.xiaori.ui.screens.OptionStats
+import com.xiaori.ui.screens.OptionStats
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 

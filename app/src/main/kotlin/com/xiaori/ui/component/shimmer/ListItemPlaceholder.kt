@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.component.shimmer
+package com.xiaori.ui.component.shimmer
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -17,9 +17,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
-import t4ulquiorra.xiaori.constants.ListItemHeight
-import t4ulquiorra.xiaori.constants.ListThumbnailSize
-import t4ulquiorra.xiaori.constants.ThumbnailCornerRadius
+import com.xiaori.constants.ListItemHeight
+import com.xiaori.constants.ListThumbnailSize
+import com.xiaori.constants.ThumbnailCornerRadius
 
 @Composable
 fun ListItemPlaceHolder(

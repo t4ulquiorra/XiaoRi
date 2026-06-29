@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.utils
+package com.xiaori.ui.utils
 
 fun String.resize(
     width: Int? = null,

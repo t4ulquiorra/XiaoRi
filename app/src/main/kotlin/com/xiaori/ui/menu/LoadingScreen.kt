@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.menu
+package com.xiaori.ui.menu
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
-import t4ulquiorra.xiaori.R
+import com.xiaori.R
 
 @Composable
 fun LoadingScreen(

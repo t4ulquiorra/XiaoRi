@@ -1,9 +1,9 @@
 
 
-package t4ulquiorra.xiaori.utils
+package com.xiaori.utils
 
 import android.content.Context
-import t4ulquiorra.xiaori.db.entities.Song
+import com.xiaori.db.entities.Song
 import timber.log.Timber
 
 data class ResolvedDiscordImages(

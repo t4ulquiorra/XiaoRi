@@ -1,5 +1,5 @@
-package t4ulquiorra.xiaori.utils
-import t4ulquiorra.xiaori.R
+package com.xiaori.utils
+import com.xiaori.R
 
 import android.app.NotificationChannel
 import android.app.NotificationManager

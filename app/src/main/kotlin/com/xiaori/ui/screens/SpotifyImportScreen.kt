@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package t4ulquiorra.xiaori.ui.screens
+package com.xiaori.ui.screens
 
 import android.webkit.CookieManager
 import android.webkit.WebResourceRequest
@@ -34,19 +34,19 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.spotifyimport.SpotifyImportViewModel
-import t4ulquiorra.xiaori.spotifyimport.SpotifyImportUiState
-import t4ulquiorra.xiaori.spotifyimport.SpotifyImportSummaryUi
-import t4ulquiorra.xiaori.spotifyimport.SpotifyImportSourceUi
-import t4ulquiorra.xiaori.spotifyimport.SpotifyImportSourceType
-import t4ulquiorra.xiaori.ui.component.DefaultDialog
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.Material3SettingsGroup
-import t4ulquiorra.xiaori.ui.component.Material3SettingsItem
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.spotify.SpotifyAuth
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.spotifyimport.SpotifyImportViewModel
+import com.xiaori.spotifyimport.SpotifyImportUiState
+import com.xiaori.spotifyimport.SpotifyImportSummaryUi
+import com.xiaori.spotifyimport.SpotifyImportSourceUi
+import com.xiaori.spotifyimport.SpotifyImportSourceType
+import com.xiaori.ui.component.DefaultDialog
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.Material3SettingsGroup
+import com.xiaori.ui.component.Material3SettingsItem
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.spotify.SpotifyAuth
 import android.net.Uri
 
 @Composable

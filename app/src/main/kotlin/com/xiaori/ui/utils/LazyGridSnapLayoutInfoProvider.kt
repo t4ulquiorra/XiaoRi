@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.utils
+package com.xiaori.ui.utils
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.gestures.Orientation

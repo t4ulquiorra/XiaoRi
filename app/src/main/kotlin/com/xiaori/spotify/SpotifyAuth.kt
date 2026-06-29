@@ -5,9 +5,9 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package t4ulquiorra.xiaori.spotify
+package com.xiaori.spotify
 
-import t4ulquiorra.xiaori.spotify.models.SpotifyInternalToken
+import com.xiaori.spotify.models.SpotifyInternalToken
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable

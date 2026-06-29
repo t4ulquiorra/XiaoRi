@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.recognition
+package com.xiaori.recognition
 
 import android.util.Base64
 import java.io.ByteArrayOutputStream

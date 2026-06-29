@@ -1,13 +1,13 @@
-package t4ulquiorra.xiaori.ui.screens.equalizer.axion
+package com.xiaori.ui.screens.equalizer.axion
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import t4ulquiorra.xiaori.eq.EqualizerService
-import t4ulquiorra.xiaori.eq.data.EQProfileRepository
-import t4ulquiorra.xiaori.eq.data.FilterType
-import t4ulquiorra.xiaori.eq.data.ParametricEQBand
-import t4ulquiorra.xiaori.eq.data.SavedEQProfile
+import com.xiaori.eq.EqualizerService
+import com.xiaori.eq.data.EQProfileRepository
+import com.xiaori.eq.data.FilterType
+import com.xiaori.eq.data.ParametricEQBand
+import com.xiaori.eq.data.SavedEQProfile
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

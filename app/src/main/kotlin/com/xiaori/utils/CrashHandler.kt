@@ -1,12 +1,12 @@
 
 
-package t4ulquiorra.xiaori.utils
+package com.xiaori.utils
 
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import t4ulquiorra.xiaori.BuildConfig
-import t4ulquiorra.xiaori.ui.screens.CrashActivity
+import com.xiaori.BuildConfig
+import com.xiaori.ui.screens.CrashActivity
 import timber.log.Timber
 import java.io.PrintWriter
 import java.io.StringWriter

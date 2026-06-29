@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.search
+package com.xiaori.ui.screens.search
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -55,26 +55,26 @@ import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.SuggestionItemHeight
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.playback.queues.YouTubeQueue
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.component.YouTubeListItem
-import t4ulquiorra.xiaori.utils.listItemShape
-import t4ulquiorra.xiaori.utils.getGroupedShape
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.SuggestionItemHeight
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.playback.queues.YouTubeQueue
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.component.YouTubeListItem
+import com.xiaori.utils.listItemShape
+import com.xiaori.utils.getGroupedShape
 import androidx.compose.material3.Surface
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Shape
 import com.music.innertube.utils.YouTubeUrlParser
-import t4ulquiorra.xiaori.ui.menu.YouTubeAlbumMenu
-import t4ulquiorra.xiaori.ui.menu.YouTubeArtistMenu
-import t4ulquiorra.xiaori.ui.menu.YouTubePlaylistMenu
-import t4ulquiorra.xiaori.ui.menu.YouTubeSongMenu
-import t4ulquiorra.xiaori.viewmodels.OnlineSearchSuggestionViewModel
+import com.xiaori.ui.menu.YouTubeAlbumMenu
+import com.xiaori.ui.menu.YouTubeArtistMenu
+import com.xiaori.ui.menu.YouTubePlaylistMenu
+import com.xiaori.ui.menu.YouTubeSongMenu
+import com.xiaori.viewmodels.OnlineSearchSuggestionViewModel
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.debounce

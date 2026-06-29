@@ -1,18 +1,18 @@
 
 
-package t4ulquiorra.xiaori.lyrics
+package com.xiaori.lyrics
 
 import android.content.Context
 import android.util.LruCache
-import t4ulquiorra.xiaori.constants.LyricsProviderOrderKey
-import t4ulquiorra.xiaori.constants.PreferredLyricsProvider
-import t4ulquiorra.xiaori.constants.PreferredLyricsProviderKey
-import t4ulquiorra.xiaori.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
-import t4ulquiorra.xiaori.extensions.toEnum
-import t4ulquiorra.xiaori.models.MediaMetadata
-import t4ulquiorra.xiaori.utils.NetworkConnectivityObserver
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.reportException
+import com.xiaori.constants.LyricsProviderOrderKey
+import com.xiaori.constants.PreferredLyricsProvider
+import com.xiaori.constants.PreferredLyricsProviderKey
+import com.xiaori.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
+import com.xiaori.extensions.toEnum
+import com.xiaori.models.MediaMetadata
+import com.xiaori.utils.NetworkConnectivityObserver
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.reportException
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job

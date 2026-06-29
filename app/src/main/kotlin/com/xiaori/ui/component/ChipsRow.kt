@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.component
+package com.xiaori.ui.component
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.animateContentSize
@@ -55,8 +55,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.ui.screens.OptionStats
+import com.xiaori.R
+import com.xiaori.ui.screens.OptionStats
 
 @Composable
 fun <E> ChipsRow(

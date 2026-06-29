@@ -1,11 +1,11 @@
 
 
-package t4ulquiorra.xiaori
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.BuildConfig
-import t4ulquiorra.xiaori.ui.screens.settings.RingtoneViewModel
-import t4ulquiorra.xiaori.ui.component.RingtoneTrimmerDialog
-import t4ulquiorra.xiaori.ui.component.RingtoneProgressDialog
+package com.xiaori
+import com.xiaori.R
+import com.xiaori.BuildConfig
+import com.xiaori.ui.screens.settings.RingtoneViewModel
+import com.xiaori.ui.component.RingtoneTrimmerDialog
+import com.xiaori.ui.component.RingtoneProgressDialog
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.CompositionLocalProvider
@@ -142,75 +142,75 @@ import coil3.toBitmap
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import t4ulquiorra.xiaori.constants.AppBarHeight
-import t4ulquiorra.xiaori.constants.AppLanguageKey
-import t4ulquiorra.xiaori.constants.DarkModeKey
-import t4ulquiorra.xiaori.constants.DefaultOpenTabKey
-import t4ulquiorra.xiaori.constants.DisableScreenshotKey
-import t4ulquiorra.xiaori.constants.DynamicThemeKey
-import t4ulquiorra.xiaori.constants.EnableHighRefreshRateKey
-import t4ulquiorra.xiaori.constants.FloatingToolbarBottomPadding
-import t4ulquiorra.xiaori.constants.FloatingToolbarHorizontalPadding
-import t4ulquiorra.xiaori.constants.ListenTogetherInTopBarKey
-import t4ulquiorra.xiaori.constants.ListenTogetherUsernameKey
-import t4ulquiorra.xiaori.constants.MiniPlayerBottomSpacing
-import t4ulquiorra.xiaori.constants.MiniPlayerHeight
-import t4ulquiorra.xiaori.constants.NavigationBarAnimationSpec
-import t4ulquiorra.xiaori.constants.NavigationBarHeight
-import t4ulquiorra.xiaori.xiaori.updater.checkForUpdate
-import t4ulquiorra.xiaori.xiaori.updater.getAutoUpdateCheckSetting
-import t4ulquiorra.xiaori.xiaori.updater.isNewerVersion
-import t4ulquiorra.xiaori.xiaori.updater.saveUpdateAvailableState
-import t4ulquiorra.xiaori.xiaori.updater.getUpdateNotificationsSetting
-import t4ulquiorra.xiaori.xiaori.UpdateNotificationHelper
+import com.xiaori.constants.AppBarHeight
+import com.xiaori.constants.AppLanguageKey
+import com.xiaori.constants.DarkModeKey
+import com.xiaori.constants.DefaultOpenTabKey
+import com.xiaori.constants.DisableScreenshotKey
+import com.xiaori.constants.DynamicThemeKey
+import com.xiaori.constants.EnableHighRefreshRateKey
+import com.xiaori.constants.FloatingToolbarBottomPadding
+import com.xiaori.constants.FloatingToolbarHorizontalPadding
+import com.xiaori.constants.ListenTogetherInTopBarKey
+import com.xiaori.constants.ListenTogetherUsernameKey
+import com.xiaori.constants.MiniPlayerBottomSpacing
+import com.xiaori.constants.MiniPlayerHeight
+import com.xiaori.constants.NavigationBarAnimationSpec
+import com.xiaori.constants.NavigationBarHeight
+import com.xiaori.xiaori.updater.checkForUpdate
+import com.xiaori.xiaori.updater.getAutoUpdateCheckSetting
+import com.xiaori.xiaori.updater.isNewerVersion
+import com.xiaori.xiaori.updater.saveUpdateAvailableState
+import com.xiaori.xiaori.updater.getUpdateNotificationsSetting
+import com.xiaori.xiaori.UpdateNotificationHelper
 import android.util.Log
 import androidx.compose.ui.platform.LocalContext
-import t4ulquiorra.xiaori.constants.PauseListenHistoryKey
-import t4ulquiorra.xiaori.constants.PauseSearchHistoryKey
-import t4ulquiorra.xiaori.constants.PureBlackKey
-import t4ulquiorra.xiaori.constants.SYSTEM_DEFAULT
-import t4ulquiorra.xiaori.constants.SelectedThemeColorKey
-import t4ulquiorra.xiaori.constants.StopMusicOnTaskClearKey
-import t4ulquiorra.xiaori.constants.UseNewMiniPlayerDesignKey
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.db.entities.SearchHistory
-import t4ulquiorra.xiaori.extensions.toEnum
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.playback.DownloadUtil
-import t4ulquiorra.xiaori.playback.MusicService
-import t4ulquiorra.xiaori.playback.MusicService.MusicBinder
-import t4ulquiorra.xiaori.playback.PlayerConnection
-import t4ulquiorra.xiaori.playback.queues.YouTubeQueue
-import t4ulquiorra.xiaori.ui.component.AppNavigationRail
-import t4ulquiorra.xiaori.ui.component.BottomSheetMenu
-import t4ulquiorra.xiaori.ui.component.BottomSheetPage
-import t4ulquiorra.xiaori.ui.component.FloatingNavigationToolbar
-import t4ulquiorra.xiaori.ui.component.LocalBottomSheetPageState
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.component.rememberBottomSheetState
-import t4ulquiorra.xiaori.ui.component.shimmer.getShimmerTheme
-import t4ulquiorra.xiaori.ui.menu.YouTubeSongMenu
-import t4ulquiorra.xiaori.ui.player.BottomSheetPlayer
-import t4ulquiorra.xiaori.ui.screens.Screens
-import t4ulquiorra.xiaori.ui.screens.SettingDialoge
-import t4ulquiorra.xiaori.ui.screens.WelcomeDialog
-import t4ulquiorra.xiaori.ui.screens.navigationBuilder
-import t4ulquiorra.xiaori.ui.screens.settings.DarkMode
-import t4ulquiorra.xiaori.ui.screens.settings.NavigationTab
-import t4ulquiorra.xiaori.ui.theme.ColorSaver
-import t4ulquiorra.xiaori.ui.theme.DefaultThemeColor
-import t4ulquiorra.xiaori.ui.theme.xiaoriTheme
-import t4ulquiorra.xiaori.ui.theme.extractThemeColor
-import t4ulquiorra.xiaori.ui.utils.appBarScrollBehavior
-import t4ulquiorra.xiaori.ui.utils.resetHeightOffset
-import t4ulquiorra.xiaori.utils.SyncUtils
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.utils.reportException
-import t4ulquiorra.xiaori.utils.setAppLocale
-import t4ulquiorra.xiaori.viewmodels.HomeViewModel
+import com.xiaori.constants.PauseListenHistoryKey
+import com.xiaori.constants.PauseSearchHistoryKey
+import com.xiaori.constants.PureBlackKey
+import com.xiaori.constants.SYSTEM_DEFAULT
+import com.xiaori.constants.SelectedThemeColorKey
+import com.xiaori.constants.StopMusicOnTaskClearKey
+import com.xiaori.constants.UseNewMiniPlayerDesignKey
+import com.xiaori.db.MusicDatabase
+import com.xiaori.db.entities.SearchHistory
+import com.xiaori.extensions.toEnum
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.playback.DownloadUtil
+import com.xiaori.playback.MusicService
+import com.xiaori.playback.MusicService.MusicBinder
+import com.xiaori.playback.PlayerConnection
+import com.xiaori.playback.queues.YouTubeQueue
+import com.xiaori.ui.component.AppNavigationRail
+import com.xiaori.ui.component.BottomSheetMenu
+import com.xiaori.ui.component.BottomSheetPage
+import com.xiaori.ui.component.FloatingNavigationToolbar
+import com.xiaori.ui.component.LocalBottomSheetPageState
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.component.rememberBottomSheetState
+import com.xiaori.ui.component.shimmer.getShimmerTheme
+import com.xiaori.ui.menu.YouTubeSongMenu
+import com.xiaori.ui.player.BottomSheetPlayer
+import com.xiaori.ui.screens.Screens
+import com.xiaori.ui.screens.SettingDialoge
+import com.xiaori.ui.screens.WelcomeDialog
+import com.xiaori.ui.screens.navigationBuilder
+import com.xiaori.ui.screens.settings.DarkMode
+import com.xiaori.ui.screens.settings.NavigationTab
+import com.xiaori.ui.theme.ColorSaver
+import com.xiaori.ui.theme.DefaultThemeColor
+import com.xiaori.ui.theme.xiaoriTheme
+import com.xiaori.ui.theme.extractThemeColor
+import com.xiaori.ui.utils.appBarScrollBehavior
+import com.xiaori.ui.utils.resetHeightOffset
+import com.xiaori.utils.SyncUtils
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.utils.rememberPreference
+import com.xiaori.utils.reportException
+import com.xiaori.utils.setAppLocale
+import com.xiaori.viewmodels.HomeViewModel
 import com.valentinilk.shimmer.LocalShimmerTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
@@ -230,9 +230,9 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     companion object {
-        const val ACTION_SEARCH = "t4ulquiorra.xiaori.action.SEARCH"
-        const val ACTION_LIBRARY = "t4ulquiorra.xiaori.action.LIBRARY"
-        const val ACTION_RECOGNITION = "t4ulquiorra.xiaori.action.RECOGNITION"
+        const val ACTION_SEARCH = "com.xiaori.action.SEARCH"
+        const val ACTION_LIBRARY = "com.xiaori.action.LIBRARY"
+        const val ACTION_RECOGNITION = "com.xiaori.action.RECOGNITION"
         const val EXTRA_AUTO_START_RECOGNITION = "auto_start_recognition"
     }
 
@@ -246,13 +246,13 @@ class MainActivity : ComponentActivity() {
     lateinit var syncUtils: SyncUtils
 
     @Inject
-    lateinit var listenTogetherManager: t4ulquiorra.xiaori.listentogether.ListenTogetherManager
+    lateinit var listenTogetherManager: com.xiaori.listentogether.ListenTogetherManager
 
     @Inject
-    lateinit var echoBrainEngine: t4ulquiorra.xiaori.engine.EchoBrainEngine
+    lateinit var echoBrainEngine: com.xiaori.engine.EchoBrainEngine
 
     @Inject
-    lateinit var echoBrainRepository: t4ulquiorra.xiaori.data.EchoBrainRepository
+    lateinit var echoBrainRepository: com.xiaori.data.EchoBrainRepository
 
     private lateinit var navController: NavHostController
     private var pendingIntent: Intent? = null
@@ -377,7 +377,7 @@ class MainActivity : ComponentActivity() {
 
         lifecycleScope.launch {
             dataStore.data
-                .map { it[t4ulquiorra.xiaori.constants.EchoBrainEnabledKey] ?: false }
+                .map { it[com.xiaori.constants.EchoBrainEnabledKey] ?: false }
                 .distinctUntilChanged()
                 .collectLatest { enabled ->
                     echoBrainEngine.isEnabled.value = enabled
@@ -776,7 +776,7 @@ class MainActivity : ComponentActivity() {
                 val snackbarHostState = remember { SnackbarHostState() }
                 var showSettingDialoge by remember { mutableStateOf(false) }
 
-                val (lastOpenedVersionCode, setLastOpenedVersionCode) = rememberPreference(t4ulquiorra.xiaori.constants.LastOpenedVersionCodeKey, -1)
+                val (lastOpenedVersionCode, setLastOpenedVersionCode) = rememberPreference(com.xiaori.constants.LastOpenedVersionCodeKey, -1)
                 var showWelcomeDialog by remember { mutableStateOf(false) }
 
                 LaunchedEffect(lastOpenedVersionCode) {
@@ -1393,5 +1393,5 @@ val LocalPlayerConnection = staticCompositionLocalOf<PlayerConnection?> { error(
 val LocalPlayerAwareWindowInsets = compositionLocalOf<WindowInsets> { error("No WindowInsets provided") }
 val LocalDownloadUtil = staticCompositionLocalOf<DownloadUtil> { error("No DownloadUtil provided") }
 val LocalSyncUtils = staticCompositionLocalOf<SyncUtils> { error("No SyncUtils provided") }
-val LocalListenTogetherManager = staticCompositionLocalOf<t4ulquiorra.xiaori.listentogether.ListenTogetherManager?> { null }
+val LocalListenTogetherManager = staticCompositionLocalOf<com.xiaori.listentogether.ListenTogetherManager?> { null }
 val LocalIsPlayerExpanded = compositionLocalOf { false }

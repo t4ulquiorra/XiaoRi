@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.menu
+package com.xiaori.ui.menu
 
 import android.content.Context
 import android.content.Intent
@@ -14,12 +14,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.media3.exoplayer.offline.Download
-import t4ulquiorra.xiaori.LocalListenTogetherManager
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.db.entities.Playlist
-import t4ulquiorra.xiaori.db.entities.PlaylistSong
-import t4ulquiorra.xiaori.ui.component.Material3MenuGroup
-import t4ulquiorra.xiaori.ui.component.Material3MenuItemData
+import com.xiaori.LocalListenTogetherManager
+import com.xiaori.R
+import com.xiaori.db.entities.Playlist
+import com.xiaori.db.entities.PlaylistSong
+import com.xiaori.ui.component.Material3MenuGroup
+import com.xiaori.ui.component.Material3MenuItemData
 
 
 @Composable

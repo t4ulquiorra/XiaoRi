@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.utils.potoken
+package com.xiaori.utils.potoken
 
 import android.content.Context
 import android.webkit.ConsoleMessage
@@ -8,7 +8,7 @@ import android.webkit.WebView
 import androidx.annotation.MainThread
 import androidx.collection.ArrayMap
 import com.music.innertube.YouTube
-import t4ulquiorra.xiaori.BuildConfig
+import com.xiaori.BuildConfig
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope

@@ -1,10 +1,10 @@
-package t4ulquiorra.xiaori.ui.screens.equalizer
+package com.xiaori.ui.screens.equalizer
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import t4ulquiorra.xiaori.eq.EqualizerService
-import t4ulquiorra.xiaori.eq.data.EQProfileRepository
-import t4ulquiorra.xiaori.eq.data.ParametricEQParser
+import com.xiaori.eq.EqualizerService
+import com.xiaori.eq.data.EQProfileRepository
+import com.xiaori.eq.data.ParametricEQParser
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

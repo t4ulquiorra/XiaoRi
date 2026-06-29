@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.screens.search.suggestions
+package com.xiaori.ui.screens.search.suggestions
 
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.clickable
@@ -21,7 +21,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import t4ulquiorra.xiaori.constants.SuggestionRegionSlugToName
+import com.xiaori.constants.SuggestionRegionSlugToName
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)

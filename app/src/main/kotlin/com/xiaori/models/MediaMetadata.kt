@@ -1,13 +1,13 @@
 
 
-package t4ulquiorra.xiaori.models
+package com.xiaori.models
 
 import androidx.compose.runtime.Immutable
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.db.entities.SongEntity
-import t4ulquiorra.xiaori.ui.utils.resize
+import com.xiaori.db.entities.Song
+import com.xiaori.db.entities.SongEntity
+import com.xiaori.ui.utils.resize
 import java.io.Serializable
 import java.time.LocalDateTime
 

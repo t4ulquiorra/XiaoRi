@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.component
+package com.xiaori.ui.component
 
 import android.graphics.BlurMaskFilter
 import androidx.compose.animation.core.animateFloatAsState
@@ -47,12 +47,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.constants.AppleMusicLyricsBlurKey
-import t4ulquiorra.xiaori.constants.LyricsRomanizeAsMainKey
-import t4ulquiorra.xiaori.lyrics.LyricsEntry
-import t4ulquiorra.xiaori.ui.screens.settings.LyricsPosition
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.constants.AppleMusicLyricsBlurKey
+import com.xiaori.constants.LyricsRomanizeAsMainKey
+import com.xiaori.lyrics.LyricsEntry
+import com.xiaori.ui.screens.settings.LyricsPosition
+import com.xiaori.utils.rememberPreference
 import kotlinx.coroutines.isActive
 import kotlin.math.PI
 import kotlin.math.cos

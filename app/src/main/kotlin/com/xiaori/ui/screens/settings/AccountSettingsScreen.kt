@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -36,14 +36,14 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
 import com.music.innertube.utils.parseCookieString
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.constants.*
-import t4ulquiorra.xiaori.ui.component.*
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.viewmodels.AccountSettingsViewModel
-import t4ulquiorra.xiaori.viewmodels.HomeViewModel
-import t4ulquiorra.xiaori.R
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.constants.*
+import com.xiaori.ui.component.*
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.utils.rememberPreference
+import com.xiaori.viewmodels.AccountSettingsViewModel
+import com.xiaori.viewmodels.HomeViewModel
+import com.xiaori.R
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun AccountSettingsScreen(

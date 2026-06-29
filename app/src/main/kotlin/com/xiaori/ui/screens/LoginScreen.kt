@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens
+package com.xiaori.ui.screens
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -28,18 +28,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
 import com.music.innertube.YouTube
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.AccountChannelHandleKey
-import t4ulquiorra.xiaori.constants.AccountEmailKey
-import t4ulquiorra.xiaori.constants.AccountNameKey
-import t4ulquiorra.xiaori.constants.DataSyncIdKey
-import t4ulquiorra.xiaori.constants.InnerTubeCookieKey
-import t4ulquiorra.xiaori.constants.VisitorDataKey
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.utils.reportException
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.constants.AccountChannelHandleKey
+import com.xiaori.constants.AccountEmailKey
+import com.xiaori.constants.AccountNameKey
+import com.xiaori.constants.DataSyncIdKey
+import com.xiaori.constants.InnerTubeCookieKey
+import com.xiaori.constants.VisitorDataKey
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.utils.rememberPreference
+import com.xiaori.utils.reportException
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

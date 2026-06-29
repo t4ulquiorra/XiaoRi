@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.component
+package com.xiaori.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -41,10 +41,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import t4ulquiorra.xiaori.constants.AppleMusicLyricsBlurKey
-import t4ulquiorra.xiaori.lyrics.LyricsEntry
-import t4ulquiorra.xiaori.ui.screens.settings.LyricsPosition
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.constants.AppleMusicLyricsBlurKey
+import com.xiaori.lyrics.LyricsEntry
+import com.xiaori.ui.screens.settings.LyricsPosition
+import com.xiaori.utils.rememberPreference
 
 
 @OptIn(ExperimentalLayoutApi::class)
@@ -101,7 +101,7 @@ fun xiaoriLyricsLine(
 
     
     val wordData = remember(entry.text, entry.words, activeDuration) {
-        val isHindiText = t4ulquiorra.xiaori.lyrics.LyricsUtils.isHindi(entry.text)
+        val isHindiText = com.xiaori.lyrics.LyricsUtils.isHindi(entry.text)
         if (!isHindiText && entry.words != null && entry.words.isNotEmpty()) {
             
             entry.words.mapIndexed { index, word ->

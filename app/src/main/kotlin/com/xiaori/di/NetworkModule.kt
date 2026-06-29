@@ -1,9 +1,9 @@
 
 
-package t4ulquiorra.xiaori.di
+package com.xiaori.di
 
 import android.content.Context
-import t4ulquiorra.xiaori.utils.NetworkConnectivityObserver
+import com.xiaori.utils.NetworkConnectivityObserver
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

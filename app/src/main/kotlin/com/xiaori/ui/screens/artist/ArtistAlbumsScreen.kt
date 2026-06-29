@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.artist
+package com.xiaori.ui.screens.artist
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -42,20 +42,20 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.CONTENT_TYPE_ALBUM
-import t4ulquiorra.xiaori.constants.CONTENT_TYPE_HEADER
-import t4ulquiorra.xiaori.constants.GridItemSize
-import t4ulquiorra.xiaori.constants.GridItemsSizeKey
-import t4ulquiorra.xiaori.constants.GridThumbnailHeight
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.LibraryAlbumGridItem
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.viewmodels.ArtistAlbumsViewModel
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.CONTENT_TYPE_ALBUM
+import com.xiaori.constants.CONTENT_TYPE_HEADER
+import com.xiaori.constants.GridItemSize
+import com.xiaori.constants.GridItemsSizeKey
+import com.xiaori.constants.GridThumbnailHeight
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.LibraryAlbumGridItem
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.viewmodels.ArtistAlbumsViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable

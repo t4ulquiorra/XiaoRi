@@ -1,26 +1,26 @@
 
 
-package t4ulquiorra.xiaori.viewmodels
+package com.xiaori.viewmodels
 
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
-import t4ulquiorra.xiaori.MainActivity
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.db.InternalDatabase
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.db.entities.ArtistEntity
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.db.entities.SongEntity
-import t4ulquiorra.xiaori.extensions.div
-import t4ulquiorra.xiaori.extensions.tryOrNull
-import t4ulquiorra.xiaori.extensions.zipInputStream
-import t4ulquiorra.xiaori.extensions.zipOutputStream
-import t4ulquiorra.xiaori.playback.MusicService
-import t4ulquiorra.xiaori.playback.MusicService.Companion.PERSISTENT_QUEUE_FILE
-import t4ulquiorra.xiaori.utils.reportException
+import com.xiaori.MainActivity
+import com.xiaori.R
+import com.xiaori.db.InternalDatabase
+import com.xiaori.db.MusicDatabase
+import com.xiaori.db.entities.ArtistEntity
+import com.xiaori.db.entities.Song
+import com.xiaori.db.entities.SongEntity
+import com.xiaori.extensions.div
+import com.xiaori.extensions.tryOrNull
+import com.xiaori.extensions.zipInputStream
+import com.xiaori.extensions.zipOutputStream
+import com.xiaori.playback.MusicService
+import com.xiaori.playback.MusicService.Companion.PERSISTENT_QUEUE_FILE
+import com.xiaori.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking

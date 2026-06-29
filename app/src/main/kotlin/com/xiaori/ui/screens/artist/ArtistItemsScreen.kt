@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.artist
+package com.xiaori.ui.screens.artist
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
@@ -38,29 +38,29 @@ import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.GridItemSize
-import t4ulquiorra.xiaori.constants.GridItemsSizeKey
-import t4ulquiorra.xiaori.constants.GridThumbnailHeight
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.playback.queues.YouTubeQueue
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.component.YouTubeGridItem
-import t4ulquiorra.xiaori.ui.component.YouTubeListItem
-import t4ulquiorra.xiaori.ui.component.shimmer.GridItemPlaceHolder
-import t4ulquiorra.xiaori.ui.component.shimmer.ListItemPlaceHolder
-import t4ulquiorra.xiaori.ui.component.shimmer.ShimmerHost
-import t4ulquiorra.xiaori.ui.menu.YouTubeAlbumMenu
-import t4ulquiorra.xiaori.ui.menu.YouTubeArtistMenu
-import t4ulquiorra.xiaori.ui.menu.YouTubePlaylistMenu
-import t4ulquiorra.xiaori.ui.menu.YouTubeSongMenu
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.utils.listItemShape
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.viewmodels.ArtistItemsViewModel
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.GridItemSize
+import com.xiaori.constants.GridItemsSizeKey
+import com.xiaori.constants.GridThumbnailHeight
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.playback.queues.YouTubeQueue
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.component.YouTubeGridItem
+import com.xiaori.ui.component.YouTubeListItem
+import com.xiaori.ui.component.shimmer.GridItemPlaceHolder
+import com.xiaori.ui.component.shimmer.ListItemPlaceHolder
+import com.xiaori.ui.component.shimmer.ShimmerHost
+import com.xiaori.ui.menu.YouTubeAlbumMenu
+import com.xiaori.ui.menu.YouTubeArtistMenu
+import com.xiaori.ui.menu.YouTubePlaylistMenu
+import com.xiaori.ui.menu.YouTubeSongMenu
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.utils.listItemShape
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.viewmodels.ArtistItemsViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable

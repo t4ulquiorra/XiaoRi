@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.recognition
+package com.xiaori.ui.screens.recognition
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -56,16 +56,16 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.ThumbnailCornerRadius
-import t4ulquiorra.xiaori.db.entities.RecognitionHistory
-import t4ulquiorra.xiaori.ui.component.DefaultDialog
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.component.NavigationTitle
-import t4ulquiorra.xiaori.ui.utils.backToMain
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.constants.ThumbnailCornerRadius
+import com.xiaori.db.entities.RecognitionHistory
+import com.xiaori.ui.component.DefaultDialog
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.component.NavigationTitle
+import com.xiaori.ui.utils.backToMain
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDate

@@ -2,18 +2,18 @@
 
 @file:OptIn(ExperimentalCoroutinesApi::class)
 
-package t4ulquiorra.xiaori.viewmodels
+package com.xiaori.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import t4ulquiorra.xiaori.constants.AddToPlaylistSortDescendingKey
-import t4ulquiorra.xiaori.constants.AddToPlaylistSortTypeKey
-import t4ulquiorra.xiaori.constants.PlaylistSortType
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.extensions.toEnum
-import t4ulquiorra.xiaori.utils.SyncUtils
-import t4ulquiorra.xiaori.utils.dataStore
+import com.xiaori.constants.AddToPlaylistSortDescendingKey
+import com.xiaori.constants.AddToPlaylistSortTypeKey
+import com.xiaori.constants.PlaylistSortType
+import com.xiaori.db.MusicDatabase
+import com.xiaori.extensions.toEnum
+import com.xiaori.utils.SyncUtils
+import com.xiaori.utils.dataStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.ExperimentalCoroutinesApi

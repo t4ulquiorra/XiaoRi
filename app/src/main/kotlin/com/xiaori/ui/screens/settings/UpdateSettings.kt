@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 
@@ -32,28 +32,28 @@ import androidx.compose.ui.unit.dp
 import android.content.Intent
 import android.net.Uri
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.Material3SettingsGroup
-import t4ulquiorra.xiaori.ui.component.Material3SettingsItem
-import t4ulquiorra.xiaori.xiaori.component.UpdateInfoDialog
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.xiaori.updater.getAutoUpdateCheckSetting
-import t4ulquiorra.xiaori.xiaori.updater.saveAutoUpdateCheckSetting
-import t4ulquiorra.xiaori.xiaori.updater.getUpdateAvailableState
-import t4ulquiorra.xiaori.xiaori.updater.saveUpdateAvailableState
-import t4ulquiorra.xiaori.xiaori.updater.getUpdateNotificationsSetting
-import t4ulquiorra.xiaori.xiaori.updater.saveUpdateNotificationsSetting
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.Material3SettingsGroup
+import com.xiaori.ui.component.Material3SettingsItem
+import com.xiaori.xiaori.component.UpdateInfoDialog
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.xiaori.updater.getAutoUpdateCheckSetting
+import com.xiaori.xiaori.updater.saveAutoUpdateCheckSetting
+import com.xiaori.xiaori.updater.getUpdateAvailableState
+import com.xiaori.xiaori.updater.saveUpdateAvailableState
+import com.xiaori.xiaori.updater.getUpdateNotificationsSetting
+import com.xiaori.xiaori.updater.saveUpdateNotificationsSetting
 import android.widget.Toast
 import androidx.compose.ui.res.pluralStringResource
-import t4ulquiorra.xiaori.xiaori.updater.getDownloadedApkCount
-import t4ulquiorra.xiaori.xiaori.updater.clearDownloadedApks
-import t4ulquiorra.xiaori.xiaori.updater.getBetaUpdatesSetting
-import t4ulquiorra.xiaori.xiaori.updater.saveBetaUpdatesSetting
-import t4ulquiorra.xiaori.xiaori.updater.autoClearOldApks
+import com.xiaori.xiaori.updater.getDownloadedApkCount
+import com.xiaori.xiaori.updater.clearDownloadedApks
+import com.xiaori.xiaori.updater.getBetaUpdatesSetting
+import com.xiaori.xiaori.updater.saveBetaUpdatesSetting
+import com.xiaori.xiaori.updater.autoClearOldApks
 import androidx.compose.material3.MaterialTheme
-import t4ulquiorra.xiaori.BuildConfig
+import com.xiaori.BuildConfig
 
 
 

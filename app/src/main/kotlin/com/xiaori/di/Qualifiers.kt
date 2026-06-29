@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.di
+package com.xiaori.di
 
 import javax.inject.Qualifier
 

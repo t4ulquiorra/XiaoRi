@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.component
+package com.xiaori.ui.component
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
@@ -13,14 +13,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavController
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.WatchEndpoint
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.db.entities.Album
-import t4ulquiorra.xiaori.db.entities.Artist
-import t4ulquiorra.xiaori.db.entities.Playlist
-import t4ulquiorra.xiaori.ui.menu.AlbumMenu
-import t4ulquiorra.xiaori.ui.menu.ArtistMenu
-import t4ulquiorra.xiaori.ui.menu.PlaylistMenu
-import t4ulquiorra.xiaori.ui.menu.YouTubePlaylistMenu
+import com.xiaori.R
+import com.xiaori.db.entities.Album
+import com.xiaori.db.entities.Artist
+import com.xiaori.db.entities.Playlist
+import com.xiaori.ui.menu.AlbumMenu
+import com.xiaori.ui.menu.ArtistMenu
+import com.xiaori.ui.menu.PlaylistMenu
+import com.xiaori.ui.menu.YouTubePlaylistMenu
 import kotlinx.coroutines.CoroutineScope
 
 @Composable

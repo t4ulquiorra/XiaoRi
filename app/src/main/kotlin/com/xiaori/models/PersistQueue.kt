@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.models
+package com.xiaori.models
 
 import java.io.Serializable
 

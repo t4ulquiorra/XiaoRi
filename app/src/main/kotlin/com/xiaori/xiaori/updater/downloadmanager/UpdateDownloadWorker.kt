@@ -1,11 +1,11 @@
-package t4ulquiorra.xiaori.xiaori.updater.downloadmanager
+package com.xiaori.xiaori.updater.downloadmanager
 
 import android.content.Context
 import android.os.Environment
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
-import t4ulquiorra.xiaori.R
+import com.xiaori.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File

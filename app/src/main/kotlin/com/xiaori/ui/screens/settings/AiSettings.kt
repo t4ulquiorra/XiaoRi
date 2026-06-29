@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -32,22 +32,22 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.AiProviderKey
-import t4ulquiorra.xiaori.constants.DeeplApiKey
-import t4ulquiorra.xiaori.constants.DeeplFormalityKey
-import t4ulquiorra.xiaori.constants.LanguageCodeToName
-import t4ulquiorra.xiaori.constants.OpenRouterApiKey
-import t4ulquiorra.xiaori.constants.OpenRouterBaseUrlKey
-import t4ulquiorra.xiaori.constants.OpenRouterModelKey
-import t4ulquiorra.xiaori.constants.TranslateLanguageKey
-import t4ulquiorra.xiaori.constants.TranslateModeKey
-import t4ulquiorra.xiaori.ui.component.EnumDialog
-import t4ulquiorra.xiaori.ui.component.Material3SettingsGroup
-import t4ulquiorra.xiaori.ui.component.Material3SettingsItem
-import t4ulquiorra.xiaori.ui.component.TextFieldDialog
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.constants.AiProviderKey
+import com.xiaori.constants.DeeplApiKey
+import com.xiaori.constants.DeeplFormalityKey
+import com.xiaori.constants.LanguageCodeToName
+import com.xiaori.constants.OpenRouterApiKey
+import com.xiaori.constants.OpenRouterBaseUrlKey
+import com.xiaori.constants.OpenRouterModelKey
+import com.xiaori.constants.TranslateLanguageKey
+import com.xiaori.constants.TranslateModeKey
+import com.xiaori.ui.component.EnumDialog
+import com.xiaori.ui.component.Material3SettingsGroup
+import com.xiaori.ui.component.Material3SettingsItem
+import com.xiaori.ui.component.TextFieldDialog
+import com.xiaori.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

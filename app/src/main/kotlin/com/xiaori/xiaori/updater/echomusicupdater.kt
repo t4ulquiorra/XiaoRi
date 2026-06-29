@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.xiaori.updater
+package com.xiaori.xiaori.updater
 
 
 import android.content.Context
@@ -59,13 +59,13 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
 import androidx.work.workDataOf
-import t4ulquiorra.xiaori.BuildConfig
-import t4ulquiorra.xiaori.R
+import com.xiaori.BuildConfig
+import com.xiaori.R
 import coil3.compose.AsyncImage
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
-import t4ulquiorra.xiaori.xiaori.updater.downloadmanager.UpdateDownloadWorker
-import t4ulquiorra.xiaori.xiaori.updater.downloadmanager.DownloadNotificationManager
+import com.xiaori.xiaori.updater.downloadmanager.UpdateDownloadWorker
+import com.xiaori.xiaori.updater.downloadmanager.DownloadNotificationManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -77,17 +77,17 @@ import java.net.URL
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.regex.Pattern
-import t4ulquiorra.xiaori.ui.component.ChangelogItem
-import t4ulquiorra.xiaori.ui.component.leadingItemShape
-import t4ulquiorra.xiaori.ui.component.middleItemShape
-import t4ulquiorra.xiaori.ui.component.endItemShape
-import t4ulquiorra.xiaori.ui.component.detachedItemShape
-import t4ulquiorra.xiaori.ui.component.parseMarkdown
-import t4ulquiorra.xiaori.ui.component.endItemShape
-import t4ulquiorra.xiaori.ui.component.detachedItemShape
-import t4ulquiorra.xiaori.ui.component.AnimatedActionButton
-import t4ulquiorra.xiaori.ui.component.ExpressiveIconButton
-import t4ulquiorra.xiaori.ui.component.ErrorSnackbar
+import com.xiaori.ui.component.ChangelogItem
+import com.xiaori.ui.component.leadingItemShape
+import com.xiaori.ui.component.middleItemShape
+import com.xiaori.ui.component.endItemShape
+import com.xiaori.ui.component.detachedItemShape
+import com.xiaori.ui.component.parseMarkdown
+import com.xiaori.ui.component.endItemShape
+import com.xiaori.ui.component.detachedItemShape
+import com.xiaori.ui.component.AnimatedActionButton
+import com.xiaori.ui.component.ExpressiveIconButton
+import com.xiaori.ui.component.ErrorSnackbar
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString

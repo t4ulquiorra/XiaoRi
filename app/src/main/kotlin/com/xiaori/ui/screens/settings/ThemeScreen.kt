@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class, ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
 
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState
@@ -68,16 +68,16 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.materialkolor.PaletteStyle
 import com.materialkolor.rememberDynamicColorScheme
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.DarkModeKey
-import t4ulquiorra.xiaori.constants.DynamicThemeKey
-import t4ulquiorra.xiaori.constants.PureBlackKey
-import t4ulquiorra.xiaori.constants.PureBlackMiniPlayerKey
-import t4ulquiorra.xiaori.constants.SelectedThemeColorKey
-import t4ulquiorra.xiaori.ui.theme.DefaultThemeColor
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.R
+import com.xiaori.constants.DarkModeKey
+import com.xiaori.constants.DynamicThemeKey
+import com.xiaori.constants.PureBlackKey
+import com.xiaori.constants.PureBlackMiniPlayerKey
+import com.xiaori.constants.SelectedThemeColorKey
+import com.xiaori.ui.theme.DefaultThemeColor
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.utils.rememberPreference
 
 data class ThemePalette(
     val nameRes: Int,

@@ -1,12 +1,12 @@
 
 
-package t4ulquiorra.xiaori.lyrics
+package com.xiaori.lyrics
 
 import android.content.Context
 import com.music.paxsenix.Paxsenix
-import t4ulquiorra.xiaori.constants.EnablePaxsenixKey
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
+import com.xiaori.constants.EnablePaxsenixKey
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
 import timber.log.Timber
 
 object PaxSenixLyricsProvider : LyricsProvider {

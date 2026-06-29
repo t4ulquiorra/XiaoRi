@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.menu
+package com.xiaori.ui.menu
 
 import android.content.Intent
 import android.content.res.Configuration
@@ -63,39 +63,39 @@ import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalDownloadUtil
-import t4ulquiorra.xiaori.LocalListenTogetherManager
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.LocalSyncUtils
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.EnableExportAsMp3Key
-import t4ulquiorra.xiaori.constants.ExportDirectoryUriKey
-import t4ulquiorra.xiaori.constants.ExportedSongIdsKey
-import t4ulquiorra.xiaori.constants.ExportingSongIdsKey
-import t4ulquiorra.xiaori.constants.ListItemHeight
-import t4ulquiorra.xiaori.constants.ListThumbnailSize
-import t4ulquiorra.xiaori.db.entities.ArtistEntity
-import t4ulquiorra.xiaori.db.entities.Event
-import t4ulquiorra.xiaori.db.entities.SpeedDialItem
-import t4ulquiorra.xiaori.db.entities.PlaylistSong
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.extensions.toMediaItem
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.playback.ExoDownloadService
-import t4ulquiorra.xiaori.playback.queues.YouTubeQueue
-import t4ulquiorra.xiaori.ui.component.ListDialog
-import t4ulquiorra.xiaori.ui.component.LocalBottomSheetPageState
-import t4ulquiorra.xiaori.ui.component.Material3MenuGroup
-import t4ulquiorra.xiaori.ui.component.Material3MenuItemData
-import t4ulquiorra.xiaori.ui.component.NewAction
-import t4ulquiorra.xiaori.ui.component.NewActionGrid
-import t4ulquiorra.xiaori.ui.component.SongListItem
-import t4ulquiorra.xiaori.ui.component.TextFieldDialog
-import t4ulquiorra.xiaori.utils.listItemShape
-import t4ulquiorra.xiaori.ui.utils.ShowMediaInfo
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.viewmodels.CachePlaylistViewModel
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalDownloadUtil
+import com.xiaori.LocalListenTogetherManager
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.LocalSyncUtils
+import com.xiaori.R
+import com.xiaori.constants.EnableExportAsMp3Key
+import com.xiaori.constants.ExportDirectoryUriKey
+import com.xiaori.constants.ExportedSongIdsKey
+import com.xiaori.constants.ExportingSongIdsKey
+import com.xiaori.constants.ListItemHeight
+import com.xiaori.constants.ListThumbnailSize
+import com.xiaori.db.entities.ArtistEntity
+import com.xiaori.db.entities.Event
+import com.xiaori.db.entities.SpeedDialItem
+import com.xiaori.db.entities.PlaylistSong
+import com.xiaori.db.entities.Song
+import com.xiaori.extensions.toMediaItem
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.playback.ExoDownloadService
+import com.xiaori.playback.queues.YouTubeQueue
+import com.xiaori.ui.component.ListDialog
+import com.xiaori.ui.component.LocalBottomSheetPageState
+import com.xiaori.ui.component.Material3MenuGroup
+import com.xiaori.ui.component.Material3MenuItemData
+import com.xiaori.ui.component.NewAction
+import com.xiaori.ui.component.NewActionGrid
+import com.xiaori.ui.component.SongListItem
+import com.xiaori.ui.component.TextFieldDialog
+import com.xiaori.utils.listItemShape
+import com.xiaori.ui.utils.ShowMediaInfo
+import com.xiaori.utils.rememberPreference
+import com.xiaori.viewmodels.CachePlaylistViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -264,7 +264,7 @@ fun SongMenu(
         mutableStateOf(false)
     }
 
-    val ringtoneViewModel = t4ulquiorra.xiaori.LocalRingtoneViewModel.current
+    val ringtoneViewModel = com.xiaori.LocalRingtoneViewModel.current
 
     if (showSelectArtistDialog) {
         ListDialog(
@@ -425,7 +425,7 @@ fun SongMenu(
                             },
                             onClick = {
                                 val durationMs = if (song.song.duration > 0) song.song.duration.toLong() * 1000 else 180000L
-                                val trackInfo = t4ulquiorra.xiaori.listentogether.TrackInfo(
+                                val trackInfo = com.xiaori.listentogether.TrackInfo(
                                     id = song.id,
                                     title = song.song.title,
                                     artist = orderedArtists.joinToString(", ") { it.name },
@@ -760,7 +760,7 @@ fun SongMenu(
                                         onDismiss()
                                     } else {
                                         onDismiss()
-                                        t4ulquiorra.xiaori.playback.AudioExportService.start(
+                                        com.xiaori.playback.AudioExportService.start(
                                             context = context,
                                             songId = song.id,
                                             songTitle = song.song.title,

@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.utils
+package com.xiaori.ui.utils
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -35,9 +35,9 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.db.entities.SongEntity
+import com.xiaori.LocalDatabase
+import com.xiaori.R
+import com.xiaori.db.entities.SongEntity
 import kotlinx.coroutines.FlowPreview
 
 @OptIn(FlowPreview::class)

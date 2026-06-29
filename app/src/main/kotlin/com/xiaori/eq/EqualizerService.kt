@@ -1,12 +1,12 @@
-package t4ulquiorra.xiaori.eq
+package com.xiaori.eq
 
 
 import android.annotation.SuppressLint
 import androidx.annotation.OptIn
 import androidx.media3.common.util.UnstableApi
-import t4ulquiorra.xiaori.eq.audio.CustomEqualizerAudioProcessor
-import t4ulquiorra.xiaori.eq.data.ParametricEQ
-import t4ulquiorra.xiaori.eq.data.SavedEQProfile
+import com.xiaori.eq.audio.CustomEqualizerAudioProcessor
+import com.xiaori.eq.data.ParametricEQ
+import com.xiaori.eq.data.SavedEQProfile
 import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton

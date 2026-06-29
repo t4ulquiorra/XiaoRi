@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.recognition
+package com.xiaori.recognition
 
 import androidx.annotation.OptIn
 import androidx.media3.common.util.UnstableApi

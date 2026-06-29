@@ -1,9 +1,9 @@
 
 
-package t4ulquiorra.xiaori.playback.queues
+package com.xiaori.playback.queues
 
 import androidx.media3.common.MediaItem
-import t4ulquiorra.xiaori.models.MediaMetadata
+import com.xiaori.models.MediaMetadata
 
 object EmptyQueue : Queue {
     override val preloadItem: MediaMetadata? = null

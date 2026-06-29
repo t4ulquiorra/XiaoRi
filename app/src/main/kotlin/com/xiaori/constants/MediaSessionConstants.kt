@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.constants
+package com.xiaori.constants
 
 import android.os.Bundle
 import androidx.media3.session.SessionCommand

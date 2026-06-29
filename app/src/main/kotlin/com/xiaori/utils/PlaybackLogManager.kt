@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.utils
+package com.xiaori.utils
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

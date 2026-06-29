@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.utils
+package com.xiaori.utils
 
 import android.net.ConnectivityManager
 import android.util.Log
@@ -9,7 +9,7 @@ import com.music.innertube.NewPipeExtractor
 import com.music.innertube.YouTube
 import com.music.innertube.models.YouTubeClient
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_CREATOR
-import t4ulquiorra.xiaori.utils.BotDetectionMitigator
+import com.xiaori.utils.BotDetectionMitigator
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_43_32
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_61_48
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR_NO_AUTH
@@ -22,16 +22,16 @@ import com.music.innertube.models.YouTubeClient.Companion.WEB
 import com.music.innertube.models.YouTubeClient.Companion.WEB_CREATOR
 import com.music.innertube.models.YouTubeClient.Companion.WEB_REMIX
 import com.music.innertube.models.response.PlayerResponse
-import t4ulquiorra.xiaori.constants.AudioQuality
-import t4ulquiorra.xiaori.utils.cipher.CipherDeobfuscator
-import t4ulquiorra.xiaori.utils.YTPlayerUtils.MAIN_CLIENT
-import t4ulquiorra.xiaori.utils.YTPlayerUtils.STREAM_FALLBACK_CLIENTS
-import t4ulquiorra.xiaori.utils.YTPlayerUtils.validateStatus
-import t4ulquiorra.xiaori.utils.potoken.PoTokenGenerator
-import t4ulquiorra.xiaori.utils.potoken.PoTokenResult
-import t4ulquiorra.xiaori.utils.sabr.EjsNTransformSolver
-import t4ulquiorra.xiaori.utils.PlaybackLogLevel
-import t4ulquiorra.xiaori.utils.PlaybackLogManager
+import com.xiaori.constants.AudioQuality
+import com.xiaori.utils.cipher.CipherDeobfuscator
+import com.xiaori.utils.YTPlayerUtils.MAIN_CLIENT
+import com.xiaori.utils.YTPlayerUtils.STREAM_FALLBACK_CLIENTS
+import com.xiaori.utils.YTPlayerUtils.validateStatus
+import com.xiaori.utils.potoken.PoTokenGenerator
+import com.xiaori.utils.potoken.PoTokenResult
+import com.xiaori.utils.sabr.EjsNTransformSolver
+import com.xiaori.utils.PlaybackLogLevel
+import com.xiaori.utils.PlaybackLogManager
 import com.music.innertube.models.IpVersion
 import okhttp3.Dns
 import okhttp3.OkHttpClient
@@ -121,7 +121,7 @@ object YTPlayerUtils {
         isDownload: Boolean = false
     ): Result<PlaybackData> {
         val showFallbackToast = context?.let { 
-            it.dataStore.data.first()[t4ulquiorra.xiaori.constants.ShowAudioFallbackToastKey] 
+            it.dataStore.data.first()[com.xiaori.constants.ShowAudioFallbackToastKey] 
         } ?: true
 
         var hasShownLosslessToast = false
@@ -292,7 +292,7 @@ object YTPlayerUtils {
                         val title = knownTitle ?: metadata?.videoDetails?.title
                         val author = knownArtist ?: metadata?.videoDetails?.author?.replace(" - Topic", "")
                         if (title != null && author != null) {
-                            val qobuzClient = t4ulquiorra.xiaori.utils.qobuz.QobuzApiClient()
+                            val qobuzClient = com.xiaori.utils.qobuz.QobuzApiClient()
                             val queryArtist = author
                             val queryTitle = title
                             val durationSeconds = metadata?.videoDetails?.lengthSeconds?.toLongOrNull()
@@ -1027,7 +1027,7 @@ private fun artistSimilarity(a: String, b: String): Float {
     return maxOf(jaccardScore, coverageScore)
 }
 
-fun confidence(queryArtist: String, queryTitle: String, queryDuration: Long?, candidate: t4ulquiorra.xiaori.utils.qobuz.QobuzTrack): Float {
+fun confidence(queryArtist: String, queryTitle: String, queryDuration: Long?, candidate: com.xiaori.utils.qobuz.QobuzTrack): Float {
     if (!candidate.streamable) return 0f
 
     val titleSim = jaccard(normalize(queryTitle), normalize(candidate.title))

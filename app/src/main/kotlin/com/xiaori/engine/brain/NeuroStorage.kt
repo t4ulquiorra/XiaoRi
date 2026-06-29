@@ -11,7 +11,7 @@ of the Flow project. Any use of this code in other projects must
 explicitly credit "Flow Android Client" and link back to the original repository.
 */
 
-package t4ulquiorra.xiaori.engine.brain
+package com.xiaori.engine.brain
 
 import android.content.Context
 import android.util.Log

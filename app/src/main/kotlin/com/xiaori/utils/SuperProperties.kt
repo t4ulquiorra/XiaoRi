@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.utils
+package com.xiaori.utils
 
 import android.os.Build
 import android.util.Base64

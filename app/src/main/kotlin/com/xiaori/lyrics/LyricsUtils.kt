@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.lyrics
+package com.xiaori.lyrics
 
 import android.text.format.DateUtils
 import com.atilika.kuromoji.ipadic.Tokenizer

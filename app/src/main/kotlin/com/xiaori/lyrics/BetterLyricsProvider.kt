@@ -1,12 +1,12 @@
 
 
-package t4ulquiorra.xiaori.lyrics
+package com.xiaori.lyrics
 
 import android.content.Context
-import t4ulquiorra.xiaori.betterlyrics.BetterLyrics
-import t4ulquiorra.xiaori.constants.EnableBetterLyricsKey
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
+import com.xiaori.betterlyrics.BetterLyrics
+import com.xiaori.constants.EnableBetterLyricsKey
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
 
 object BetterLyricsProvider : LyricsProvider {
     override val name = "BetterLyrics"

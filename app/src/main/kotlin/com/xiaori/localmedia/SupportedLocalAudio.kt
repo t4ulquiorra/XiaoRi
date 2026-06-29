@@ -1,7 +1,7 @@
 
 
 
-package t4ulquiorra.xiaori.localmedia
+package com.xiaori.localmedia
 
 import java.util.Locale
 

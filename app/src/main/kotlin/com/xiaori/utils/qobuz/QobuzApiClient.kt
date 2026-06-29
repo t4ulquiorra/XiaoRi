@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.utils.qobuz
+package com.xiaori.utils.qobuz
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

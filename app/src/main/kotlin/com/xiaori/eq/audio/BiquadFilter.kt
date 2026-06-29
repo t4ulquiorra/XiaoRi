@@ -1,6 +1,6 @@
-package t4ulquiorra.xiaori.eq.audio
+package com.xiaori.eq.audio
 
-import t4ulquiorra.xiaori.eq.data.FilterType
+import com.xiaori.eq.data.FilterType
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.pow

@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
 import android.app.Activity
 import android.content.Context
@@ -56,77 +56,77 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.CanvasThumbnailAnimationKey
-import t4ulquiorra.xiaori.constants.ChipSortTypeKey
-import t4ulquiorra.xiaori.constants.CropAlbumArtKey
-import t4ulquiorra.xiaori.constants.DefaultOpenTabKey
-import t4ulquiorra.xiaori.constants.DensityScale
-import t4ulquiorra.xiaori.constants.DensityScaleKey
-import t4ulquiorra.xiaori.constants.DynamicThemeKey
-import t4ulquiorra.xiaori.constants.EnableDynamicIconKey
-import t4ulquiorra.xiaori.constants.EnableHighRefreshRateKey
-import t4ulquiorra.xiaori.constants.EnableLyricsThumbnailPlayPauseKey
-import t4ulquiorra.xiaori.constants.GridItemSize
-import t4ulquiorra.xiaori.constants.GridItemsSizeKey
-import t4ulquiorra.xiaori.constants.HidePlayerThumbnailKey
-import t4ulquiorra.xiaori.constants.LibraryFilter
-import t4ulquiorra.xiaori.constants.ListenTogetherInTopBarKey
-import t4ulquiorra.xiaori.constants.LyricsAnimationStyle
-import t4ulquiorra.xiaori.constants.LyricsAnimationStyleKey
-import t4ulquiorra.xiaori.constants.LyricsStandardBlurKey
-import t4ulquiorra.xiaori.constants.LyricsTextPositionKey
-import t4ulquiorra.xiaori.constants.LyricsTextSizeKey
-import t4ulquiorra.xiaori.constants.PlayerBackgroundStyle
-import t4ulquiorra.xiaori.constants.PlayerBackgroundStyleKey
-import t4ulquiorra.xiaori.constants.PlayerButtonsStyle
-import t4ulquiorra.xiaori.constants.PlayerButtonsStyleKey
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.constants.CanvasThumbnailAnimationKey
+import com.xiaori.constants.ChipSortTypeKey
+import com.xiaori.constants.CropAlbumArtKey
+import com.xiaori.constants.DefaultOpenTabKey
+import com.xiaori.constants.DensityScale
+import com.xiaori.constants.DensityScaleKey
+import com.xiaori.constants.DynamicThemeKey
+import com.xiaori.constants.EnableDynamicIconKey
+import com.xiaori.constants.EnableHighRefreshRateKey
+import com.xiaori.constants.EnableLyricsThumbnailPlayPauseKey
+import com.xiaori.constants.GridItemSize
+import com.xiaori.constants.GridItemsSizeKey
+import com.xiaori.constants.HidePlayerThumbnailKey
+import com.xiaori.constants.LibraryFilter
+import com.xiaori.constants.ListenTogetherInTopBarKey
+import com.xiaori.constants.LyricsAnimationStyle
+import com.xiaori.constants.LyricsAnimationStyleKey
+import com.xiaori.constants.LyricsStandardBlurKey
+import com.xiaori.constants.LyricsTextPositionKey
+import com.xiaori.constants.LyricsTextSizeKey
+import com.xiaori.constants.PlayerBackgroundStyle
+import com.xiaori.constants.PlayerBackgroundStyleKey
+import com.xiaori.constants.PlayerButtonsStyle
+import com.xiaori.constants.PlayerButtonsStyleKey
 
-import t4ulquiorra.xiaori.constants.RotatingThumbnailKey
-import t4ulquiorra.xiaori.constants.SelectedThemeColorKey
-import t4ulquiorra.xiaori.constants.ShowCachedPlaylistKey
-import t4ulquiorra.xiaori.constants.ShowExportedPlaylistKey
-import t4ulquiorra.xiaori.constants.ShowDownloadedPlaylistKey
-import t4ulquiorra.xiaori.constants.ShowLikedPlaylistKey
-import t4ulquiorra.xiaori.constants.ShowTopPlaylistKey
-import t4ulquiorra.xiaori.constants.ShowUploadedPlaylistKey
-import t4ulquiorra.xiaori.constants.SliderStyle
-import t4ulquiorra.xiaori.constants.SliderStyleKey
-import t4ulquiorra.xiaori.constants.SquigglySliderKey
-import t4ulquiorra.xiaori.constants.SwipeSensitivityKey
-import t4ulquiorra.xiaori.constants.SwipeThumbnailKey
-import t4ulquiorra.xiaori.constants.SwipeLyricsKey
-import t4ulquiorra.xiaori.constants.SwipeToRemoveSongKey
-import t4ulquiorra.xiaori.constants.SwipeToSongKey
-import t4ulquiorra.xiaori.constants.ThumbnailCornerRadiusKey
+import com.xiaori.constants.RotatingThumbnailKey
+import com.xiaori.constants.SelectedThemeColorKey
+import com.xiaori.constants.ShowCachedPlaylistKey
+import com.xiaori.constants.ShowExportedPlaylistKey
+import com.xiaori.constants.ShowDownloadedPlaylistKey
+import com.xiaori.constants.ShowLikedPlaylistKey
+import com.xiaori.constants.ShowTopPlaylistKey
+import com.xiaori.constants.ShowUploadedPlaylistKey
+import com.xiaori.constants.SliderStyle
+import com.xiaori.constants.SliderStyleKey
+import com.xiaori.constants.SquigglySliderKey
+import com.xiaori.constants.SwipeSensitivityKey
+import com.xiaori.constants.SwipeThumbnailKey
+import com.xiaori.constants.SwipeLyricsKey
+import com.xiaori.constants.SwipeToRemoveSongKey
+import com.xiaori.constants.SwipeToSongKey
+import com.xiaori.constants.ThumbnailCornerRadiusKey
 
-import t4ulquiorra.xiaori.constants.UseNewPlayerDesignKey
-import t4ulquiorra.xiaori.ui.component.ThumbnailCornerRadiusModal
-import t4ulquiorra.xiaori.ui.component.DefaultDialog
-import t4ulquiorra.xiaori.ui.component.EnumDialog
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.Material3SettingsGroup
-import t4ulquiorra.xiaori.ui.component.Material3SettingsItem
-import t4ulquiorra.xiaori.ui.component.PlayerSliderTrack
-import t4ulquiorra.xiaori.ui.component.SquigglySlider
-import t4ulquiorra.xiaori.ui.component.WavySlider
-import t4ulquiorra.xiaori.ui.theme.DefaultThemeColor
-import t4ulquiorra.xiaori.ui.theme.PlayerSliderColors
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.utils.IconUtils
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.constants.UseNewPlayerDesignKey
+import com.xiaori.ui.component.ThumbnailCornerRadiusModal
+import com.xiaori.ui.component.DefaultDialog
+import com.xiaori.ui.component.EnumDialog
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.Material3SettingsGroup
+import com.xiaori.ui.component.Material3SettingsItem
+import com.xiaori.ui.component.PlayerSliderTrack
+import com.xiaori.ui.component.SquigglySlider
+import com.xiaori.ui.component.WavySlider
+import com.xiaori.ui.theme.DefaultThemeColor
+import com.xiaori.ui.theme.PlayerSliderColors
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.utils.IconUtils
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.utils.rememberPreference
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
-import t4ulquiorra.xiaori.constants.LyricsClickKey
-import t4ulquiorra.xiaori.constants.AppleMusicLyricsBlurKey
-import t4ulquiorra.xiaori.constants.LyricsGlowEffectKey
-import t4ulquiorra.xiaori.constants.LyricsLineSpacingKey
-import t4ulquiorra.xiaori.constants.LyricsScrollKey
-import t4ulquiorra.xiaori.constants.HideStatusBarOnFullscreenKey
-import t4ulquiorra.xiaori.constants.MiniPlayerBackgroundStyleKey
-import t4ulquiorra.xiaori.constants.ShowCommentButtonKey
+import com.xiaori.constants.LyricsClickKey
+import com.xiaori.constants.AppleMusicLyricsBlurKey
+import com.xiaori.constants.LyricsGlowEffectKey
+import com.xiaori.constants.LyricsLineSpacingKey
+import com.xiaori.constants.LyricsScrollKey
+import com.xiaori.constants.HideStatusBarOnFullscreenKey
+import com.xiaori.constants.MiniPlayerBackgroundStyleKey
+import com.xiaori.constants.ShowCommentButtonKey
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -143,11 +143,11 @@ highlightKey: String? = null) {
         defaultValue = true
     )
     val (enableLegacyIcon, onEnableLegacyIconChange) = rememberPreference(
-        t4ulquiorra.xiaori.constants.EnableLegacyIconKey,
+        com.xiaori.constants.EnableLegacyIconKey,
         defaultValue = false
     )
     val (enableHighRefreshRate, onEnableHighRefreshRateChange) = rememberPreference(
-        t4ulquiorra.xiaori.constants.EnableHighRefreshRateKey,
+        com.xiaori.constants.EnableHighRefreshRateKey,
         defaultValue = true
     )
     val (selectedThemeColorInt) = rememberPreference(
@@ -183,11 +183,11 @@ highlightKey: String? = null) {
         defaultValue = true
     )
     val (showCodecOnPlayer, onShowCodecOnPlayerChange) = rememberPreference(
-        t4ulquiorra.xiaori.constants.ShowCodecOnPlayerKey,
+        com.xiaori.constants.ShowCodecOnPlayerKey,
         defaultValue = false
     )
     val (hidePlayerSlider, onHidePlayerSliderChange) = rememberPreference(
-        t4ulquiorra.xiaori.constants.HidePlayerSliderKey,
+        com.xiaori.constants.HidePlayerSliderKey,
         defaultValue = false
     )
     val (hidePlayerThumbnail, onHidePlayerThumbnailChange) = rememberPreference(

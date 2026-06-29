@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.utils
+package com.xiaori.ui.utils
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithContent

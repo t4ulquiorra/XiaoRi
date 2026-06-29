@@ -1,8 +1,8 @@
 
 
-package t4ulquiorra.xiaori.di
+package com.xiaori.di
 
-import t4ulquiorra.xiaori.lyrics.LyricsHelper
+import com.xiaori.lyrics.LyricsHelper
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent

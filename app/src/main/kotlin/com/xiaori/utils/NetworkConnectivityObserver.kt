@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.utils
+package com.xiaori.utils
 
 import android.content.Context
 import android.net.ConnectivityManager

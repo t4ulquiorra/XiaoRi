@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
 import android.content.Context
 import androidx.lifecycle.Lifecycle
@@ -19,10 +19,10 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeout
-import t4ulquiorra.xiaori.db.entities.Song
+import com.xiaori.db.entities.Song
 import com.xiaori.discord.DiscordOAuthRepository
-import t4ulquiorra.xiaori.utils.DiscordImageResolver
-import t4ulquiorra.xiaori.utils.DiscordRPC
+import com.xiaori.utils.DiscordImageResolver
+import com.xiaori.utils.DiscordRPC
 import timber.log.Timber
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicLong

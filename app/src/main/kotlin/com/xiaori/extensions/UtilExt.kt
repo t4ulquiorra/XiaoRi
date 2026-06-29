@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.extensions
+package com.xiaori.extensions
 
 fun <T> tryOrNull(block: () -> T): T? =
     try {

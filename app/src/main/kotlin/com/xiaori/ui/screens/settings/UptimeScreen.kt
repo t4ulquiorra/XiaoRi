@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.tween
@@ -19,8 +19,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.LocalPlayerAwareWindowInsets
 import androidx.compose.material3.TopAppBar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay

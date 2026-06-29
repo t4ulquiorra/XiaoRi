@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -30,18 +30,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.DisableScreenshotKey
-import t4ulquiorra.xiaori.constants.PauseListenHistoryKey
-import t4ulquiorra.xiaori.constants.PauseSearchHistoryKey
-import t4ulquiorra.xiaori.ui.component.DefaultDialog
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.Material3SettingsGroup
-import t4ulquiorra.xiaori.ui.component.Material3SettingsItem
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.constants.DisableScreenshotKey
+import com.xiaori.constants.PauseListenHistoryKey
+import com.xiaori.constants.PauseSearchHistoryKey
+import com.xiaori.ui.component.DefaultDialog
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.Material3SettingsGroup
+import com.xiaori.ui.component.Material3SettingsItem
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

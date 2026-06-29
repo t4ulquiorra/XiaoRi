@@ -2,7 +2,7 @@
 
 @file:Suppress("DEPRECATION")
 
-package t4ulquiorra.xiaori.playback
+package com.xiaori.playback
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -72,104 +72,104 @@ import com.google.common.util.concurrent.MoreExecutors
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import t4ulquiorra.xiaori.MainActivity
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.AudioNormalizationKey
-import t4ulquiorra.xiaori.constants.AudioOffload
-import t4ulquiorra.xiaori.constants.AudioQualityKey
-import t4ulquiorra.xiaori.constants.AutoDownloadOnLikeKey
-import t4ulquiorra.xiaori.constants.AutoLoadMoreKey
-import t4ulquiorra.xiaori.constants.AutoSkipNextOnErrorKey
-import t4ulquiorra.xiaori.constants.CrossfadeDurationKey
-import t4ulquiorra.xiaori.constants.CrossfadeEnabledKey
-import t4ulquiorra.xiaori.constants.CrossfadeGaplessKey
-import t4ulquiorra.xiaori.constants.DisableLoadMoreWhenRepeatAllKey
+import com.xiaori.MainActivity
+import com.xiaori.R
+import com.xiaori.constants.AudioNormalizationKey
+import com.xiaori.constants.AudioOffload
+import com.xiaori.constants.AudioQualityKey
+import com.xiaori.constants.AutoDownloadOnLikeKey
+import com.xiaori.constants.AutoLoadMoreKey
+import com.xiaori.constants.AutoSkipNextOnErrorKey
+import com.xiaori.constants.CrossfadeDurationKey
+import com.xiaori.constants.CrossfadeEnabledKey
+import com.xiaori.constants.CrossfadeGaplessKey
+import com.xiaori.constants.DisableLoadMoreWhenRepeatAllKey
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
-import t4ulquiorra.xiaori.constants.DiscordActivityNameKey
-import t4ulquiorra.xiaori.constants.DiscordActivityTypeKey
-import t4ulquiorra.xiaori.constants.DiscordTokenKey
-import t4ulquiorra.xiaori.constants.EnableDiscordRPCKey
-import t4ulquiorra.xiaori.constants.EnableLastFMScrobblingKey
-import t4ulquiorra.xiaori.constants.HideExplicitKey
-import t4ulquiorra.xiaori.constants.HideVideoSongsKey
-import t4ulquiorra.xiaori.constants.HistoryDuration
-import t4ulquiorra.xiaori.constants.LastFMUseNowPlaying
-import t4ulquiorra.xiaori.constants.MediaSessionConstants.CommandToggleLike
-import t4ulquiorra.xiaori.constants.MediaSessionConstants.CommandToggleRepeatMode
-import t4ulquiorra.xiaori.constants.MediaSessionConstants.CommandToggleShuffle
-import t4ulquiorra.xiaori.constants.MediaSessionConstants.CommandToggleStartRadio
-import t4ulquiorra.xiaori.constants.PauseListenHistoryKey
-import t4ulquiorra.xiaori.constants.PauseOnMute
-import t4ulquiorra.xiaori.constants.PersistentQueueKey
-import t4ulquiorra.xiaori.constants.PersistentShuffleAcrossQueuesKey
-import t4ulquiorra.xiaori.constants.PlayerVolumeKey
-import t4ulquiorra.xiaori.constants.RememberShuffleAndRepeatKey
-import t4ulquiorra.xiaori.constants.RepeatModeKey
-import t4ulquiorra.xiaori.constants.ResumeOnBluetoothConnectKey
-import t4ulquiorra.xiaori.constants.ScrobbleDelayPercentKey
-import t4ulquiorra.xiaori.constants.ScrobbleDelaySecondsKey
-import t4ulquiorra.xiaori.constants.ScrobbleMinSongDurationKey
-import t4ulquiorra.xiaori.constants.ShowLyricsKey
-import t4ulquiorra.xiaori.constants.ShuffleModeKey
-import t4ulquiorra.xiaori.constants.ShufflePlaylistFirstKey
-import t4ulquiorra.xiaori.constants.PreventDuplicateTracksInQueueKey
-import t4ulquiorra.xiaori.constants.SimilarContent
-import t4ulquiorra.xiaori.constants.SkipSilenceInstantKey
-import t4ulquiorra.xiaori.constants.SkipSilenceKey
-import t4ulquiorra.xiaori.constants.IpVersionKey
+import com.xiaori.constants.DiscordActivityNameKey
+import com.xiaori.constants.DiscordActivityTypeKey
+import com.xiaori.constants.DiscordTokenKey
+import com.xiaori.constants.EnableDiscordRPCKey
+import com.xiaori.constants.EnableLastFMScrobblingKey
+import com.xiaori.constants.HideExplicitKey
+import com.xiaori.constants.HideVideoSongsKey
+import com.xiaori.constants.HistoryDuration
+import com.xiaori.constants.LastFMUseNowPlaying
+import com.xiaori.constants.MediaSessionConstants.CommandToggleLike
+import com.xiaori.constants.MediaSessionConstants.CommandToggleRepeatMode
+import com.xiaori.constants.MediaSessionConstants.CommandToggleShuffle
+import com.xiaori.constants.MediaSessionConstants.CommandToggleStartRadio
+import com.xiaori.constants.PauseListenHistoryKey
+import com.xiaori.constants.PauseOnMute
+import com.xiaori.constants.PersistentQueueKey
+import com.xiaori.constants.PersistentShuffleAcrossQueuesKey
+import com.xiaori.constants.PlayerVolumeKey
+import com.xiaori.constants.RememberShuffleAndRepeatKey
+import com.xiaori.constants.RepeatModeKey
+import com.xiaori.constants.ResumeOnBluetoothConnectKey
+import com.xiaori.constants.ScrobbleDelayPercentKey
+import com.xiaori.constants.ScrobbleDelaySecondsKey
+import com.xiaori.constants.ScrobbleMinSongDurationKey
+import com.xiaori.constants.ShowLyricsKey
+import com.xiaori.constants.ShuffleModeKey
+import com.xiaori.constants.ShufflePlaylistFirstKey
+import com.xiaori.constants.PreventDuplicateTracksInQueueKey
+import com.xiaori.constants.SimilarContent
+import com.xiaori.constants.SkipSilenceInstantKey
+import com.xiaori.constants.SkipSilenceKey
+import com.xiaori.constants.IpVersionKey
 import com.music.innertube.models.IpVersion
 import okhttp3.Dns
 import java.net.InetAddress
 import java.net.Inet4Address
 import java.net.Inet6Address
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.db.entities.Event
-import t4ulquiorra.xiaori.db.entities.FormatEntity
-import t4ulquiorra.xiaori.db.entities.LyricsEntity
-import t4ulquiorra.xiaori.db.entities.RelatedSongMap
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.di.DownloadCache
-import t4ulquiorra.xiaori.di.PlayerCache
-import t4ulquiorra.xiaori.eq.EqualizerService
-import t4ulquiorra.xiaori.eq.audio.CustomEqualizerAudioProcessor
-import t4ulquiorra.xiaori.eq.data.EQProfileRepository
-import t4ulquiorra.xiaori.extensions.SilentHandler
-import t4ulquiorra.xiaori.extensions.collect
-import t4ulquiorra.xiaori.extensions.collectLatest
-import t4ulquiorra.xiaori.extensions.currentMetadata
-import t4ulquiorra.xiaori.extensions.findNextMediaItemById
-import t4ulquiorra.xiaori.extensions.mediaItems
-import t4ulquiorra.xiaori.extensions.metadata
-import t4ulquiorra.xiaori.extensions.setOffloadEnabled
-import t4ulquiorra.xiaori.extensions.toEnum
-import t4ulquiorra.xiaori.extensions.toMediaItem
-import t4ulquiorra.xiaori.extensions.toPersistQueue
-import t4ulquiorra.xiaori.extensions.toQueue
-import t4ulquiorra.xiaori.lyrics.LyricsHelper
-import t4ulquiorra.xiaori.models.PersistPlayerState
-import t4ulquiorra.xiaori.models.PersistQueue
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.playback.audio.SilenceDetectorAudioProcessor
-import t4ulquiorra.xiaori.playback.queues.EmptyQueue
-import t4ulquiorra.xiaori.playback.queues.Queue
-import t4ulquiorra.xiaori.playback.queues.YouTubeQueue
-import t4ulquiorra.xiaori.playback.queues.filterExplicit
-import t4ulquiorra.xiaori.playback.queues.filterVideoSongs
-import t4ulquiorra.xiaori.utils.CoilBitmapLoader
-import t4ulquiorra.xiaori.ui.screens.settings.DiscordPresenceManager
-import t4ulquiorra.xiaori.utils.NetworkConnectivityObserver
-import t4ulquiorra.xiaori.utils.ScrobbleManager
-import t4ulquiorra.xiaori.utils.SyncUtils
-import t4ulquiorra.xiaori.utils.YTPlayerUtils
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
-import t4ulquiorra.xiaori.utils.reportException
-import t4ulquiorra.xiaori.widget.XiaoRiWidgetManager
-import t4ulquiorra.xiaori.widget.MusicWidgetReceiver
+import com.xiaori.db.MusicDatabase
+import com.xiaori.db.entities.Event
+import com.xiaori.db.entities.FormatEntity
+import com.xiaori.db.entities.LyricsEntity
+import com.xiaori.db.entities.RelatedSongMap
+import com.xiaori.db.entities.Song
+import com.xiaori.di.DownloadCache
+import com.xiaori.di.PlayerCache
+import com.xiaori.eq.EqualizerService
+import com.xiaori.eq.audio.CustomEqualizerAudioProcessor
+import com.xiaori.eq.data.EQProfileRepository
+import com.xiaori.extensions.SilentHandler
+import com.xiaori.extensions.collect
+import com.xiaori.extensions.collectLatest
+import com.xiaori.extensions.currentMetadata
+import com.xiaori.extensions.findNextMediaItemById
+import com.xiaori.extensions.mediaItems
+import com.xiaori.extensions.metadata
+import com.xiaori.extensions.setOffloadEnabled
+import com.xiaori.extensions.toEnum
+import com.xiaori.extensions.toMediaItem
+import com.xiaori.extensions.toPersistQueue
+import com.xiaori.extensions.toQueue
+import com.xiaori.lyrics.LyricsHelper
+import com.xiaori.models.PersistPlayerState
+import com.xiaori.models.PersistQueue
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.playback.audio.SilenceDetectorAudioProcessor
+import com.xiaori.playback.queues.EmptyQueue
+import com.xiaori.playback.queues.Queue
+import com.xiaori.playback.queues.YouTubeQueue
+import com.xiaori.playback.queues.filterExplicit
+import com.xiaori.playback.queues.filterVideoSongs
+import com.xiaori.utils.CoilBitmapLoader
+import com.xiaori.ui.screens.settings.DiscordPresenceManager
+import com.xiaori.utils.NetworkConnectivityObserver
+import com.xiaori.utils.ScrobbleManager
+import com.xiaori.utils.SyncUtils
+import com.xiaori.utils.YTPlayerUtils
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
+import com.xiaori.utils.reportException
+import com.xiaori.widget.XiaoRiWidgetManager
+import com.xiaori.widget.MusicWidgetReceiver
 import dagger.hilt.android.AndroidEntryPoint
-import t4ulquiorra.xiaori.utils.isLocalMediaId
+import com.xiaori.utils.isLocalMediaId
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -234,7 +234,7 @@ class MusicService :
     lateinit var widgetManager: XiaoRiWidgetManager
 
     @Inject
-    lateinit var listenTogetherManager: t4ulquiorra.xiaori.listentogether.ListenTogetherManager
+    lateinit var listenTogetherManager: com.xiaori.listentogether.ListenTogetherManager
     
 
     private lateinit var audioManager: AudioManager
@@ -276,13 +276,13 @@ class MusicService :
     val waitingForNetworkConnection = MutableStateFlow(false)
     private val isNetworkConnected = MutableStateFlow(false)
 
-    private lateinit var audioQuality: t4ulquiorra.xiaori.constants.AudioQuality
+    private lateinit var audioQuality: com.xiaori.constants.AudioQuality
     private lateinit var ipVersion: IpVersion
 
     private var currentQueue: Queue = EmptyQueue
     var queueTitle: String? = null
 
-    val currentMediaMetadata = MutableStateFlow<t4ulquiorra.xiaori.models.MediaMetadata?>(null)
+    val currentMediaMetadata = MutableStateFlow<com.xiaori.models.MediaMetadata?>(null)
     private val currentSong =
         currentMediaMetadata
             .flatMapLatest { mediaMetadata ->
@@ -544,7 +544,7 @@ class MusicService :
 
         audioManager.registerAudioDeviceCallback(audioDeviceCallback, null)
 
-        audioQuality = dataStore.get(AudioQualityKey).toEnum(t4ulquiorra.xiaori.constants.AudioQuality.OPUS)
+        audioQuality = dataStore.get(AudioQualityKey).toEnum(com.xiaori.constants.AudioQuality.OPUS)
         ipVersion = dataStore.get(IpVersionKey).toEnum(IpVersion.AUTO)
         playerVolume = MutableStateFlow(dataStore.get(PlayerVolumeKey, 1f).coerceIn(0f, 1f))
 
@@ -592,14 +592,14 @@ class MusicService :
         
         scope.launch {
             dataStore.data
-                .map { it[t4ulquiorra.xiaori.constants.ListenBrainzEnabledKey] ?: false }
+                .map { it[com.xiaori.constants.ListenBrainzEnabledKey] ?: false }
                 .distinctUntilChanged()
                 .collect { listenBrainzEnabled = it }
         }
 
         scope.launch {
             dataStore.data
-                .map { it[t4ulquiorra.xiaori.constants.ListenBrainzTokenKey] ?: "" }
+                .map { it[com.xiaori.constants.ListenBrainzTokenKey] ?: "" }
                 .distinctUntilChanged()
                 .collect { listenBrainzToken = it }
         }
@@ -608,8 +608,8 @@ class MusicService :
         scope.launch {
             dataStore.data
                 .map { it[AudioQualityKey]?.let { value ->
-                    t4ulquiorra.xiaori.constants.AudioQuality.entries.find { it.name == value }
-                } ?: t4ulquiorra.xiaori.constants.AudioQuality.OPUS }
+                    com.xiaori.constants.AudioQuality.entries.find { it.name == value }
+                } ?: com.xiaori.constants.AudioQuality.OPUS }
                 .distinctUntilChanged()
                 .collect { newQuality ->
                     val oldQuality = audioQuality
@@ -2671,9 +2671,9 @@ class MusicService :
             
             val lockedQuality = if (isCurrentlyPlaying && dbFormat != null) {
                 when {
-                    dbFormat.mimeType.contains("flac", ignoreCase = true) -> t4ulquiorra.xiaori.constants.AudioQuality.LOSSLESS
-                    dbFormat.mimeType.contains("mp4", ignoreCase = true) || dbFormat.mimeType.contains("m4a", ignoreCase = true) -> t4ulquiorra.xiaori.constants.AudioQuality.SAAVN
-                    else -> t4ulquiorra.xiaori.constants.AudioQuality.OPUS
+                    dbFormat.mimeType.contains("flac", ignoreCase = true) -> com.xiaori.constants.AudioQuality.LOSSLESS
+                    dbFormat.mimeType.contains("mp4", ignoreCase = true) || dbFormat.mimeType.contains("m4a", ignoreCase = true) -> com.xiaori.constants.AudioQuality.SAAVN
+                    else -> com.xiaori.constants.AudioQuality.OPUS
                 }
             } else {
                 audioQuality
@@ -2684,9 +2684,9 @@ class MusicService :
                 val isSaavnCache = dbFormat.codecs == "mp4a.40.2" || dbFormat.mimeType.contains("mp4", ignoreCase = true)
                 
                 val cacheMatchesTarget = when (lockedQuality) {
-                    t4ulquiorra.xiaori.constants.AudioQuality.LOSSLESS -> isLosslessCache
-                    t4ulquiorra.xiaori.constants.AudioQuality.SAAVN -> isSaavnCache
-                    t4ulquiorra.xiaori.constants.AudioQuality.OPUS -> !isLosslessCache && !isSaavnCache
+                    com.xiaori.constants.AudioQuality.LOSSLESS -> isLosslessCache
+                    com.xiaori.constants.AudioQuality.SAAVN -> isSaavnCache
+                    com.xiaori.constants.AudioQuality.OPUS -> !isLosslessCache && !isSaavnCache
                 }
                 
                 if (!cacheMatchesTarget) {
@@ -3132,7 +3132,7 @@ class MusicService :
 
     
     private fun initializeCast() {
-        if (dataStore.get(t4ulquiorra.xiaori.constants.EnableGoogleCastKey, true)) {
+        if (dataStore.get(com.xiaori.constants.EnableGoogleCastKey, true)) {
             try {
                 castConnectionHandler = CastConnectionHandler(this, scope, this)
                 castConnectionHandler?.initialize()
@@ -3352,11 +3352,11 @@ class MusicService :
     private var preloadJob: kotlinx.coroutines.Job? = null
 
     private fun preloadUpcomingItems() {
-        val preloadEnabled = kotlinx.coroutines.runBlocking { dataStore.get(t4ulquiorra.xiaori.constants.PreloadNextSongEnabledKey, true) }
+        val preloadEnabled = kotlinx.coroutines.runBlocking { dataStore.get(com.xiaori.constants.PreloadNextSongEnabledKey, true) }
         if (!preloadEnabled) return
 
-        val preloadLimit = kotlinx.coroutines.runBlocking { dataStore.get(t4ulquiorra.xiaori.constants.PreloadNextSongLimitKey, 1) }
-        val preloadLyrics = kotlinx.coroutines.runBlocking { dataStore.get(t4ulquiorra.xiaori.constants.PreloadLyricsEnabledKey, true) }
+        val preloadLimit = kotlinx.coroutines.runBlocking { dataStore.get(com.xiaori.constants.PreloadNextSongLimitKey, 1) }
+        val preloadLyrics = kotlinx.coroutines.runBlocking { dataStore.get(com.xiaori.constants.PreloadLyricsEnabledKey, true) }
 
         val currentIndex = player.currentMediaItemIndex
         if (currentIndex == androidx.media3.common.C.INDEX_UNSET) return
@@ -3380,7 +3380,7 @@ class MusicService :
                         val dbSong = database.song(mediaId).firstOrNull()
                         val knownArtist = dbSong?.artists?.joinToString(separator = ", ") { artist -> artist.name }?.replace(" - Topic", "")
                         
-                        val playbackData = t4ulquiorra.xiaori.utils.YTPlayerUtils.playerResponseForPlayback(
+                        val playbackData = com.xiaori.utils.YTPlayerUtils.playerResponseForPlayback(
                             videoId = mediaId,
                             audioQuality = audioQuality,
                             connectivityManager = connectivityManager,
@@ -3404,16 +3404,16 @@ class MusicService :
                         val dbSong = database.song(mediaId).firstOrNull()
                         if (dbSong != null) {
                             kotlin.runCatching {
-                                val metadata = t4ulquiorra.xiaori.models.MediaMetadata(
+                                val metadata = com.xiaori.models.MediaMetadata(
                                     id = dbSong.song.id,
                                     title = dbSong.song.title,
-                                    artists = dbSong.artists.map { artist -> t4ulquiorra.xiaori.models.MediaMetadata.Artist(artist.id, artist.name) },
+                                    artists = dbSong.artists.map { artist -> com.xiaori.models.MediaMetadata.Artist(artist.id, artist.name) },
                                     duration = dbSong.song.duration,
                                     thumbnailUrl = dbSong.song.thumbnailUrl
                                 )
                                 val lyricsResult = lyricsHelper.getLyrics(metadata)
                                 database.query {
-                                    upsert(t4ulquiorra.xiaori.db.entities.LyricsEntity(id = mediaId, lyrics = lyricsResult.lyrics))
+                                    upsert(com.xiaori.db.entities.LyricsEntity(id = mediaId, lyrics = lyricsResult.lyrics))
                                 }
                                 Timber.tag(TAG).d("Preloaded lyrics for $mediaId")
                             }

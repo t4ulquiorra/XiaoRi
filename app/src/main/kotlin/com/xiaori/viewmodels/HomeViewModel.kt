@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.viewmodels
+package com.xiaori.viewmodels
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
@@ -21,24 +21,24 @@ import com.music.innertube.models.filterYoutubeShorts
 import com.music.innertube.pages.ExplorePage
 import com.music.innertube.pages.HomePage
 import com.music.innertube.utils.completed
-import t4ulquiorra.xiaori.constants.HideExplicitKey
-import t4ulquiorra.xiaori.constants.HideVideoSongsKey
-import t4ulquiorra.xiaori.constants.HideYoutubeShortsKey
-import t4ulquiorra.xiaori.constants.InnerTubeCookieKey
-import t4ulquiorra.xiaori.constants.QuickPicks
-import t4ulquiorra.xiaori.constants.QuickPicksKey
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.db.entities.Album
-import t4ulquiorra.xiaori.db.entities.LocalItem
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.db.entities.SpeedDialItem
-import t4ulquiorra.xiaori.extensions.filterVideoSongs
-import t4ulquiorra.xiaori.extensions.toEnum
-import t4ulquiorra.xiaori.models.SimilarRecommendation
-import t4ulquiorra.xiaori.utils.SyncUtils
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
-import t4ulquiorra.xiaori.utils.reportException
+import com.xiaori.constants.HideExplicitKey
+import com.xiaori.constants.HideVideoSongsKey
+import com.xiaori.constants.HideYoutubeShortsKey
+import com.xiaori.constants.InnerTubeCookieKey
+import com.xiaori.constants.QuickPicks
+import com.xiaori.constants.QuickPicksKey
+import com.xiaori.db.MusicDatabase
+import com.xiaori.db.entities.Album
+import com.xiaori.db.entities.LocalItem
+import com.xiaori.db.entities.Song
+import com.xiaori.db.entities.SpeedDialItem
+import com.xiaori.extensions.filterVideoSongs
+import com.xiaori.extensions.toEnum
+import com.xiaori.models.SimilarRecommendation
+import com.xiaori.utils.SyncUtils
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
+import com.xiaori.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
@@ -73,7 +73,7 @@ class HomeViewModel @Inject constructor(
     @ApplicationContext val context: Context,
     val database: MusicDatabase,
     val syncUtils: SyncUtils,
-    val echoBrainEngine: t4ulquiorra.xiaori.engine.EchoBrainEngine
+    val echoBrainEngine: com.xiaori.engine.EchoBrainEngine
 ) : ViewModel() {
     val isRefreshing = MutableStateFlow(false)
     val isLoading = MutableStateFlow(false)

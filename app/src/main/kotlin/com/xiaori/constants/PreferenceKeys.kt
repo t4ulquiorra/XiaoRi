@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.constants
+package com.xiaori.constants
 
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.floatPreferencesKey

@@ -5,7 +5,7 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package t4ulquiorra.xiaori.spotifyimport
+package com.xiaori.spotifyimport
 
 import androidx.compose.runtime.Immutable
 

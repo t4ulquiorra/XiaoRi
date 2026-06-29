@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.xiaori
+package com.xiaori.xiaori
 
 import android.Manifest
 import android.app.NotificationChannel
@@ -12,7 +12,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
-import t4ulquiorra.xiaori.R
+import com.xiaori.R
 
 object UpdateNotificationHelper {
     private const val CHANNEL_ID = "updates"

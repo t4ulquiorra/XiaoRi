@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.Column
@@ -41,20 +41,20 @@ import coil3.SingletonImageLoader
 import coil3.annotation.DelicateCoilApi
 import coil3.annotation.ExperimentalCoilApi
 import coil3.imageLoader
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.MaxImageCacheSizeKey
-import t4ulquiorra.xiaori.constants.MaxSongCacheSizeKey
-import t4ulquiorra.xiaori.extensions.tryOrNull
-import t4ulquiorra.xiaori.ui.component.ActionPromptDialog
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.Material3SettingsGroup
-import t4ulquiorra.xiaori.ui.component.Material3SettingsItem
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.ui.utils.formatFileSize
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.MaxImageCacheSizeKey
+import com.xiaori.constants.MaxSongCacheSizeKey
+import com.xiaori.extensions.tryOrNull
+import com.xiaori.ui.component.ActionPromptDialog
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.Material3SettingsGroup
+import com.xiaori.ui.component.Material3SettingsItem
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.ui.utils.formatFileSize
+import com.xiaori.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
@@ -65,7 +65,7 @@ import kotlin.math.roundToInt
 import android.content.Intent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import t4ulquiorra.xiaori.constants.ExportDirectoryUriKey
+import com.xiaori.constants.ExportDirectoryUriKey
 
 @OptIn(ExperimentalCoilApi::class, ExperimentalMaterial3Api::class, DelicateCoilApi::class)
 @Composable
@@ -194,7 +194,7 @@ highlightKey: String? = null) {
             onConfirm = {
                 androidx.media3.exoplayer.offline.DownloadService.sendRemoveAllDownloads(
                     context,
-                    t4ulquiorra.xiaori.playback.ExoDownloadService::class.java,
+                    com.xiaori.playback.ExoDownloadService::class.java,
                     false
                 )
                 clearDownloads = false

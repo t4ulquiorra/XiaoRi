@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.listentogether
+package com.xiaori.listentogether
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

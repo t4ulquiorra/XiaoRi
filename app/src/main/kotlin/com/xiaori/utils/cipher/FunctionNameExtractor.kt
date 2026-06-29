@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.utils.cipher
+package com.xiaori.utils.cipher
 
 import timber.log.Timber
 

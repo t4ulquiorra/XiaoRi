@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.xiaori.updater.downloadmanager
+package com.xiaori.xiaori.updater.downloadmanager
 
 import android.app.Notification
 import android.content.Context
@@ -13,7 +13,7 @@ import androidx.media3.session.DefaultMediaNotificationProvider
 import androidx.media3.session.MediaNotification
 import androidx.media3.session.MediaSession
 import com.google.common.collect.ImmutableList
-import t4ulquiorra.xiaori.R
+import com.xiaori.R
 import java.util.Locale
 
 

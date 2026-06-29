@@ -1,8 +1,8 @@
 
 
-package t4ulquiorra.xiaori
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.BuildConfig
+package com.xiaori
+import com.xiaori.R
+import com.xiaori.BuildConfig
 
 import android.app.Application
 import android.app.NotificationChannel
@@ -24,14 +24,14 @@ import com.music.innertube.YouTube
 import com.music.innertube.models.IpVersion
 import com.music.innertube.models.YouTubeLocale
 import com.music.kugou.KuGou
-import t4ulquiorra.xiaori.constants.*
-import t4ulquiorra.xiaori.di.ApplicationScope
-import t4ulquiorra.xiaori.extensions.toEnum
-import t4ulquiorra.xiaori.extensions.toInetSocketAddress
-import t4ulquiorra.xiaori.utils.CrashHandler
-import t4ulquiorra.xiaori.utils.cipher.CipherDeobfuscator
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.reportException
+import com.xiaori.constants.*
+import com.xiaori.di.ApplicationScope
+import com.xiaori.extensions.toEnum
+import com.xiaori.extensions.toInetSocketAddress
+import com.xiaori.utils.CrashHandler
+import com.xiaori.utils.cipher.CipherDeobfuscator
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.reportException
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

@@ -24,13 +24,13 @@ if (hasGoogleServicesConfig) {
 }
 
 android {
-    namespace = "t4ulquiorra.xiaori"
+    namespace = "com.xiaori"
     compileSdk = 36
     ndkVersion = "27.0.12077973"
 
 
     defaultConfig {
-        applicationId = "t4ulquiorra.xiaori"
+        applicationId = "com.xiaori"
         minSdk = 26
         targetSdk = 36
         versionCode = 516

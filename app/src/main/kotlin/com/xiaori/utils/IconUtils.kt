@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.utils
+package com.xiaori.utils
 
 import android.content.ComponentName
 import android.content.Context
@@ -9,9 +9,9 @@ import android.content.pm.PackageManager
 object IconUtils {
     fun setIcon(context: Context, isDynamic: Boolean, isLegacy: Boolean) {
         val pm = context.packageManager
-        val dynamic = ComponentName(context, "t4ulquiorra.xiaori.MainActivityAlias")
-        val static = ComponentName(context, "t4ulquiorra.xiaori.MainActivityStatic")
-        val legacy = ComponentName(context, "t4ulquiorra.xiaori.MainActivityLegacy")
+        val dynamic = ComponentName(context, "com.xiaori.MainActivityAlias")
+        val static = ComponentName(context, "com.xiaori.MainActivityStatic")
+        val legacy = ComponentName(context, "com.xiaori.MainActivityLegacy")
 
         pm.setComponentEnabledSetting(
             dynamic,

@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -32,52 +32,52 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.BuildConfig
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.AudioNormalizationKey
-import t4ulquiorra.xiaori.constants.AudioOffload
-import t4ulquiorra.xiaori.constants.AudioQuality
-import t4ulquiorra.xiaori.constants.AudioQualityKey
-import t4ulquiorra.xiaori.constants.AutoDownloadOnLikeKey
-import t4ulquiorra.xiaori.constants.CrossfadeDurationKey
-import t4ulquiorra.xiaori.constants.CrossfadeEnabledKey
-import t4ulquiorra.xiaori.constants.CrossfadeGaplessKey
-import t4ulquiorra.xiaori.constants.AutoLoadMoreKey
-import t4ulquiorra.xiaori.constants.AutoSkipNextOnErrorKey
-import t4ulquiorra.xiaori.constants.DisableLoadMoreWhenRepeatAllKey
-import t4ulquiorra.xiaori.constants.EnableGoogleCastKey
-import t4ulquiorra.xiaori.constants.HistoryDuration
-import t4ulquiorra.xiaori.constants.KeepScreenOn
-import t4ulquiorra.xiaori.constants.PauseOnMute
-import t4ulquiorra.xiaori.constants.PersistentQueueKey
-import t4ulquiorra.xiaori.constants.PersistentShuffleAcrossQueuesKey
-import t4ulquiorra.xiaori.constants.PreventDuplicateTracksInQueueKey
-import t4ulquiorra.xiaori.constants.RememberShuffleAndRepeatKey
-import t4ulquiorra.xiaori.constants.ResumeOnBluetoothConnectKey
-import t4ulquiorra.xiaori.constants.SeekExtraSeconds
-import t4ulquiorra.xiaori.constants.ShufflePlaylistFirstKey
-import t4ulquiorra.xiaori.constants.SimilarContent
-import t4ulquiorra.xiaori.constants.ShowAudioFallbackToastKey
-import t4ulquiorra.xiaori.constants.SkipSilenceInstantKey
-import t4ulquiorra.xiaori.constants.SkipSilenceKey
-import t4ulquiorra.xiaori.constants.StopMusicOnTaskClearKey
-import t4ulquiorra.xiaori.constants.EnableExportAsMp3Key
+import com.xiaori.BuildConfig
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.constants.AudioNormalizationKey
+import com.xiaori.constants.AudioOffload
+import com.xiaori.constants.AudioQuality
+import com.xiaori.constants.AudioQualityKey
+import com.xiaori.constants.AutoDownloadOnLikeKey
+import com.xiaori.constants.CrossfadeDurationKey
+import com.xiaori.constants.CrossfadeEnabledKey
+import com.xiaori.constants.CrossfadeGaplessKey
+import com.xiaori.constants.AutoLoadMoreKey
+import com.xiaori.constants.AutoSkipNextOnErrorKey
+import com.xiaori.constants.DisableLoadMoreWhenRepeatAllKey
+import com.xiaori.constants.EnableGoogleCastKey
+import com.xiaori.constants.HistoryDuration
+import com.xiaori.constants.KeepScreenOn
+import com.xiaori.constants.PauseOnMute
+import com.xiaori.constants.PersistentQueueKey
+import com.xiaori.constants.PersistentShuffleAcrossQueuesKey
+import com.xiaori.constants.PreventDuplicateTracksInQueueKey
+import com.xiaori.constants.RememberShuffleAndRepeatKey
+import com.xiaori.constants.ResumeOnBluetoothConnectKey
+import com.xiaori.constants.SeekExtraSeconds
+import com.xiaori.constants.ShufflePlaylistFirstKey
+import com.xiaori.constants.SimilarContent
+import com.xiaori.constants.ShowAudioFallbackToastKey
+import com.xiaori.constants.SkipSilenceInstantKey
+import com.xiaori.constants.SkipSilenceKey
+import com.xiaori.constants.StopMusicOnTaskClearKey
+import com.xiaori.constants.EnableExportAsMp3Key
 
-import t4ulquiorra.xiaori.constants.PreloadNextSongEnabledKey
-import t4ulquiorra.xiaori.constants.PreloadNextSongLimitKey
-import t4ulquiorra.xiaori.constants.PreloadLyricsEnabledKey
+import com.xiaori.constants.PreloadNextSongEnabledKey
+import com.xiaori.constants.PreloadNextSongLimitKey
+import com.xiaori.constants.PreloadLyricsEnabledKey
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import t4ulquiorra.xiaori.ui.component.DefaultDialog
-import t4ulquiorra.xiaori.ui.component.EnumDialog
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.Material3SettingsGroup
-import t4ulquiorra.xiaori.ui.component.Material3SettingsItem
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.ui.component.DefaultDialog
+import com.xiaori.ui.component.EnumDialog
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.Material3SettingsGroup
+import com.xiaori.ui.component.Material3SettingsItem
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.utils.rememberPreference
 import kotlin.math.roundToInt
 import android.content.Intent
 import android.net.Uri
@@ -231,8 +231,8 @@ highlightKey: String? = null) {
     }
 
     val (downloadQuality, onDownloadQualityChange) = rememberEnumPreference(
-        t4ulquiorra.xiaori.constants.DownloadQualityKey,
-        defaultValue = t4ulquiorra.xiaori.constants.DownloadQuality.YOUTUBE
+        com.xiaori.constants.DownloadQualityKey,
+        defaultValue = com.xiaori.constants.DownloadQuality.YOUTUBE
     )
 
     var showSaavnAudioWarning by remember { mutableStateOf(false) }
@@ -253,7 +253,7 @@ highlightKey: String? = null) {
             },
             title = stringResource(R.string.audio_quality),
             current = audioQuality,
-            values = AudioQuality.values().filter { t4ulquiorra.xiaori.constants.LOSSLESS_ENABLED || it != AudioQuality.LOSSLESS },
+            values = AudioQuality.values().filter { com.xiaori.constants.LOSSLESS_ENABLED || it != AudioQuality.LOSSLESS },
             valueText = {
                 when (it) {
                     AudioQuality.OPUS -> "Opus"
@@ -273,12 +273,12 @@ highlightKey: String? = null) {
             },
             title = stringResource(R.string.download_quality_title),
             current = downloadQuality,
-            values = t4ulquiorra.xiaori.constants.DownloadQuality.values().filter { t4ulquiorra.xiaori.constants.LOSSLESS_ENABLED || it != t4ulquiorra.xiaori.constants.DownloadQuality.LOSSLESS },
+            values = com.xiaori.constants.DownloadQuality.values().filter { com.xiaori.constants.LOSSLESS_ENABLED || it != com.xiaori.constants.DownloadQuality.LOSSLESS },
             valueText = {
                 when (it) {
-                    t4ulquiorra.xiaori.constants.DownloadQuality.YOUTUBE -> "YouTube Music (AAC/Default)"
-                    t4ulquiorra.xiaori.constants.DownloadQuality.SAAVN -> "Saavn (320kbps)"
-                    t4ulquiorra.xiaori.constants.DownloadQuality.LOSSLESS -> "Qobuz (Lossless)"
+                    com.xiaori.constants.DownloadQuality.YOUTUBE -> "YouTube Music (AAC/Default)"
+                    com.xiaori.constants.DownloadQuality.SAAVN -> "Saavn (320kbps)"
+                    com.xiaori.constants.DownloadQuality.LOSSLESS -> "Qobuz (Lossless)"
                 }
             }
         )
@@ -431,9 +431,9 @@ highlightKey: String? = null) {
                     description = {
                         Text(
                             when (downloadQuality) {
-                                t4ulquiorra.xiaori.constants.DownloadQuality.YOUTUBE -> "YouTube Music (AAC/Default)"
-                                t4ulquiorra.xiaori.constants.DownloadQuality.SAAVN -> "Saavn (320kbps)"
-                                t4ulquiorra.xiaori.constants.DownloadQuality.LOSSLESS -> "Qobuz (Lossless)"
+                                com.xiaori.constants.DownloadQuality.YOUTUBE -> "YouTube Music (AAC/Default)"
+                                com.xiaori.constants.DownloadQuality.SAAVN -> "Saavn (320kbps)"
+                                com.xiaori.constants.DownloadQuality.LOSSLESS -> "Qobuz (Lossless)"
                             }
                         )
                     },

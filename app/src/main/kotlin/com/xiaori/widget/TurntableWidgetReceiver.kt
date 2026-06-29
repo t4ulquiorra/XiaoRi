@@ -3,13 +3,13 @@
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package t4ulquiorra.xiaori.widget
+package com.xiaori.widget
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
-import t4ulquiorra.xiaori.playback.MusicService
+import com.xiaori.playback.MusicService
 
 class TurntableWidgetReceiver : AppWidgetProvider() {
 
@@ -59,9 +59,9 @@ class TurntableWidgetReceiver : AppWidgetProvider() {
     }
 
     companion object {
-        const val ACTION_TURNTABLE_PLAY_PAUSE = "t4ulquiorra.xiaori.widget.TURNTABLE_PLAY_PAUSE"
-        const val ACTION_TURNTABLE_NEXT = "t4ulquiorra.xiaori.widget.TURNTABLE_NEXT"
-        const val ACTION_TURNTABLE_PREVIOUS = "t4ulquiorra.xiaori.widget.TURNTABLE_PREVIOUS"
-        const val ACTION_UPDATE_TURNTABLE_WIDGET = "t4ulquiorra.xiaori.widget.UPDATE_TURNTABLE_WIDGET"
+        const val ACTION_TURNTABLE_PLAY_PAUSE = "com.xiaori.widget.TURNTABLE_PLAY_PAUSE"
+        const val ACTION_TURNTABLE_NEXT = "com.xiaori.widget.TURNTABLE_NEXT"
+        const val ACTION_TURNTABLE_PREVIOUS = "com.xiaori.widget.TURNTABLE_PREVIOUS"
+        const val ACTION_UPDATE_TURNTABLE_WIDGET = "com.xiaori.widget.UPDATE_TURNTABLE_WIDGET"
     }
 }

@@ -1,10 +1,10 @@
-package t4ulquiorra.xiaori.eq.audio
+package com.xiaori.eq.audio
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor
 import androidx.media3.common.util.UnstableApi
-import t4ulquiorra.xiaori.eq.data.ParametricEQ
-import t4ulquiorra.xiaori.eq.data.ParametricEQBand
+import com.xiaori.eq.data.ParametricEQ
+import com.xiaori.eq.data.ParametricEQBand
 import timber.log.Timber
 import java.nio.ByteBuffer
 import java.nio.ByteOrder

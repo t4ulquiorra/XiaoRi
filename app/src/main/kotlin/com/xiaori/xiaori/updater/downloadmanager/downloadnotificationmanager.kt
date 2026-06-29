@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.xiaori.updater.downloadmanager
+package com.xiaori.xiaori.updater.downloadmanager
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -10,7 +10,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.graphics.toColorInt
-import t4ulquiorra.xiaori.R
+import com.xiaori.R
 
 object DownloadNotificationManager {
     private lateinit var notificationManager: NotificationManager

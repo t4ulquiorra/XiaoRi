@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.api
+package com.xiaori.api
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

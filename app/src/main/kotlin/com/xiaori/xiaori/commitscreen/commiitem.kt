@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.xiaori.commitscreen
+package com.xiaori.xiaori.commitscreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -26,7 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import t4ulquiorra.xiaori.R
+import com.xiaori.R
 
 @Composable
  fun CommitItem(

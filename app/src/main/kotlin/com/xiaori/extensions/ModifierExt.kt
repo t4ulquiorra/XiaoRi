@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.extensions
+package com.xiaori.extensions
 
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.ui.Modifier

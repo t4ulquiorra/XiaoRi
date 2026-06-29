@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.component
+package com.xiaori.ui.component
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*

@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.viewmodels
+package com.xiaori.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

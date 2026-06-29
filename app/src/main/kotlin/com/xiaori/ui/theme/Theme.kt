@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.theme
+package com.xiaori.ui.theme
 
 import android.graphics.Bitmap
 import android.os.Build

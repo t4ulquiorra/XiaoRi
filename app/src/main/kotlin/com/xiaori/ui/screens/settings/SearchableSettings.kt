@@ -1,8 +1,8 @@
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import t4ulquiorra.xiaori.R
+import com.xiaori.R
 
 @Composable
 fun getAllSearchableSettings(): List<Triple<String, String, String>> {

@@ -1,11 +1,11 @@
 
 
-package t4ulquiorra.xiaori.ui.utils
+package com.xiaori.ui.utils
 
 import android.content.Context
 import android.widget.Toast
 import androidx.compose.ui.platform.UriHandler
-import t4ulquiorra.xiaori.R
+import com.xiaori.R
 
 
 fun UriHandler.safeOpenUri(context: Context, uri: String) {

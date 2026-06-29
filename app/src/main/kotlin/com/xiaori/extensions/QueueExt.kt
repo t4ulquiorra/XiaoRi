@@ -1,16 +1,16 @@
 
 
-package t4ulquiorra.xiaori.extensions
+package com.xiaori.extensions
 
-import t4ulquiorra.xiaori.models.MediaMetadata
-import t4ulquiorra.xiaori.models.PersistQueue
-import t4ulquiorra.xiaori.models.QueueData
-import t4ulquiorra.xiaori.models.QueueType
-import t4ulquiorra.xiaori.playback.queues.ListQueue
-import t4ulquiorra.xiaori.playback.queues.LocalAlbumRadio
-import t4ulquiorra.xiaori.playback.queues.Queue
-import t4ulquiorra.xiaori.playback.queues.YouTubeAlbumRadio
-import t4ulquiorra.xiaori.playback.queues.YouTubeQueue
+import com.xiaori.models.MediaMetadata
+import com.xiaori.models.PersistQueue
+import com.xiaori.models.QueueData
+import com.xiaori.models.QueueType
+import com.xiaori.playback.queues.ListQueue
+import com.xiaori.playback.queues.LocalAlbumRadio
+import com.xiaori.playback.queues.Queue
+import com.xiaori.playback.queues.YouTubeAlbumRadio
+import com.xiaori.playback.queues.YouTubeQueue
 
 fun Queue.toPersistQueue(
     title: String?,

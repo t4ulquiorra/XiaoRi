@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.utils
+package com.xiaori.ui.utils
 
 import androidx.compose.foundation.shape.CornerBasedShape
 import androidx.compose.foundation.shape.CornerSize

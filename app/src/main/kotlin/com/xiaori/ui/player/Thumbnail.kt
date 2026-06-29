@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.player
+package com.xiaori.ui.player
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearEasing
@@ -79,33 +79,33 @@ import coil3.SingletonImageLoader
 import coil3.compose.AsyncImage
 import coil3.request.CachePolicy
 import coil3.request.ImageRequest
-import t4ulquiorra.xiaori.LocalListenTogetherManager
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.CropAlbumArtKey
-import t4ulquiorra.xiaori.constants.HidePlayerThumbnailKey
-import t4ulquiorra.xiaori.constants.PlayerBackgroundStyle
-import t4ulquiorra.xiaori.constants.PlayerBackgroundStyleKey
-import t4ulquiorra.xiaori.constants.PlayerHorizontalPadding
-import t4ulquiorra.xiaori.constants.RotatingThumbnailKey
-import t4ulquiorra.xiaori.constants.SeekExtraSeconds
-import t4ulquiorra.xiaori.constants.SwipeThumbnailKey
-import t4ulquiorra.xiaori.constants.ThumbnailCornerRadiusKey
-import t4ulquiorra.xiaori.constants.ThumbnailCornerRadius
-import t4ulquiorra.xiaori.listentogether.RoomRole
-import t4ulquiorra.xiaori.ui.component.CastButton
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.constants.CanvasThumbnailAnimationKey
-import t4ulquiorra.xiaori.canvas.TidalCanvasProvider
-import t4ulquiorra.xiaori.canvas.CanvasArtwork
-import t4ulquiorra.xiaori.extensions.metadata
-import t4ulquiorra.xiaori.ui.utils.resize
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.LocalListenTogetherManager
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.CropAlbumArtKey
+import com.xiaori.constants.HidePlayerThumbnailKey
+import com.xiaori.constants.PlayerBackgroundStyle
+import com.xiaori.constants.PlayerBackgroundStyleKey
+import com.xiaori.constants.PlayerHorizontalPadding
+import com.xiaori.constants.RotatingThumbnailKey
+import com.xiaori.constants.SeekExtraSeconds
+import com.xiaori.constants.SwipeThumbnailKey
+import com.xiaori.constants.ThumbnailCornerRadiusKey
+import com.xiaori.constants.ThumbnailCornerRadius
+import com.xiaori.listentogether.RoomRole
+import com.xiaori.ui.component.CastButton
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.constants.CanvasThumbnailAnimationKey
+import com.xiaori.canvas.TidalCanvasProvider
+import com.xiaori.canvas.CanvasArtwork
+import com.xiaori.extensions.metadata
+import com.xiaori.ui.utils.resize
+import com.xiaori.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.delay
-import t4ulquiorra.xiaori.applecanvas.AppleMusicCanvasProvider
-import t4ulquiorra.xiaori.xiaoricanvas.xiaoriCanvasProvider
+import com.xiaori.applecanvas.AppleMusicCanvasProvider
+import com.xiaori.xiaoricanvas.xiaoriCanvasProvider
 import java.util.Locale
 
 
@@ -572,7 +572,7 @@ private fun ThumbnailItem(
     textBackgroundColor: Color,
     layoutDirection: LayoutDirection,
     onSeek: (String, Boolean) -> Unit,
-    playerConnection: t4ulquiorra.xiaori.playback.PlayerConnection,
+    playerConnection: com.xiaori.playback.PlayerConnection,
     context: android.content.Context,
     isLandscape: Boolean = false,
     isListenTogetherGuest: Boolean = false,

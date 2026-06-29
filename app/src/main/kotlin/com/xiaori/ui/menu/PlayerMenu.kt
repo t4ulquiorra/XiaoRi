@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.menu
+package com.xiaori.ui.menu
 
 import android.content.Context
 import android.content.res.Configuration
@@ -72,28 +72,28 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import com.music.innertube.YouTube
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalDownloadUtil
-import t4ulquiorra.xiaori.LocalListenTogetherManager
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.EnableExportAsMp3Key
-import t4ulquiorra.xiaori.constants.ExportDirectoryUriKey
-import t4ulquiorra.xiaori.constants.ExportedSongIdsKey
-import t4ulquiorra.xiaori.constants.ExportingSongIdsKey
-import t4ulquiorra.xiaori.constants.ListItemHeight
-import t4ulquiorra.xiaori.listentogether.ConnectionState
-import t4ulquiorra.xiaori.listentogether.ListenTogetherEvent
-import t4ulquiorra.xiaori.models.MediaMetadata
-import t4ulquiorra.xiaori.playback.ExoDownloadService
-import t4ulquiorra.xiaori.ui.component.BottomSheetState
-import t4ulquiorra.xiaori.ui.component.ListDialog
-import t4ulquiorra.xiaori.ui.component.Material3MenuGroup
-import t4ulquiorra.xiaori.ui.component.Material3MenuItemData
-import t4ulquiorra.xiaori.ui.component.NewAction
-import t4ulquiorra.xiaori.ui.component.NewActionGrid
-import t4ulquiorra.xiaori.ui.component.VolumeSlider
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalDownloadUtil
+import com.xiaori.LocalListenTogetherManager
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.EnableExportAsMp3Key
+import com.xiaori.constants.ExportDirectoryUriKey
+import com.xiaori.constants.ExportedSongIdsKey
+import com.xiaori.constants.ExportingSongIdsKey
+import com.xiaori.constants.ListItemHeight
+import com.xiaori.listentogether.ConnectionState
+import com.xiaori.listentogether.ListenTogetherEvent
+import com.xiaori.models.MediaMetadata
+import com.xiaori.playback.ExoDownloadService
+import com.xiaori.ui.component.BottomSheetState
+import com.xiaori.ui.component.ListDialog
+import com.xiaori.ui.component.Material3MenuGroup
+import com.xiaori.ui.component.Material3MenuItemData
+import com.xiaori.ui.component.NewAction
+import com.xiaori.ui.component.NewActionGrid
+import com.xiaori.ui.component.VolumeSlider
+import com.xiaori.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlin.math.log2
@@ -180,9 +180,9 @@ fun PlayerMenu(
     }
 
     val listenTogetherManager = LocalListenTogetherManager.current
-    val ringtoneViewModel = t4ulquiorra.xiaori.LocalRingtoneViewModel.current
-    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsState(initial = t4ulquiorra.xiaori.listentogether.RoomRole.NONE)
-    val isListenTogetherGuest = listenTogetherRoleState?.value == t4ulquiorra.xiaori.listentogether.RoomRole.GUEST
+    val ringtoneViewModel = com.xiaori.LocalRingtoneViewModel.current
+    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsState(initial = com.xiaori.listentogether.RoomRole.NONE)
+    val isListenTogetherGuest = listenTogetherRoleState?.value == com.xiaori.listentogether.RoomRole.GUEST
     val pendingSuggestions by listenTogetherManager?.pendingSuggestions?.collectAsState(initial = emptyList()) ?: remember { mutableStateOf(emptyList()) }
 
     AddToPlaylistDialog(
@@ -470,7 +470,7 @@ fun PlayerMenu(
                     add(
                         Material3MenuItemData(
                             customComposable = {
-                                t4ulquiorra.xiaori.ui.component.CastButton(asMenuItem = true)
+                                com.xiaori.ui.component.CastButton(asMenuItem = true)
                             }
                         )
                     )
@@ -622,7 +622,7 @@ fun PlayerMenu(
                                         onDismiss()
                                     } else {
                                         onDismiss()
-                                        t4ulquiorra.xiaori.playback.AudioExportService.start(
+                                        com.xiaori.playback.AudioExportService.start(
                                             context = context,
                                             songId = mediaMetadata.id,
                                             songTitle = mediaMetadata.title,
@@ -808,7 +808,7 @@ fun TempoPitchDialog(onDismiss: () -> Unit) {
         playerConnection.player.playbackParameters =
             PlaybackParameters(tempo, 2f.pow(transposeValue.toFloat() / 12))
     }
-    val listenTogetherManager = t4ulquiorra.xiaori.LocalListenTogetherManager.current
+    val listenTogetherManager = com.xiaori.LocalListenTogetherManager.current
     val isInRoom = listenTogetherManager?.isInRoom ?: false
 
     AlertDialog(
@@ -927,7 +927,7 @@ fun ListenTogetherDialog(
     if (!visible) return
     
     val context = LocalContext.current
-    val listenTogetherManager = t4ulquiorra.xiaori.LocalListenTogetherManager.current
+    val listenTogetherManager = com.xiaori.LocalListenTogetherManager.current
     
     
     if (listenTogetherManager == null) {
@@ -981,7 +981,7 @@ fun ListenTogetherDialog(
     val pendingSuggestions by listenTogetherManager.pendingSuggestions.collectAsState()
     
     
-    var savedUsername by rememberPreference(t4ulquiorra.xiaori.constants.ListenTogetherUsernameKey, "")
+    var savedUsername by rememberPreference(com.xiaori.constants.ListenTogetherUsernameKey, "")
     var roomCodeInput by rememberSaveable { mutableStateOf("") }
     var usernameInput by rememberSaveable { mutableStateOf(savedUsername) }
 

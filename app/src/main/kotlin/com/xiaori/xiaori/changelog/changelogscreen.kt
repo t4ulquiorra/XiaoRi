@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.xiaori.changelog
+package com.xiaori.xiaori.changelog
 
 
 
@@ -80,11 +80,11 @@ import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import t4ulquiorra.xiaori.BuildConfig
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.xiaori.updater.extractUrls
-import t4ulquiorra.xiaori.ui.component.parseMarkdown
+import com.xiaori.BuildConfig
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.xiaori.updater.extractUrls
+import com.xiaori.ui.component.parseMarkdown
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

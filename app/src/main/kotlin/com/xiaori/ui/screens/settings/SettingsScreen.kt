@@ -1,8 +1,8 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
-import t4ulquiorra.xiaori.R
+import com.xiaori.R
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Build
@@ -45,14 +45,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.BuildConfig
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.Material3SettingsGroup
-import t4ulquiorra.xiaori.ui.component.Material3SettingsItem
-import t4ulquiorra.xiaori.ui.screens.Screens
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.xiaori.updater.getUpdateAvailableState
+import com.xiaori.BuildConfig
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.Material3SettingsGroup
+import com.xiaori.ui.component.Material3SettingsItem
+import com.xiaori.ui.screens.Screens
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.xiaori.updater.getUpdateAvailableState
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -64,7 +64,7 @@ highlightKey: String? = null) {
     val uriHandler = LocalUriHandler.current
     val context = LocalContext.current
     val isAndroid12OrLater = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
-    val isUpdateAvailable = getUpdateAvailableState(context) && t4ulquiorra.xiaori.xiaori.updater.getAutoUpdateCheckSetting(context)
+    val isUpdateAvailable = getUpdateAvailableState(context) && com.xiaori.xiaori.updater.getAutoUpdateCheckSetting(context)
 
     var searchQuery by rememberSaveable { mutableStateOf("") }
     val searchLower = searchQuery.lowercase()

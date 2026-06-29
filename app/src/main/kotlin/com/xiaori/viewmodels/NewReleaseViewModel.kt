@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.viewmodels
+package com.xiaori.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -8,11 +8,11 @@ import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.filterExplicit
-import t4ulquiorra.xiaori.constants.HideExplicitKey
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
-import t4ulquiorra.xiaori.utils.reportException
+import com.xiaori.constants.HideExplicitKey
+import com.xiaori.db.MusicDatabase
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
+import com.xiaori.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

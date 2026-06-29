@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.player
+package com.xiaori.ui.player
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween

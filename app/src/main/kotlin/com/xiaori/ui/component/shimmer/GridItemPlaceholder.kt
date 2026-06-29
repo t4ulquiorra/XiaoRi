@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.component.shimmer
+package com.xiaori.ui.component.shimmer
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -18,12 +18,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
-import t4ulquiorra.xiaori.constants.GridItemSize
-import t4ulquiorra.xiaori.constants.GridItemsSizeKey
-import t4ulquiorra.xiaori.constants.GridThumbnailHeight
-import t4ulquiorra.xiaori.constants.SmallGridThumbnailHeight
-import t4ulquiorra.xiaori.constants.ThumbnailCornerRadius
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
+import com.xiaori.constants.GridItemSize
+import com.xiaori.constants.GridItemsSizeKey
+import com.xiaori.constants.GridThumbnailHeight
+import com.xiaori.constants.SmallGridThumbnailHeight
+import com.xiaori.constants.ThumbnailCornerRadius
+import com.xiaori.utils.rememberEnumPreference
 
 @Composable
 fun GridItemPlaceHolder(

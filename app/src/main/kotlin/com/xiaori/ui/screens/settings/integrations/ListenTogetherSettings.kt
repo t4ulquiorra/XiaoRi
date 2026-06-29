@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.settings.integrations
+package com.xiaori.ui.screens.settings.integrations
 
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -62,26 +62,26 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.ListenTogetherAutoApprovalKey
-import t4ulquiorra.xiaori.constants.ListenTogetherServerUrlKey
-import t4ulquiorra.xiaori.constants.ListenTogetherSmartResyncKey
-import t4ulquiorra.xiaori.constants.ListenTogetherSyncVolumeKey
-import t4ulquiorra.xiaori.constants.ListenTogetherUsernameKey
-import t4ulquiorra.xiaori.listentogether.ListenTogetherEvent
-import t4ulquiorra.xiaori.listentogether.ListenTogetherServer
-import t4ulquiorra.xiaori.listentogether.ListenTogetherServers
-import t4ulquiorra.xiaori.listentogether.LogEntry
-import t4ulquiorra.xiaori.listentogether.LogLevel
-import t4ulquiorra.xiaori.listentogether.RoomRole
-import t4ulquiorra.xiaori.ui.component.DefaultDialog
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.IntegrationCard
-import t4ulquiorra.xiaori.ui.component.IntegrationCardItem
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.viewmodels.ListenTogetherViewModel
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.constants.ListenTogetherAutoApprovalKey
+import com.xiaori.constants.ListenTogetherServerUrlKey
+import com.xiaori.constants.ListenTogetherSmartResyncKey
+import com.xiaori.constants.ListenTogetherSyncVolumeKey
+import com.xiaori.constants.ListenTogetherUsernameKey
+import com.xiaori.listentogether.ListenTogetherEvent
+import com.xiaori.listentogether.ListenTogetherServer
+import com.xiaori.listentogether.ListenTogetherServers
+import com.xiaori.listentogether.LogEntry
+import com.xiaori.listentogether.LogLevel
+import com.xiaori.listentogether.RoomRole
+import com.xiaori.ui.component.DefaultDialog
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.IntegrationCard
+import com.xiaori.ui.component.IntegrationCardItem
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.utils.rememberPreference
+import com.xiaori.viewmodels.ListenTogetherViewModel
 import kotlinx.coroutines.flow.collectLatest
 
 @OptIn(ExperimentalMaterial3Api::class)

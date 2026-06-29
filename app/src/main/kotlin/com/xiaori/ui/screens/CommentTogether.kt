@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens
+package com.xiaori.ui.screens
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
@@ -30,11 +30,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.LocalListenTogetherManager
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.listentogether.ChatMessagePayload
-import t4ulquiorra.xiaori.listentogether.RepliedMessage
+import com.xiaori.LocalListenTogetherManager
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.listentogether.ChatMessagePayload
+import com.xiaori.listentogether.RepliedMessage
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.style.TextDecoration
 import android.net.Uri

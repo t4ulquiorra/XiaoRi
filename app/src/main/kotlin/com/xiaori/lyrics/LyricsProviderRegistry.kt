@@ -1,8 +1,8 @@
 
 
-package t4ulquiorra.xiaori.lyrics
+package com.xiaori.lyrics
 
-import t4ulquiorra.xiaori.constants.PreferredLyricsProvider
+import com.xiaori.constants.PreferredLyricsProvider
 
 
 object LyricsProviderRegistry {

@@ -3,7 +3,7 @@
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package t4ulquiorra.xiaori.widget
+package com.xiaori.widget
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -16,23 +16,23 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.RemoteViews
-import t4ulquiorra.xiaori.MainActivity
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.recognition.MusicRecognitionService
-import t4ulquiorra.xiaori.widget.MusicRecognizerWidgetService.Companion.ALBUM_ART_CACHE_FILE
-import t4ulquiorra.xiaori.widget.MusicRecognizerWidgetService.Companion.PREF_ARTIST_NAME
-import t4ulquiorra.xiaori.widget.MusicRecognizerWidgetService.Companion.PREF_COVER_ART_PATH
-import t4ulquiorra.xiaori.widget.MusicRecognizerWidgetService.Companion.PREF_ERROR_MESSAGE
-import t4ulquiorra.xiaori.widget.MusicRecognizerWidgetService.Companion.PREF_PULSE_FRAME
-import t4ulquiorra.xiaori.widget.MusicRecognizerWidgetService.Companion.PREF_SONG_TITLE
-import t4ulquiorra.xiaori.widget.MusicRecognizerWidgetService.Companion.PREF_STATE
-import t4ulquiorra.xiaori.widget.MusicRecognizerWidgetService.Companion.PREFS_NAME
-import t4ulquiorra.xiaori.widget.MusicRecognizerWidgetService.Companion.STATE_ERROR
-import t4ulquiorra.xiaori.widget.MusicRecognizerWidgetService.Companion.STATE_IDLE
-import t4ulquiorra.xiaori.widget.MusicRecognizerWidgetService.Companion.STATE_LISTENING
-import t4ulquiorra.xiaori.widget.MusicRecognizerWidgetService.Companion.STATE_NO_MATCH
-import t4ulquiorra.xiaori.widget.MusicRecognizerWidgetService.Companion.STATE_PROCESSING
-import t4ulquiorra.xiaori.widget.MusicRecognizerWidgetService.Companion.STATE_SUCCESS
+import com.xiaori.MainActivity
+import com.xiaori.R
+import com.xiaori.recognition.MusicRecognitionService
+import com.xiaori.widget.MusicRecognizerWidgetService.Companion.ALBUM_ART_CACHE_FILE
+import com.xiaori.widget.MusicRecognizerWidgetService.Companion.PREF_ARTIST_NAME
+import com.xiaori.widget.MusicRecognizerWidgetService.Companion.PREF_COVER_ART_PATH
+import com.xiaori.widget.MusicRecognizerWidgetService.Companion.PREF_ERROR_MESSAGE
+import com.xiaori.widget.MusicRecognizerWidgetService.Companion.PREF_PULSE_FRAME
+import com.xiaori.widget.MusicRecognizerWidgetService.Companion.PREF_SONG_TITLE
+import com.xiaori.widget.MusicRecognizerWidgetService.Companion.PREF_STATE
+import com.xiaori.widget.MusicRecognizerWidgetService.Companion.PREFS_NAME
+import com.xiaori.widget.MusicRecognizerWidgetService.Companion.STATE_ERROR
+import com.xiaori.widget.MusicRecognizerWidgetService.Companion.STATE_IDLE
+import com.xiaori.widget.MusicRecognizerWidgetService.Companion.STATE_LISTENING
+import com.xiaori.widget.MusicRecognizerWidgetService.Companion.STATE_NO_MATCH
+import com.xiaori.widget.MusicRecognizerWidgetService.Companion.STATE_PROCESSING
+import com.xiaori.widget.MusicRecognizerWidgetService.Companion.STATE_SUCCESS
 import java.io.File
 
 /**
@@ -114,7 +114,7 @@ class MusicRecognizerWidgetReceiver : AppWidgetProvider() {
         if (!MusicRecognitionService.hasRecordPermission(context)) {
             context.startActivity(
                 Intent(context, MainActivity::class.java).apply {
-                    action = "t4ulquiorra.xiaori.action.RECOGNITION"
+                    action = "com.xiaori.action.RECOGNITION"
                     flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP
                 }
             )
@@ -326,15 +326,15 @@ class MusicRecognizerWidgetReceiver : AppWidgetProvider() {
         PendingIntent.getActivity(
             context, 21,
             Intent(context, MainActivity::class.java).apply {
-                action = "t4ulquiorra.xiaori.action.RECOGNITION"
+                action = "com.xiaori.action.RECOGNITION"
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP
             },
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
     companion object {
-        const val ACTION_START_RECOGNITION = "t4ulquiorra.xiaori.widget.recognizer.TAP_MIC"
-        const val ACTION_UPDATE_WIDGET = "t4ulquiorra.xiaori.widget.recognizer.UPDATE"
-        const val ACTION_RESET_STATE = "t4ulquiorra.xiaori.widget.recognizer.RESET"
+        const val ACTION_START_RECOGNITION = "com.xiaori.widget.recognizer.TAP_MIC"
+        const val ACTION_UPDATE_WIDGET = "com.xiaori.widget.recognizer.UPDATE"
+        const val ACTION_RESET_STATE = "com.xiaori.widget.recognizer.RESET"
     }
 }

@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.extensions
+package com.xiaori.extensions
 
 import android.net.Uri
 import android.os.Bundle
@@ -8,10 +8,10 @@ import androidx.core.net.toUri
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata.MEDIA_TYPE_MUSIC
 import com.music.innertube.models.SongItem
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.models.MediaMetadata
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.ui.utils.resize
+import com.xiaori.db.entities.Song
+import com.xiaori.models.MediaMetadata
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.ui.utils.resize
 import java.util.Locale
 
 val MediaItem.metadata: MediaMetadata?

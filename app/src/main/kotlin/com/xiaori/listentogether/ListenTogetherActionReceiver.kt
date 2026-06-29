@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.listentogether
+package com.xiaori.listentogether
 
 import android.content.BroadcastReceiver
 import android.content.Context

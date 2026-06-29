@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.playback.audio
+package com.xiaori.playback.audio
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor

@@ -1,12 +1,12 @@
 
 
-package t4ulquiorra.xiaori.playback.queues
+package com.xiaori.playback.queues
 
 import androidx.media3.common.MediaItem
 import com.music.innertube.YouTube
 import com.music.innertube.models.WatchEndpoint
-import t4ulquiorra.xiaori.extensions.toMediaItem
-import t4ulquiorra.xiaori.models.MediaMetadata
+import com.xiaori.extensions.toMediaItem
+import com.xiaori.models.MediaMetadata
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.withContext
 

@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.library
+package com.xiaori.ui.screens.library
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -11,11 +11,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.ChipSortTypeKey
-import t4ulquiorra.xiaori.constants.LibraryFilter
-import t4ulquiorra.xiaori.ui.component.ChipsRow
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
+import com.xiaori.R
+import com.xiaori.constants.ChipSortTypeKey
+import com.xiaori.constants.LibraryFilter
+import com.xiaori.ui.component.ChipsRow
+import com.xiaori.utils.rememberEnumPreference
 import androidx.activity.compose.BackHandler
 
 @Composable

@@ -3,7 +3,7 @@
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package t4ulquiorra.xiaori.widget
+package com.xiaori.widget
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -23,9 +23,9 @@ import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.toBitmap
-import t4ulquiorra.xiaori.MainActivity
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.db.MusicDatabase
+import com.xiaori.MainActivity
+import com.xiaori.R
+import com.xiaori.db.MusicDatabase
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

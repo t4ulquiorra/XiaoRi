@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.search.suggestions
+package com.xiaori.ui.screens.search.suggestions
 
 data class SuggestionTrack(
     val rank: Int,

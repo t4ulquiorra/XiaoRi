@@ -5,10 +5,10 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package t4ulquiorra.xiaori.spotify
+package com.xiaori.spotify
 
-import t4ulquiorra.xiaori.spotify.models.SpotifyPlaylist
-import t4ulquiorra.xiaori.spotify.models.SpotifyTrack
+import com.xiaori.spotify.models.SpotifyPlaylist
+import com.xiaori.spotify.models.SpotifyTrack
 
 /**
  * Utility object for creating search queries from Spotify track data.

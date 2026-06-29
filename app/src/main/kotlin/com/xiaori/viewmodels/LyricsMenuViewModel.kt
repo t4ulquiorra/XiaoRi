@@ -1,18 +1,18 @@
 
 
-package t4ulquiorra.xiaori.viewmodels
+package com.xiaori.viewmodels
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.db.entities.LyricsEntity
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.lyrics.LyricsHelper
-import t4ulquiorra.xiaori.lyrics.LyricsResult
-import t4ulquiorra.xiaori.models.MediaMetadata
-import t4ulquiorra.xiaori.utils.NetworkConnectivityObserver
+import com.xiaori.db.MusicDatabase
+import com.xiaori.db.entities.LyricsEntity
+import com.xiaori.db.entities.Song
+import com.xiaori.lyrics.LyricsHelper
+import com.xiaori.lyrics.LyricsResult
+import com.xiaori.models.MediaMetadata
+import com.xiaori.utils.NetworkConnectivityObserver
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

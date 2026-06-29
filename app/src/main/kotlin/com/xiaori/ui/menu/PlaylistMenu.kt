@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.menu
+package com.xiaori.ui.menu
 
 import android.content.Intent
 import android.content.res.Configuration
@@ -42,8 +42,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.ui.Alignment
-import t4ulquiorra.xiaori.constants.InnerTubeCookieKey
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.constants.InnerTubeCookieKey
+import com.xiaori.utils.rememberPreference
 import com.music.innertube.utils.parseCookieString
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
@@ -51,26 +51,26 @@ import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import com.music.innertube.YouTube
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalDownloadUtil
-import t4ulquiorra.xiaori.LocalListenTogetherManager
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.db.entities.Playlist
-import t4ulquiorra.xiaori.db.entities.SpeedDialItem
-import t4ulquiorra.xiaori.db.entities.PlaylistSong
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.extensions.toMediaItem
-import t4ulquiorra.xiaori.playback.ExoDownloadService
-import t4ulquiorra.xiaori.playback.queues.ListQueue
-import t4ulquiorra.xiaori.playback.queues.YouTubeQueue
-import t4ulquiorra.xiaori.ui.component.DefaultDialog
-import t4ulquiorra.xiaori.ui.component.Material3MenuGroup
-import t4ulquiorra.xiaori.ui.component.Material3MenuItemData
-import t4ulquiorra.xiaori.ui.component.NewAction
-import t4ulquiorra.xiaori.ui.component.NewActionGrid
-import t4ulquiorra.xiaori.ui.component.PlaylistListItem
-import t4ulquiorra.xiaori.ui.component.TextFieldDialog
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalDownloadUtil
+import com.xiaori.LocalListenTogetherManager
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.db.entities.Playlist
+import com.xiaori.db.entities.SpeedDialItem
+import com.xiaori.db.entities.PlaylistSong
+import com.xiaori.db.entities.Song
+import com.xiaori.extensions.toMediaItem
+import com.xiaori.playback.ExoDownloadService
+import com.xiaori.playback.queues.ListQueue
+import com.xiaori.playback.queues.YouTubeQueue
+import com.xiaori.ui.component.DefaultDialog
+import com.xiaori.ui.component.Material3MenuGroup
+import com.xiaori.ui.component.Material3MenuItemData
+import com.xiaori.ui.component.NewAction
+import com.xiaori.ui.component.NewActionGrid
+import com.xiaori.ui.component.PlaylistListItem
+import com.xiaori.ui.component.TextFieldDialog
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

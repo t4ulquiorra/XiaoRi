@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.component
+package com.xiaori.ui.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -22,9 +22,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import kotlin.math.roundToInt
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.ThumbnailCornerRadiusKey
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.R
+import com.xiaori.constants.ThumbnailCornerRadiusKey
+import com.xiaori.utils.rememberPreference
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

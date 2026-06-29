@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.listentogether
+package com.xiaori.listentogether
 
 import android.util.Base64
 import android.Manifest
@@ -18,17 +18,17 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.getSystemService
 import androidx.datastore.preferences.core.edit
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.ListenTogetherAutoApprovalKey
-import t4ulquiorra.xiaori.constants.ListenTogetherIsHostKey
-import t4ulquiorra.xiaori.constants.ListenTogetherRoomCodeKey
-import t4ulquiorra.xiaori.constants.ListenTogetherServerUrlKey
-import t4ulquiorra.xiaori.constants.ListenTogetherSessionTimestampKey
-import t4ulquiorra.xiaori.constants.ListenTogetherSessionTokenKey
-import t4ulquiorra.xiaori.constants.ListenTogetherUserIdKey
-import t4ulquiorra.xiaori.utils.NetworkConnectivityObserver
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
+import com.xiaori.R
+import com.xiaori.constants.ListenTogetherAutoApprovalKey
+import com.xiaori.constants.ListenTogetherIsHostKey
+import com.xiaori.constants.ListenTogetherRoomCodeKey
+import com.xiaori.constants.ListenTogetherServerUrlKey
+import com.xiaori.constants.ListenTogetherSessionTimestampKey
+import com.xiaori.constants.ListenTogetherSessionTokenKey
+import com.xiaori.constants.ListenTogetherUserIdKey
+import com.xiaori.utils.NetworkConnectivityObserver
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -146,10 +146,10 @@ class ListenTogetherClient @Inject constructor(
 
         
         private const val NOTIFICATION_CHANNEL_ID = "listen_together_channel"
-        const val ACTION_APPROVE_JOIN = "t4ulquiorra.xiaori.LISTEN_TOGETHER_APPROVE_JOIN"
-        const val ACTION_REJECT_JOIN = "t4ulquiorra.xiaori.LISTEN_TOGETHER_REJECT_JOIN"
-        const val ACTION_APPROVE_SUGGESTION = "t4ulquiorra.xiaori.LISTEN_TOGETHER_APPROVE_SUGGESTION"
-        const val ACTION_REJECT_SUGGESTION = "t4ulquiorra.xiaori.LISTEN_TOGETHER_REJECT_SUGGESTION"
+        const val ACTION_APPROVE_JOIN = "com.xiaori.LISTEN_TOGETHER_APPROVE_JOIN"
+        const val ACTION_REJECT_JOIN = "com.xiaori.LISTEN_TOGETHER_REJECT_JOIN"
+        const val ACTION_APPROVE_SUGGESTION = "com.xiaori.LISTEN_TOGETHER_APPROVE_SUGGESTION"
+        const val ACTION_REJECT_SUGGESTION = "com.xiaori.LISTEN_TOGETHER_REJECT_SUGGESTION"
         const val EXTRA_USER_ID = "extra_user_id"
         const val EXTRA_SUGGESTION_ID = "extra_suggestion_id"
         const val EXTRA_NOTIFICATION_ID = "extra_notification_id"
@@ -278,7 +278,7 @@ class ListenTogetherClient @Inject constructor(
     
     private fun loadBlockedUsernames() {
         try {
-            val blockedJson = context.dataStore.get(t4ulquiorra.xiaori.constants.ListenTogetherBlockedUsersKey, "")
+            val blockedJson = context.dataStore.get(com.xiaori.constants.ListenTogetherBlockedUsersKey, "")
             val blockedList = if (blockedJson.isNotEmpty()) {
                 json.decodeFromString<List<String>>(blockedJson)
             } else {
@@ -296,7 +296,7 @@ class ListenTogetherClient @Inject constructor(
         try {
             val blockedJson = json.encodeToString(_blockedUsernames.value.toList())
             context.dataStore.edit { preferences ->
-                preferences[t4ulquiorra.xiaori.constants.ListenTogetherBlockedUsersKey] = blockedJson
+                preferences[com.xiaori.constants.ListenTogetherBlockedUsersKey] = blockedJson
             }
         } catch (e: Exception) {
             log(LogLevel.ERROR, "Failed to save blocked usernames", e.message)

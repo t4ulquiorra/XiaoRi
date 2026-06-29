@@ -1,24 +1,24 @@
 
 
-package t4ulquiorra.xiaori.listentogether
+package com.xiaori.listentogether
 
 import android.content.Context
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import com.music.innertube.YouTube
 import com.music.innertube.models.WatchEndpoint
-import t4ulquiorra.xiaori.constants.ListenTogetherSmartResyncKey
-import t4ulquiorra.xiaori.constants.ListenTogetherSyncVolumeKey
-import t4ulquiorra.xiaori.extensions.currentMetadata
-import t4ulquiorra.xiaori.extensions.metadata
-import t4ulquiorra.xiaori.extensions.toMediaItem
-import t4ulquiorra.xiaori.models.MediaMetadata
-import t4ulquiorra.xiaori.models.MediaMetadata.Album
-import t4ulquiorra.xiaori.models.MediaMetadata.Artist
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.playback.PlayerConnection
-import t4ulquiorra.xiaori.playback.queues.YouTubeQueue
-import t4ulquiorra.xiaori.utils.dataStore
+import com.xiaori.constants.ListenTogetherSmartResyncKey
+import com.xiaori.constants.ListenTogetherSyncVolumeKey
+import com.xiaori.extensions.currentMetadata
+import com.xiaori.extensions.metadata
+import com.xiaori.extensions.toMediaItem
+import com.xiaori.models.MediaMetadata
+import com.xiaori.models.MediaMetadata.Album
+import com.xiaori.models.MediaMetadata.Artist
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.playback.PlayerConnection
+import com.xiaori.playback.queues.YouTubeQueue
+import com.xiaori.utils.dataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

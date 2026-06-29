@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.library
+package com.xiaori.ui.screens.library
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -91,27 +91,27 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.CONTENT_TYPE_HEADER
-import t4ulquiorra.xiaori.constants.CONTENT_TYPE_SONG
-import t4ulquiorra.xiaori.constants.LocalSongsExcludedFoldersKey
-import t4ulquiorra.xiaori.constants.LocalSongsMinDurationSecondsKey
-import t4ulquiorra.xiaori.constants.LocalSongsSortDescendingKey
-import t4ulquiorra.xiaori.constants.LocalSongsSortTypeKey
-import t4ulquiorra.xiaori.extensions.toMediaItem
-import t4ulquiorra.xiaori.extensions.togglePlayPause
-import t4ulquiorra.xiaori.localmedia.LocalSongScanConfig
-import t4ulquiorra.xiaori.localmedia.SupportedLocalAudio
-import t4ulquiorra.xiaori.playback.queues.ListQueue
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.component.SongListItem
-import t4ulquiorra.xiaori.ui.component.SortHeader
-import t4ulquiorra.xiaori.ui.menu.SongMenu
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.viewmodels.LocalSongsScanState
-import t4ulquiorra.xiaori.viewmodels.LocalSongsViewModel
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.CONTENT_TYPE_HEADER
+import com.xiaori.constants.CONTENT_TYPE_SONG
+import com.xiaori.constants.LocalSongsExcludedFoldersKey
+import com.xiaori.constants.LocalSongsMinDurationSecondsKey
+import com.xiaori.constants.LocalSongsSortDescendingKey
+import com.xiaori.constants.LocalSongsSortTypeKey
+import com.xiaori.extensions.toMediaItem
+import com.xiaori.extensions.togglePlayPause
+import com.xiaori.localmedia.LocalSongScanConfig
+import com.xiaori.localmedia.SupportedLocalAudio
+import com.xiaori.playback.queues.ListQueue
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.component.SongListItem
+import com.xiaori.ui.component.SortHeader
+import com.xiaori.ui.menu.SongMenu
+import com.xiaori.utils.rememberPreference
+import com.xiaori.viewmodels.LocalSongsScanState
+import com.xiaori.viewmodels.LocalSongsViewModel
 import java.text.Collator
 import java.time.LocalDateTime
 import java.util.Locale

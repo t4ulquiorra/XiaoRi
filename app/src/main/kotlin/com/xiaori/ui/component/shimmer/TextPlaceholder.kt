@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.component.shimmer
+package com.xiaori.ui.component.shimmer
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

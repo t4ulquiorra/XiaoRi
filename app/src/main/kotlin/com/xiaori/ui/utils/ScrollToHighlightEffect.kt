@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.utils
+package com.xiaori.ui.utils
 
 import androidx.compose.foundation.ScrollState
 import androidx.compose.runtime.Composable

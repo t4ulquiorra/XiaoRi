@@ -1,9 +1,9 @@
 
 
-package t4ulquiorra.xiaori.listentogether
+package com.xiaori.listentogether
 
 import com.google.protobuf.MessageLite
-import t4ulquiorra.xiaori.listentogether.proto.Listentogether
+import com.xiaori.listentogether.proto.Listentogether
 import kotlinx.serialization.json.Json
 import timber.log.Timber
 import java.io.ByteArrayInputStream

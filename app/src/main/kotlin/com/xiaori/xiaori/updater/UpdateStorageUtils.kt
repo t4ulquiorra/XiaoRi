@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.xiaori.updater
+package com.xiaori.xiaori.updater
 
 import android.content.Context
 import android.os.Environment

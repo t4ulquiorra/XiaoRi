@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens
+package com.xiaori.ui.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -58,25 +58,25 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.ListItemHeight
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.playback.queues.YouTubeQueue
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.component.NavigationTitle
-import t4ulquiorra.xiaori.ui.component.YouTubeGridItem
-import t4ulquiorra.xiaori.ui.component.YouTubeListItem
-import t4ulquiorra.xiaori.ui.component.shimmer.GridItemPlaceHolder
-import t4ulquiorra.xiaori.ui.component.shimmer.ShimmerHost
-import t4ulquiorra.xiaori.ui.component.shimmer.TextPlaceholder
-import t4ulquiorra.xiaori.ui.menu.YouTubeAlbumMenu
-import t4ulquiorra.xiaori.ui.menu.YouTubeSongMenu
-import t4ulquiorra.xiaori.ui.utils.SnapLayoutInfoProvider
-import t4ulquiorra.xiaori.utils.listItemShape
-import t4ulquiorra.xiaori.viewmodels.ChartsViewModel
-import t4ulquiorra.xiaori.viewmodels.ExploreViewModel
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.ListItemHeight
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.playback.queues.YouTubeQueue
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.component.NavigationTitle
+import com.xiaori.ui.component.YouTubeGridItem
+import com.xiaori.ui.component.YouTubeListItem
+import com.xiaori.ui.component.shimmer.GridItemPlaceHolder
+import com.xiaori.ui.component.shimmer.ShimmerHost
+import com.xiaori.ui.component.shimmer.TextPlaceholder
+import com.xiaori.ui.menu.YouTubeAlbumMenu
+import com.xiaori.ui.menu.YouTubeSongMenu
+import com.xiaori.ui.utils.SnapLayoutInfoProvider
+import com.xiaori.utils.listItemShape
+import com.xiaori.viewmodels.ChartsViewModel
+import com.xiaori.viewmodels.ExploreViewModel
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable

@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.playback
+package com.xiaori.playback
 
 import android.content.Context
 import androidx.media3.common.MediaItem
@@ -13,15 +13,15 @@ import androidx.media3.common.Player.REPEAT_MODE_OFF
 import androidx.media3.common.Player.STATE_ENDED
 import androidx.media3.common.Timeline
 import androidx.media3.exoplayer.ExoPlayer
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.extensions.currentMetadata
-import t4ulquiorra.xiaori.extensions.getCurrentQueueIndex
-import t4ulquiorra.xiaori.extensions.getQueueWindows
-import t4ulquiorra.xiaori.extensions.metadata
-import t4ulquiorra.xiaori.extensions.togglePlayPause
-import t4ulquiorra.xiaori.playback.MusicService.MusicBinder
-import t4ulquiorra.xiaori.playback.queues.Queue
-import t4ulquiorra.xiaori.utils.reportException
+import com.xiaori.db.MusicDatabase
+import com.xiaori.extensions.currentMetadata
+import com.xiaori.extensions.getCurrentQueueIndex
+import com.xiaori.extensions.getQueueWindows
+import com.xiaori.extensions.metadata
+import com.xiaori.extensions.togglePlayPause
+import com.xiaori.playback.MusicService.MusicBinder
+import com.xiaori.playback.queues.Queue
+import com.xiaori.utils.reportException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow

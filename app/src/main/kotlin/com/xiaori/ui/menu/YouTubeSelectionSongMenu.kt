@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.menu
+package com.xiaori.ui.menu
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.WindowInsets
@@ -35,18 +35,18 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalDownloadUtil
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.LocalSyncUtils
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.extensions.toMediaItem
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.playback.ExoDownloadService
-import t4ulquiorra.xiaori.playback.queues.ListQueue
-import t4ulquiorra.xiaori.ui.component.DefaultDialog
-import t4ulquiorra.xiaori.ui.component.Material3MenuGroup
-import t4ulquiorra.xiaori.ui.component.Material3MenuItemData
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalDownloadUtil
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.LocalSyncUtils
+import com.xiaori.R
+import com.xiaori.extensions.toMediaItem
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.playback.ExoDownloadService
+import com.xiaori.playback.queues.ListQueue
+import com.xiaori.ui.component.DefaultDialog
+import com.xiaori.ui.component.Material3MenuGroup
+import com.xiaori.ui.component.Material3MenuItemData
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime
 
@@ -67,7 +67,7 @@ fun YouTubeSelectionSongMenu(
         mutableStateOf(false)
     }
 
-    val listenTogetherManager = t4ulquiorra.xiaori.LocalListenTogetherManager.current
+    val listenTogetherManager = com.xiaori.LocalListenTogetherManager.current
     val isGuest = listenTogetherManager?.isInRoom == true && listenTogetherManager.isHost == false
 
     var downloadState by remember {
@@ -124,8 +124,8 @@ fun YouTubeSelectionSongMenu(
             songSelection.map { song ->
                 
                 val metadata = song.toMediaMetadata()
-                t4ulquiorra.xiaori.db.entities.Song(
-                    song = t4ulquiorra.xiaori.db.entities.SongEntity(
+                com.xiaori.db.entities.Song(
+                    song = com.xiaori.db.entities.SongEntity(
                         id = metadata.id,
                         title = metadata.title,
                         duration = metadata.duration,
@@ -140,13 +140,13 @@ fun YouTubeSelectionSongMenu(
                         libraryRemoveToken = metadata.libraryRemoveToken
                     ),
                     artists = metadata.artists.map { artist ->
-                        t4ulquiorra.xiaori.db.entities.ArtistEntity(
+                        com.xiaori.db.entities.ArtistEntity(
                             id = artist.id ?: "",
                             name = artist.name
                         )
                     },
                     album = metadata.album?.let { album ->
-                        t4ulquiorra.xiaori.db.entities.AlbumEntity(
+                        com.xiaori.db.entities.AlbumEntity(
                             id = album.id,
                             title = album.title,
                             thumbnailUrl = metadata.thumbnailUrl, 
@@ -402,7 +402,7 @@ fun YouTubeSelectionSongMenu(
                                         
                                         insert(metadata)
                                         
-                                        val songEntity = t4ulquiorra.xiaori.db.entities.SongEntity(
+                                        val songEntity = com.xiaori.db.entities.SongEntity(
                                             id = metadata.id,
                                             title = metadata.title,
                                             duration = metadata.duration,

@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.xiaori.shapes
+package com.xiaori.xiaori.shapes
 
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Outline

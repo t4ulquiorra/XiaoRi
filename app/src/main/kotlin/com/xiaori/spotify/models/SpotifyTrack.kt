@@ -5,7 +5,7 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package t4ulquiorra.xiaori.spotify.models
+package com.xiaori.spotify.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

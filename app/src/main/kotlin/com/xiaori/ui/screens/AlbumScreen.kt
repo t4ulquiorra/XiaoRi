@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens
+package com.xiaori.ui.screens
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.BorderStroke
@@ -90,7 +90,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.foundation.layout.offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import t4ulquiorra.xiaori.constants.AppBarHeight
+import com.xiaori.constants.AppBarHeight
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.util.fastForEachIndexed
@@ -99,35 +99,35 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.exoplayer.offline.Download
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalDownloadUtil
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.HideExplicitKey
-import t4ulquiorra.xiaori.constants.HideVideoSongsKey
-import t4ulquiorra.xiaori.constants.AlbumCanvasEnabledKey
-import t4ulquiorra.xiaori.db.entities.Album
-import t4ulquiorra.xiaori.playback.ExoDownloadService
-import t4ulquiorra.xiaori.playback.queues.LocalAlbumRadio
-import t4ulquiorra.xiaori.ui.component.AlbumGradient
-import t4ulquiorra.xiaori.ui.component.ExpandableText
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.LinkSegment
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.component.NavigationTitle
-import t4ulquiorra.xiaori.ui.component.SongListItem
-import t4ulquiorra.xiaori.ui.component.YouTubeGridItem
-import t4ulquiorra.xiaori.ui.menu.AlbumMenu
-import t4ulquiorra.xiaori.ui.menu.SelectionSongMenu
-import t4ulquiorra.xiaori.ui.menu.SongMenu
-import t4ulquiorra.xiaori.ui.menu.YouTubeAlbumMenu
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.ui.utils.fadingEdge
-import t4ulquiorra.xiaori.ui.player.CanvasArtworkPlayer
-import t4ulquiorra.xiaori.utils.listItemShape
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.viewmodels.AlbumViewModel
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalDownloadUtil
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.HideExplicitKey
+import com.xiaori.constants.HideVideoSongsKey
+import com.xiaori.constants.AlbumCanvasEnabledKey
+import com.xiaori.db.entities.Album
+import com.xiaori.playback.ExoDownloadService
+import com.xiaori.playback.queues.LocalAlbumRadio
+import com.xiaori.ui.component.AlbumGradient
+import com.xiaori.ui.component.ExpandableText
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.LinkSegment
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.component.NavigationTitle
+import com.xiaori.ui.component.SongListItem
+import com.xiaori.ui.component.YouTubeGridItem
+import com.xiaori.ui.menu.AlbumMenu
+import com.xiaori.ui.menu.SelectionSongMenu
+import com.xiaori.ui.menu.SongMenu
+import com.xiaori.ui.menu.YouTubeAlbumMenu
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.ui.utils.fadingEdge
+import com.xiaori.ui.player.CanvasArtworkPlayer
+import com.xiaori.utils.listItemShape
+import com.xiaori.utils.rememberPreference
+import com.xiaori.viewmodels.AlbumViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable

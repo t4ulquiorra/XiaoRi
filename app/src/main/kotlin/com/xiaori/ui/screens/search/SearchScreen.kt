@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.search
+package com.xiaori.ui.screens.search
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -74,22 +74,22 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.navigation.NavController
 import com.music.innertube.models.WatchEndpoint
 import com.music.innertube.utils.YouTubeUrlParser
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalIsPlayerExpanded
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.PauseSearchHistoryKey
-import t4ulquiorra.xiaori.constants.SearchSource
-import t4ulquiorra.xiaori.constants.SearchSourceKey
-import t4ulquiorra.xiaori.db.entities.SearchHistory
-import t4ulquiorra.xiaori.playback.queues.YouTubeQueue
-import t4ulquiorra.xiaori.ui.component.NavigationTitle
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.viewmodels.MoodAndGenresViewModel
-import t4ulquiorra.xiaori.viewmodels.ExploreViewModel
-import t4ulquiorra.xiaori.ui.screens.search.suggestions.SuggestionsTabContent
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalIsPlayerExpanded
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.PauseSearchHistoryKey
+import com.xiaori.constants.SearchSource
+import com.xiaori.constants.SearchSourceKey
+import com.xiaori.db.entities.SearchHistory
+import com.xiaori.playback.queues.YouTubeQueue
+import com.xiaori.ui.component.NavigationTitle
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.utils.rememberPreference
+import com.xiaori.viewmodels.MoodAndGenresViewModel
+import com.xiaori.viewmodels.ExploreViewModel
+import com.xiaori.ui.screens.search.suggestions.SuggestionsTabContent
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.net.URLEncoder
@@ -107,12 +107,12 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.component.YouTubeGridItem
-import t4ulquiorra.xiaori.ui.menu.YouTubeAlbumMenu
-import t4ulquiorra.xiaori.constants.GridThumbnailHeight
-import t4ulquiorra.xiaori.constants.GridItemsSizeKey
-import t4ulquiorra.xiaori.constants.GridItemSize
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.component.YouTubeGridItem
+import com.xiaori.ui.menu.YouTubeAlbumMenu
+import com.xiaori.constants.GridThumbnailHeight
+import com.xiaori.constants.GridItemsSizeKey
+import com.xiaori.constants.GridItemSize
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

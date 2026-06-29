@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.utils
+package com.xiaori.utils
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp

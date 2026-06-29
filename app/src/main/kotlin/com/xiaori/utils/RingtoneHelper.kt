@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.utils
+package com.xiaori.utils
 
 import android.content.ContentValues
 import android.content.Context
@@ -11,7 +11,7 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.provider.Settings
 import androidx.core.content.getSystemService
-import t4ulquiorra.xiaori.constants.AudioQuality
+import com.xiaori.constants.AudioQuality
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext

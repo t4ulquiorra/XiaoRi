@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.screens.ambient
+package com.xiaori.ui.screens.ambient
 
 import android.app.Activity
 import android.content.pm.ActivityInfo
@@ -36,9 +36,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.extensions.togglePlayPause
-import t4ulquiorra.xiaori.ui.player.InlineLyricsView
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.extensions.togglePlayPause
+import com.xiaori.ui.player.InlineLyricsView
 import kotlin.math.abs
 
 @Composable

@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.viewmodels
+package com.xiaori.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
@@ -9,17 +9,17 @@ import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import t4ulquiorra.xiaori.constants.HideVideoSongsKey
-import t4ulquiorra.xiaori.constants.PlaylistSongSortDescendingKey
-import t4ulquiorra.xiaori.constants.PlaylistSongSortType
-import t4ulquiorra.xiaori.constants.PlaylistSongSortTypeKey
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.db.entities.PlaylistSong
-import t4ulquiorra.xiaori.extensions.reversed
-import t4ulquiorra.xiaori.extensions.toEnum
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.utils.SyncUtils
-import t4ulquiorra.xiaori.utils.dataStore
+import com.xiaori.constants.HideVideoSongsKey
+import com.xiaori.constants.PlaylistSongSortDescendingKey
+import com.xiaori.constants.PlaylistSongSortType
+import com.xiaori.constants.PlaylistSongSortTypeKey
+import com.xiaori.db.MusicDatabase
+import com.xiaori.db.entities.PlaylistSong
+import com.xiaori.extensions.reversed
+import com.xiaori.extensions.toEnum
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.utils.SyncUtils
+import com.xiaori.utils.dataStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers

@@ -1,10 +1,10 @@
-package t4ulquiorra.xiaori.db.daos
+package com.xiaori.db.daos
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import t4ulquiorra.xiaori.db.entities.SpeedDialItem
+import com.xiaori.db.entities.SpeedDialItem
 import kotlinx.coroutines.flow.Flow
 
 @Dao

@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.recognition
+package com.xiaori.recognition
 
 import android.Manifest
 import android.annotation.SuppressLint

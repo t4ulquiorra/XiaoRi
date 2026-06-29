@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.utils
+package com.xiaori.utils
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -57,7 +57,7 @@ object AppleMusicAboutAlbum {
             }
 
             val searchUrl = "$AMP_BASE_URL/v1/catalog/$storefront/search"
-            val token = t4ulquiorra.xiaori.utils.AppleMusicTokenProvider.getToken()
+            val token = com.xiaori.utils.AppleMusicTokenProvider.getToken()
             val searchResponse = client.get(searchUrl) {
                 header("Authorization", "Bearer $token")
                 header("Origin", "https://music.apple.com")

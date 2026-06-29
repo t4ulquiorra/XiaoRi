@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.localmedia
+package com.xiaori.localmedia
 
 import android.content.ContentUris
 import android.content.Context
@@ -10,16 +10,16 @@ import android.provider.MediaStore
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.db.entities.AlbumArtistMap
-import t4ulquiorra.xiaori.db.entities.AlbumEntity
-import t4ulquiorra.xiaori.db.entities.ArtistEntity
-import t4ulquiorra.xiaori.db.entities.FormatEntity
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.db.entities.SongAlbumMap
-import t4ulquiorra.xiaori.db.entities.SongArtistMap
-import t4ulquiorra.xiaori.db.entities.SongEntity
+import com.xiaori.R
+import com.xiaori.db.MusicDatabase
+import com.xiaori.db.entities.AlbumArtistMap
+import com.xiaori.db.entities.AlbumEntity
+import com.xiaori.db.entities.ArtistEntity
+import com.xiaori.db.entities.FormatEntity
+import com.xiaori.db.entities.Song
+import com.xiaori.db.entities.SongAlbumMap
+import com.xiaori.db.entities.SongArtistMap
+import com.xiaori.db.entities.SongEntity
 import java.nio.charset.StandardCharsets
 import java.time.Instant
 import java.time.LocalDateTime

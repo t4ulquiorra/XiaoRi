@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.playback
+package com.xiaori.playback
 
 import android.app.Service
 import android.content.Context
@@ -11,11 +11,11 @@ import androidx.documentfile.provider.DocumentFile
 import com.arthenica.ffmpegkit.FFmpegKit
 import com.arthenica.ffmpegkit.ReturnCode
 import com.music.innertube.YouTube
-import t4ulquiorra.xiaori.constants.AudioQuality
-import t4ulquiorra.xiaori.constants.ExportingSongIdsKey
-import t4ulquiorra.xiaori.constants.ExportedSongIdsKey
-import t4ulquiorra.xiaori.utils.YTPlayerUtils
-import t4ulquiorra.xiaori.utils.dataStore
+import com.xiaori.constants.AudioQuality
+import com.xiaori.constants.ExportingSongIdsKey
+import com.xiaori.constants.ExportedSongIdsKey
+import com.xiaori.utils.YTPlayerUtils
+import com.xiaori.utils.dataStore
 import androidx.datastore.preferences.core.edit
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

@@ -1,10 +1,10 @@
 
 
-package t4ulquiorra.xiaori.viewmodels
+package com.xiaori.viewmodels
 
 import androidx.lifecycle.ViewModel
-import t4ulquiorra.xiaori.ui.screens.settings.DarkMode
-import t4ulquiorra.xiaori.ui.theme.DefaultThemeColor
+import com.xiaori.ui.screens.settings.DarkMode
+import com.xiaori.ui.theme.DefaultThemeColor
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.search.suggestions
+package com.xiaori.ui.screens.search.suggestions
 
 import android.util.Log
 import okhttp3.OkHttpClient

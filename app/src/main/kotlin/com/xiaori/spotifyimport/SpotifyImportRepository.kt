@@ -5,7 +5,7 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package t4ulquiorra.xiaori.spotifyimport
+package com.xiaori.spotifyimport
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
@@ -21,29 +21,29 @@ import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.sync.withPermit
 import kotlinx.coroutines.withContext
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.SpotifyAccessTokenExpiresAtKey
-import t4ulquiorra.xiaori.constants.SpotifyAccessTokenKey
-import t4ulquiorra.xiaori.constants.SpotifyAccountAvatarUrlKey
-import t4ulquiorra.xiaori.constants.SpotifyAccountNameKey
-import t4ulquiorra.xiaori.constants.SpotifySpDcKey
-import t4ulquiorra.xiaori.constants.SpotifySpKeyKey
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.db.entities.PlaylistEntity
-import t4ulquiorra.xiaori.db.entities.PlaylistSongMap
+import com.xiaori.R
+import com.xiaori.constants.SpotifyAccessTokenExpiresAtKey
+import com.xiaori.constants.SpotifyAccessTokenKey
+import com.xiaori.constants.SpotifyAccountAvatarUrlKey
+import com.xiaori.constants.SpotifyAccountNameKey
+import com.xiaori.constants.SpotifySpDcKey
+import com.xiaori.constants.SpotifySpKeyKey
+import com.xiaori.db.MusicDatabase
+import com.xiaori.db.entities.PlaylistEntity
+import com.xiaori.db.entities.PlaylistSongMap
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import t4ulquiorra.xiaori.models.MediaMetadata
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.spotify.Spotify
-import t4ulquiorra.xiaori.spotify.SpotifyAuth
-import t4ulquiorra.xiaori.spotify.SpotifyMapper
-import t4ulquiorra.xiaori.spotify.models.SpotifyPlaylist
-import t4ulquiorra.xiaori.spotify.models.SpotifyPlaylistTracksRef
-import t4ulquiorra.xiaori.spotify.models.SpotifyTrack
-import t4ulquiorra.xiaori.utils.clearWebAuthSession
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.reportException
+import com.xiaori.models.MediaMetadata
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.spotify.Spotify
+import com.xiaori.spotify.SpotifyAuth
+import com.xiaori.spotify.SpotifyMapper
+import com.xiaori.spotify.models.SpotifyPlaylist
+import com.xiaori.spotify.models.SpotifyPlaylistTracksRef
+import com.xiaori.spotify.models.SpotifyTrack
+import com.xiaori.utils.clearWebAuthSession
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.reportException
 import java.time.LocalDateTime
 import java.util.concurrent.atomic.AtomicInteger
 import javax.inject.Inject

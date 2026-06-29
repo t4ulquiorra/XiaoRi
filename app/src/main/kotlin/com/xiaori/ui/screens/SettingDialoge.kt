@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.screens
+package com.xiaori.ui.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -22,16 +22,16 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import coil3.compose.AsyncImage
 import com.music.innertube.utils.parseCookieString
-import t4ulquiorra.xiaori.BuildConfig
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.AccountEmailKey
-import t4ulquiorra.xiaori.constants.InnerTubeCookieKey
-import t4ulquiorra.xiaori.constants.UseLoginForBrowse
-import t4ulquiorra.xiaori.constants.YtmSyncKey
-import t4ulquiorra.xiaori.ui.component.Material3SettingsGroup
-import t4ulquiorra.xiaori.ui.component.Material3SettingsItem
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.viewmodels.HomeViewModel
+import com.xiaori.BuildConfig
+import com.xiaori.R
+import com.xiaori.constants.AccountEmailKey
+import com.xiaori.constants.InnerTubeCookieKey
+import com.xiaori.constants.UseLoginForBrowse
+import com.xiaori.constants.YtmSyncKey
+import com.xiaori.ui.component.Material3SettingsGroup
+import com.xiaori.ui.component.Material3SettingsItem
+import com.xiaori.utils.rememberPreference
+import com.xiaori.viewmodels.HomeViewModel
 import androidx.compose.ui.layout.ContentScale
 
 @Composable

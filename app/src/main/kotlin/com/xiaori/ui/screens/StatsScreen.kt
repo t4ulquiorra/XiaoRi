@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens
+package com.xiaori.ui.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
@@ -37,29 +37,29 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.music.innertube.models.WatchEndpoint
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.StatPeriod
-import t4ulquiorra.xiaori.extensions.toMediaItem
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.playback.queues.ListQueue
-import t4ulquiorra.xiaori.playback.queues.YouTubeQueue
-import t4ulquiorra.xiaori.ui.component.ChoiceChipsRow
-import t4ulquiorra.xiaori.ui.component.HideOnScrollFAB
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.LocalAlbumsGrid
-import t4ulquiorra.xiaori.ui.component.LocalArtistsGrid
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.component.LocalSongsGrid
-import t4ulquiorra.xiaori.ui.component.NavigationTitle
-import t4ulquiorra.xiaori.ui.menu.AlbumMenu
-import t4ulquiorra.xiaori.ui.menu.ArtistMenu
-import t4ulquiorra.xiaori.ui.menu.SongMenu
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.utils.joinByBullet
-import t4ulquiorra.xiaori.utils.makeTimeString
-import t4ulquiorra.xiaori.viewmodels.StatsViewModel
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.StatPeriod
+import com.xiaori.extensions.toMediaItem
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.playback.queues.ListQueue
+import com.xiaori.playback.queues.YouTubeQueue
+import com.xiaori.ui.component.ChoiceChipsRow
+import com.xiaori.ui.component.HideOnScrollFAB
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.LocalAlbumsGrid
+import com.xiaori.ui.component.LocalArtistsGrid
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.component.LocalSongsGrid
+import com.xiaori.ui.component.NavigationTitle
+import com.xiaori.ui.menu.AlbumMenu
+import com.xiaori.ui.menu.ArtistMenu
+import com.xiaori.ui.menu.SongMenu
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.utils.joinByBullet
+import com.xiaori.utils.makeTimeString
+import com.xiaori.viewmodels.StatsViewModel
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 

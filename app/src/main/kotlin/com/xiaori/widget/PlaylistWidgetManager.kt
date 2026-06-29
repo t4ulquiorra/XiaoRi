@@ -3,7 +3,7 @@
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package t4ulquiorra.xiaori.widget
+package com.xiaori.widget
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -25,11 +25,11 @@ import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.toBitmap
-import t4ulquiorra.xiaori.MainActivity
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.db.entities.Playlist
-import t4ulquiorra.xiaori.di.ApplicationScope
+import com.xiaori.MainActivity
+import com.xiaori.R
+import com.xiaori.db.MusicDatabase
+import com.xiaori.db.entities.Playlist
+import com.xiaori.di.ApplicationScope
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
@@ -618,7 +618,7 @@ class PlaylistWidgetManager @Inject constructor(
 
     private fun getOpenTargetIntent(item: QuickPick): PendingIntent {
         val intent = Intent(context, MainActivity::class.java).apply {
-            action = "t4ulquiorra.xiaori.action.OPEN_WIDGET_TARGET"
+            action = "com.xiaori.action.OPEN_WIDGET_TARGET"
             putExtra("extra_widget_target_type", item.targetType)
             putExtra("extra_widget_target_id", item.targetId)
         }

@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.component
+package com.xiaori.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -26,8 +26,8 @@ import androidx.compose.ui.unit.dp
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.YTItem
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.ThumbnailCornerRadius
+import com.xiaori.R
+import com.xiaori.constants.ThumbnailCornerRadius
 
 @Composable
 fun SpeedDialGridItem(

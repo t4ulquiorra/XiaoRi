@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.viewmodels
+package com.xiaori.viewmodels
 
 import android.content.Context
 import androidx.compose.runtime.getValue
@@ -14,15 +14,15 @@ import com.music.innertube.models.filterExplicit
 import com.music.innertube.models.filterVideoSongs
 import com.music.innertube.models.filterYoutubeShorts
 import com.music.innertube.pages.ArtistPage
-import t4ulquiorra.xiaori.constants.HideExplicitKey
-import t4ulquiorra.xiaori.constants.HideVideoSongsKey
-import t4ulquiorra.xiaori.constants.HideYoutubeShortsKey
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.extensions.filterExplicit
-import t4ulquiorra.xiaori.extensions.filterExplicitAlbums
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
-import t4ulquiorra.xiaori.utils.reportException
+import com.xiaori.constants.HideExplicitKey
+import com.xiaori.constants.HideVideoSongsKey
+import com.xiaori.constants.HideYoutubeShortsKey
+import com.xiaori.db.MusicDatabase
+import com.xiaori.extensions.filterExplicit
+import com.xiaori.extensions.filterExplicitAlbums
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
+import com.xiaori.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -33,8 +33,8 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import t4ulquiorra.xiaori.extensions.filterVideoSongs as filterVideoSongsLocal
-import t4ulquiorra.xiaori.artistvideo.ArtistVideoCanvasProvider
+import com.xiaori.extensions.filterVideoSongs as filterVideoSongsLocal
+import com.xiaori.artistvideo.ArtistVideoCanvasProvider
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 

@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.constants
+package com.xiaori.constants
 
 enum class LibraryFilter {
     SONGS,

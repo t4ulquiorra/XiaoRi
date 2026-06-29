@@ -1,12 +1,12 @@
 
 
-package t4ulquiorra.xiaori.lyrics
+package com.xiaori.lyrics
 
 import android.content.Context
 import com.music.youlyplus.YouLyPlus
-import t4ulquiorra.xiaori.constants.EnableYouLyPlusKey
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
+import com.xiaori.constants.EnableYouLyPlusKey
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
 
 object YouLyPlusLyricsProvider : LyricsProvider {
     override val name = "YouLyPlus"

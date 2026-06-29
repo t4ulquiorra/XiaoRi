@@ -1,10 +1,10 @@
-package t4ulquiorra.xiaori.lyrics
+package com.xiaori.lyrics
 
 import android.content.Context
 import com.xiaori.unison.Unison
-import t4ulquiorra.xiaori.constants.UnisonLyricsEnabledKey
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
+import com.xiaori.constants.UnisonLyricsEnabledKey
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
 
 object UnisonLyricsProvider : LyricsProvider {
     override val name: String = "Unison"

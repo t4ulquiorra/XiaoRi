@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.constants
+package com.xiaori.constants
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring

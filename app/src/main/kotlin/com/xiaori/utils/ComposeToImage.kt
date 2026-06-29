@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.utils
+package com.xiaori.utils
 
 import android.content.ContentValues
 import android.content.Context
@@ -29,8 +29,8 @@ import coil3.ImageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.ui.component.LyricsBackgroundStyle
+import com.xiaori.R
+import com.xiaori.ui.component.LyricsBackgroundStyle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File

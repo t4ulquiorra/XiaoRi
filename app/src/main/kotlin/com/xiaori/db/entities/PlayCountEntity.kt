@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.db.entities
+package com.xiaori.db.entities
 
 import androidx.compose.runtime.Immutable
 import androidx.room.Entity

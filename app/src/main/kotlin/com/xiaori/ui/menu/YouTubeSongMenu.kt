@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.menu
+package com.xiaori.ui.menu
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -56,37 +56,37 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalDownloadUtil
-import t4ulquiorra.xiaori.LocalListenTogetherManager
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.LocalSyncUtils
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.EnableExportAsMp3Key
-import t4ulquiorra.xiaori.constants.ExportDirectoryUriKey
-import t4ulquiorra.xiaori.constants.ExportedSongIdsKey
-import t4ulquiorra.xiaori.constants.ExportingSongIdsKey
-import t4ulquiorra.xiaori.constants.ListItemHeight
-import t4ulquiorra.xiaori.constants.ListThumbnailSize
-import t4ulquiorra.xiaori.constants.ThumbnailCornerRadius
-import t4ulquiorra.xiaori.db.entities.SpeedDialItem
-import t4ulquiorra.xiaori.db.entities.SongEntity
-import t4ulquiorra.xiaori.extensions.toMediaItem
-import t4ulquiorra.xiaori.models.MediaMetadata
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.playback.ExoDownloadService
-import t4ulquiorra.xiaori.playback.queues.YouTubeQueue
-import t4ulquiorra.xiaori.ui.component.ListDialog
-import t4ulquiorra.xiaori.ui.component.LocalBottomSheetPageState
-import t4ulquiorra.xiaori.ui.component.Material3MenuGroup
-import t4ulquiorra.xiaori.ui.component.Material3MenuItemData
-import t4ulquiorra.xiaori.ui.component.NewAction
-import t4ulquiorra.xiaori.ui.component.NewActionGrid
-import t4ulquiorra.xiaori.ui.utils.ShowMediaInfo
-import t4ulquiorra.xiaori.ui.utils.resize
-import t4ulquiorra.xiaori.utils.joinByBullet
-import t4ulquiorra.xiaori.utils.makeTimeString
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalDownloadUtil
+import com.xiaori.LocalListenTogetherManager
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.LocalSyncUtils
+import com.xiaori.R
+import com.xiaori.constants.EnableExportAsMp3Key
+import com.xiaori.constants.ExportDirectoryUriKey
+import com.xiaori.constants.ExportedSongIdsKey
+import com.xiaori.constants.ExportingSongIdsKey
+import com.xiaori.constants.ListItemHeight
+import com.xiaori.constants.ListThumbnailSize
+import com.xiaori.constants.ThumbnailCornerRadius
+import com.xiaori.db.entities.SpeedDialItem
+import com.xiaori.db.entities.SongEntity
+import com.xiaori.extensions.toMediaItem
+import com.xiaori.models.MediaMetadata
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.playback.ExoDownloadService
+import com.xiaori.playback.queues.YouTubeQueue
+import com.xiaori.ui.component.ListDialog
+import com.xiaori.ui.component.LocalBottomSheetPageState
+import com.xiaori.ui.component.Material3MenuGroup
+import com.xiaori.ui.component.Material3MenuItemData
+import com.xiaori.ui.component.NewAction
+import com.xiaori.ui.component.NewActionGrid
+import com.xiaori.ui.utils.ShowMediaInfo
+import com.xiaori.ui.utils.resize
+import com.xiaori.utils.joinByBullet
+import com.xiaori.utils.makeTimeString
+import com.xiaori.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -108,7 +108,7 @@ fun YouTubeSongMenu(
     val coroutineScope = rememberCoroutineScope()
     val syncUtils = LocalSyncUtils.current
     val listenTogetherManager = LocalListenTogetherManager.current
-    val ringtoneViewModel = t4ulquiorra.xiaori.LocalRingtoneViewModel.current
+    val ringtoneViewModel = com.xiaori.LocalRingtoneViewModel.current
     val isPinned by database.speedDialDao.isPinned(song.id).collectAsState(initial = false)
     val artists = remember {
         song.artists.mapNotNull {
@@ -345,7 +345,7 @@ fun YouTubeSongMenu(
                             },
                             onClick = {
                                 val durationMs = if (song.duration != null && song.duration!! > 0) song.duration!! * 1000L else 180000L
-                                val trackInfo = t4ulquiorra.xiaori.listentogether.TrackInfo(
+                                val trackInfo = com.xiaori.listentogether.TrackInfo(
                                     id = song.id,
                                     title = song.title,
                                     artist = artists.joinToString(", ") { it.name },
@@ -609,7 +609,7 @@ fun YouTubeSongMenu(
                                         onDismiss()
                                     } else {
                                         onDismiss()
-                                        t4ulquiorra.xiaori.playback.AudioExportService.start(
+                                        com.xiaori.playback.AudioExportService.start(
                                             context = context,
                                             songId = song.id,
                                             songTitle = song.title,

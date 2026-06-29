@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.search.suggestions
+package com.xiaori.ui.screens.search.suggestions
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -36,10 +36,10 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import coil3.compose.SubcomposeAsyncImage
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.SuggestionRegionKey
-import t4ulquiorra.xiaori.constants.SuggestionRegionSlugToName
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.R
+import com.xiaori.constants.SuggestionRegionKey
+import com.xiaori.constants.SuggestionRegionSlugToName
+import com.xiaori.utils.rememberPreference
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
@@ -71,7 +71,7 @@ fun SuggestionsTabContent(
     val isLoading by viewModel.isLoading.collectAsState()
     val isManualLoading by viewModel.isManualLoading.collectAsState()
     val uriHandler = androidx.compose.ui.platform.LocalUriHandler.current
-    val playerConnection = t4ulquiorra.xiaori.LocalPlayerConnection.current
+    val playerConnection = com.xiaori.LocalPlayerConnection.current
     val context = LocalContext.current
     val (regionCode, _) = rememberPreference(
         key = SuggestionRegionKey,

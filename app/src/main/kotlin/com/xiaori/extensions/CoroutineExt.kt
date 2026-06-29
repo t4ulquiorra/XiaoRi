@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.extensions
+package com.xiaori.extensions
 
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope

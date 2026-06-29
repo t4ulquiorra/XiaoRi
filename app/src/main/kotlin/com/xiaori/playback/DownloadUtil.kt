@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.playback
+package com.xiaori.playback
 
 import coil3.SingletonImageLoader
 import coil3.request.CachePolicy
@@ -19,22 +19,22 @@ import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadManager
 import androidx.media3.exoplayer.offline.DownloadNotificationHelper
 import com.music.innertube.YouTube
-import t4ulquiorra.xiaori.constants.AudioQuality
-import t4ulquiorra.xiaori.constants.AudioQualityKey
-import t4ulquiorra.xiaori.constants.IpVersionKey
+import com.xiaori.constants.AudioQuality
+import com.xiaori.constants.AudioQualityKey
+import com.xiaori.constants.IpVersionKey
 import com.music.innertube.models.IpVersion
 import okhttp3.Dns
 import java.net.InetAddress
 import java.net.Inet4Address
 import java.net.Inet6Address
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.db.entities.FormatEntity
-import t4ulquiorra.xiaori.db.entities.SongEntity
-import t4ulquiorra.xiaori.di.DownloadCache
-import t4ulquiorra.xiaori.di.PlayerCache
-import t4ulquiorra.xiaori.ui.utils.resize
-import t4ulquiorra.xiaori.utils.YTPlayerUtils
-import t4ulquiorra.xiaori.utils.enumPreference
+import com.xiaori.db.MusicDatabase
+import com.xiaori.db.entities.FormatEntity
+import com.xiaori.db.entities.SongEntity
+import com.xiaori.di.DownloadCache
+import com.xiaori.di.PlayerCache
+import com.xiaori.ui.utils.resize
+import com.xiaori.utils.YTPlayerUtils
+import com.xiaori.utils.enumPreference
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -65,7 +65,7 @@ constructor(
     @PlayerCache val playerCache: SimpleCache,
 ) {
     private val connectivityManager = context.getSystemService<ConnectivityManager>()!!
-    private val downloadQuality by enumPreference(context, t4ulquiorra.xiaori.constants.DownloadQualityKey, t4ulquiorra.xiaori.constants.DownloadQuality.YOUTUBE)
+    private val downloadQuality by enumPreference(context, com.xiaori.constants.DownloadQualityKey, com.xiaori.constants.DownloadQuality.YOUTUBE)
     private val ipVersion by enumPreference(context, IpVersionKey, IpVersion.AUTO)
     private val songUrlCache = HashMap<String, Pair<String, Long>>()
 
@@ -108,8 +108,8 @@ constructor(
                 YTPlayerUtils.playerResponseForPlayback(
                     mediaId,
                     audioQuality = when (downloadQuality) {
-                        t4ulquiorra.xiaori.constants.DownloadQuality.LOSSLESS -> AudioQuality.LOSSLESS
-                        t4ulquiorra.xiaori.constants.DownloadQuality.SAAVN -> AudioQuality.SAAVN
+                        com.xiaori.constants.DownloadQuality.LOSSLESS -> AudioQuality.LOSSLESS
+                        com.xiaori.constants.DownloadQuality.SAAVN -> AudioQuality.SAAVN
                         else -> AudioQuality.OPUS
                     },
                     connectivityManager = connectivityManager,

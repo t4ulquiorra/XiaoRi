@@ -3,7 +3,7 @@
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package t4ulquiorra.xiaori.widget
+package com.xiaori.widget
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -25,11 +25,11 @@ import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.toBitmap
-import t4ulquiorra.xiaori.MainActivity
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.db.DatabaseDao
-import t4ulquiorra.xiaori.db.entities.RecognitionHistory
-import t4ulquiorra.xiaori.recognition.MusicRecognitionService
+import com.xiaori.MainActivity
+import com.xiaori.R
+import com.xiaori.db.DatabaseDao
+import com.xiaori.db.entities.RecognitionHistory
+import com.xiaori.recognition.MusicRecognitionService
 import com.music.shazamkit.models.RecognitionStatus
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
@@ -330,8 +330,8 @@ class MusicRecognizerWidgetService : Service() {
     // ─── Constants ────────────────────────────────────────────────────────────
 
     companion object {
-        const val ACTION_START_RECOGNITION = "t4ulquiorra.xiaori.widget.recognizer.START"
-        const val ACTION_STOP_RECOGNITION = "t4ulquiorra.xiaori.widget.recognizer.STOP"
+        const val ACTION_START_RECOGNITION = "com.xiaori.widget.recognizer.START"
+        const val ACTION_STOP_RECOGNITION = "com.xiaori.widget.recognizer.STOP"
 
         const val PREFS_NAME = "recognizer_widget_prefs"
         const val PREF_STATE = "state"

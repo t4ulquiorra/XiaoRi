@@ -1,9 +1,9 @@
 
 
-package t4ulquiorra.xiaori.viewmodels
+package com.xiaori.viewmodels
 
 import androidx.lifecycle.ViewModel
-import t4ulquiorra.xiaori.listentogether.ListenTogetherManager
+import com.xiaori.listentogether.ListenTogetherManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

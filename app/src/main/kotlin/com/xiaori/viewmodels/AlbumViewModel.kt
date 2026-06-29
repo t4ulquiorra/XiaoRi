@@ -1,14 +1,14 @@
 
 
-package t4ulquiorra.xiaori.viewmodels
+package com.xiaori.viewmodels
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
 import com.music.innertube.models.AlbumItem
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.utils.reportException
+import com.xiaori.db.MusicDatabase
+import com.xiaori.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -16,8 +16,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.Dispatchers
-import t4ulquiorra.xiaori.utils.Wikipedia
-import t4ulquiorra.xiaori.utils.AppleMusicAboutAlbum
+import com.xiaori.utils.Wikipedia
+import com.xiaori.utils.AppleMusicAboutAlbum
 import javax.inject.Inject
 
 @HiltViewModel

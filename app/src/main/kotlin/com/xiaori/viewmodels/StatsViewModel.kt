@@ -1,17 +1,17 @@
 
 
-package t4ulquiorra.xiaori.viewmodels
+package com.xiaori.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
-import t4ulquiorra.xiaori.constants.HideVideoSongsKey
-import t4ulquiorra.xiaori.constants.statToPeriod
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.ui.screens.OptionStats
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.reportException
+import com.xiaori.constants.HideVideoSongsKey
+import com.xiaori.constants.statToPeriod
+import com.xiaori.db.MusicDatabase
+import com.xiaori.ui.screens.OptionStats
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.ExperimentalCoroutinesApi

@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.settings.integrations
+package com.xiaori.ui.screens.settings.integrations
 
 import androidx.compose.foundation.layout.Column
 
@@ -23,12 +23,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.IntegrationCard
-import t4ulquiorra.xiaori.ui.component.IntegrationCardItem
-import t4ulquiorra.xiaori.ui.utils.backToMain
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.IntegrationCard
+import com.xiaori.ui.component.IntegrationCardItem
+import com.xiaori.ui.utils.backToMain
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -38,8 +38,8 @@ fun IntegrationScreen(
 highlightKey: String? = null) {
     val context = androidx.compose.ui.platform.LocalContext.current
 
-    val (listenBrainzEnabled, onListenBrainzEnabledChange) = t4ulquiorra.xiaori.utils.rememberPreference(t4ulquiorra.xiaori.constants.ListenBrainzEnabledKey, false)
-    val (listenBrainzToken, onListenBrainzTokenChange) = t4ulquiorra.xiaori.utils.rememberPreference(t4ulquiorra.xiaori.constants.ListenBrainzTokenKey, "")
+    val (listenBrainzEnabled, onListenBrainzEnabledChange) = com.xiaori.utils.rememberPreference(com.xiaori.constants.ListenBrainzEnabledKey, false)
+    val (listenBrainzToken, onListenBrainzTokenChange) = com.xiaori.utils.rememberPreference(com.xiaori.constants.ListenBrainzTokenKey, "")
 
     var showListenBrainzTokenEditor = androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
 
@@ -52,7 +52,7 @@ highlightKey: String? = null) {
         Spacer(Modifier.windowInsetsPadding(LocalPlayerAwareWindowInsets.current.only(WindowInsetsSides.Top)))
         Spacer(modifier = Modifier.padding(top = 16.dp))
 
-        t4ulquiorra.xiaori.ui.component.SwitchPreference(
+        com.xiaori.ui.component.SwitchPreference(
             title = { Text(stringResource(R.string.listenbrainz_scrobbling)) },
             description = stringResource(R.string.listenbrainz_scrobbling_description),
             icon = { Icon(painterResource(R.drawable.token), null) },
@@ -60,7 +60,7 @@ highlightKey: String? = null) {
             onCheckedChange = onListenBrainzEnabledChange,
         )
 
-        t4ulquiorra.xiaori.ui.component.PreferenceEntry(
+        com.xiaori.ui.component.PreferenceEntry(
             title = {
                 Text(
                     if (listenBrainzToken.isBlank()) {
@@ -93,7 +93,7 @@ highlightKey: String? = null) {
     )
 
     if (showListenBrainzTokenEditor.value) {
-        t4ulquiorra.xiaori.ui.component.TextFieldDialog(
+        com.xiaori.ui.component.TextFieldDialog(
             initialTextFieldValue =
                 androidx.compose.ui.text.input
                     .TextFieldValue(listenBrainzToken),
@@ -108,7 +108,7 @@ highlightKey: String? = null) {
                 it.isNotEmpty()
             },
             extraContent = {
-                t4ulquiorra.xiaori.ui.component.InfoLabel(text = stringResource(R.string.listenbrainz_scrobbling_description))
+                com.xiaori.ui.component.InfoLabel(text = stringResource(R.string.listenbrainz_scrobbling_description))
             },
         )
     }

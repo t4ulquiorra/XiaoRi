@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.viewmodels
+package com.xiaori.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,11 +11,11 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import t4ulquiorra.xiaori.localmedia.LocalSongScanConfig
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.localmedia.LocalSongScanSummary
-import t4ulquiorra.xiaori.localmedia.LocalSongScanner
-import t4ulquiorra.xiaori.utils.reportException
+import com.xiaori.localmedia.LocalSongScanConfig
+import com.xiaori.db.MusicDatabase
+import com.xiaori.localmedia.LocalSongScanSummary
+import com.xiaori.localmedia.LocalSongScanner
+import com.xiaori.utils.reportException
 import javax.inject.Inject
 
 @HiltViewModel

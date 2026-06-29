@@ -11,7 +11,7 @@ of the Flow project. Any use of this code in other projects must
 explicitly credit "Flow Android Client" and link back to the original repository.
 */
 
-package t4ulquiorra.xiaori.engine.brain
+package com.xiaori.engine.brain
 
 import java.util.Calendar
 
@@ -168,7 +168,7 @@ enum class QueryStrategy {
 // ── Internal Tracking Structures ──
 
 internal data class ScoredMediaMetadata(
-    val track: t4ulquiorra.xiaori.models.MediaMetadata,
+    val track: com.xiaori.models.MediaMetadata,
     var score: Double,
     val vector: ContentVector
 )

@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.xiaori
+package com.xiaori.xiaori
 
 import android.content.Context
 import android.media.AudioDeviceInfo

@@ -1,12 +1,12 @@
-package t4ulquiorra.xiaori.db.daos
+package com.xiaori.db.daos
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import t4ulquiorra.xiaori.db.entities.BrainActivityLogEntity
-import t4ulquiorra.xiaori.db.entities.PlayEventEntity
-import t4ulquiorra.xiaori.db.entities.TasteProfileEntity
+import com.xiaori.db.entities.BrainActivityLogEntity
+import com.xiaori.db.entities.PlayEventEntity
+import com.xiaori.db.entities.TasteProfileEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

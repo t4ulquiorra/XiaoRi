@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.db.entities
+package com.xiaori.db.entities
 
 sealed class LocalItem {
     abstract val id: String

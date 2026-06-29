@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens
+package com.xiaori.ui.screens
 
 import android.app.Activity
 import androidx.compose.animation.core.tween
@@ -20,48 +20,48 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.dialog
 import androidx.navigation.navArgument
-import t4ulquiorra.xiaori.constants.DarkModeKey
-import t4ulquiorra.xiaori.constants.PureBlackKey
-import t4ulquiorra.xiaori.ui.screens.artist.ArtistAlbumsScreen
-import t4ulquiorra.xiaori.ui.screens.artist.ArtistItemsScreen
-import t4ulquiorra.xiaori.ui.screens.artist.ArtistScreen
-import t4ulquiorra.xiaori.ui.screens.artist.ArtistSongsScreen
-import t4ulquiorra.xiaori.ui.screens.equalizer.EqScreen
-import t4ulquiorra.xiaori.ui.screens.library.LibraryScreen
-import t4ulquiorra.xiaori.ui.screens.library.LocalSongScreen
-import t4ulquiorra.xiaori.ui.screens.playlist.AutoPlaylistScreen
-import t4ulquiorra.xiaori.ui.screens.playlist.CachePlaylistScreen
-import t4ulquiorra.xiaori.ui.screens.playlist.LocalPlaylistScreen
-import t4ulquiorra.xiaori.ui.screens.playlist.OnlinePlaylistScreen
-import t4ulquiorra.xiaori.ui.screens.playlist.TopPlaylistScreen
-import t4ulquiorra.xiaori.ui.screens.search.OnlineSearchResult
-import t4ulquiorra.xiaori.ui.screens.search.SearchScreen
-import t4ulquiorra.xiaori.ui.screens.settings.AboutScreen
-import t4ulquiorra.xiaori.ui.screens.settings.AppearanceSettings
-import t4ulquiorra.xiaori.ui.screens.settings.BackupAndRestore
-import t4ulquiorra.xiaori.ui.screens.settings.ContentSettings
-import t4ulquiorra.xiaori.ui.screens.settings.UptimeScreen
-import t4ulquiorra.xiaori.ui.screens.settings.DarkMode
-import t4ulquiorra.xiaori.ui.screens.settings.PlayerSettings
-import t4ulquiorra.xiaori.ui.screens.settings.PrivacySettings
-import t4ulquiorra.xiaori.ui.screens.settings.RomanizationSettings
-import t4ulquiorra.xiaori.ui.screens.settings.SettingsScreen
-import t4ulquiorra.xiaori.ui.screens.settings.AccountSettingsScreen
-import t4ulquiorra.xiaori.ui.screens.settings.StorageSettings
-import t4ulquiorra.xiaori.ui.screens.settings.ThemeScreen
-import t4ulquiorra.xiaori.ui.screens.settings.AiSettings
-import t4ulquiorra.xiaori.ui.screens.settings.integrations.IntegrationScreen
-import t4ulquiorra.xiaori.ui.screens.settings.integrations.ListenTogetherSettings
-import t4ulquiorra.xiaori.ui.screens.recognition.RecognitionScreen
-import t4ulquiorra.xiaori.ui.screens.recognition.RecognitionHistoryScreen
-import t4ulquiorra.xiaori.ui.screens.settings.UpdateSettings
-import t4ulquiorra.xiaori.xiaori.updater.UpdateScreen
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.xiaori.changelog.ChangelogScreen
-import t4ulquiorra.xiaori.xiaori.commitscreen.CommitScreen
-import t4ulquiorra.xiaori.ui.screens.equalizer.axion.AxionEqScreen
-import t4ulquiorra.xiaori.ui.screens.ambient.AmbientModeScreen
+import com.xiaori.constants.DarkModeKey
+import com.xiaori.constants.PureBlackKey
+import com.xiaori.ui.screens.artist.ArtistAlbumsScreen
+import com.xiaori.ui.screens.artist.ArtistItemsScreen
+import com.xiaori.ui.screens.artist.ArtistScreen
+import com.xiaori.ui.screens.artist.ArtistSongsScreen
+import com.xiaori.ui.screens.equalizer.EqScreen
+import com.xiaori.ui.screens.library.LibraryScreen
+import com.xiaori.ui.screens.library.LocalSongScreen
+import com.xiaori.ui.screens.playlist.AutoPlaylistScreen
+import com.xiaori.ui.screens.playlist.CachePlaylistScreen
+import com.xiaori.ui.screens.playlist.LocalPlaylistScreen
+import com.xiaori.ui.screens.playlist.OnlinePlaylistScreen
+import com.xiaori.ui.screens.playlist.TopPlaylistScreen
+import com.xiaori.ui.screens.search.OnlineSearchResult
+import com.xiaori.ui.screens.search.SearchScreen
+import com.xiaori.ui.screens.settings.AboutScreen
+import com.xiaori.ui.screens.settings.AppearanceSettings
+import com.xiaori.ui.screens.settings.BackupAndRestore
+import com.xiaori.ui.screens.settings.ContentSettings
+import com.xiaori.ui.screens.settings.UptimeScreen
+import com.xiaori.ui.screens.settings.DarkMode
+import com.xiaori.ui.screens.settings.PlayerSettings
+import com.xiaori.ui.screens.settings.PrivacySettings
+import com.xiaori.ui.screens.settings.RomanizationSettings
+import com.xiaori.ui.screens.settings.SettingsScreen
+import com.xiaori.ui.screens.settings.AccountSettingsScreen
+import com.xiaori.ui.screens.settings.StorageSettings
+import com.xiaori.ui.screens.settings.ThemeScreen
+import com.xiaori.ui.screens.settings.AiSettings
+import com.xiaori.ui.screens.settings.integrations.IntegrationScreen
+import com.xiaori.ui.screens.settings.integrations.ListenTogetherSettings
+import com.xiaori.ui.screens.recognition.RecognitionScreen
+import com.xiaori.ui.screens.recognition.RecognitionHistoryScreen
+import com.xiaori.ui.screens.settings.UpdateSettings
+import com.xiaori.xiaori.updater.UpdateScreen
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.utils.rememberPreference
+import com.xiaori.xiaori.changelog.ChangelogScreen
+import com.xiaori.xiaori.commitscreen.CommitScreen
+import com.xiaori.ui.screens.equalizer.axion.AxionEqScreen
+import com.xiaori.ui.screens.ambient.AmbientModeScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 fun NavGraphBuilder.navigationBuilder(
@@ -328,10 +328,10 @@ fun NavGraphBuilder.navigationBuilder(
         route = "settings/echo_brain?highlightKey={highlightKey}",
         arguments = listOf(navArgument("highlightKey") { type = NavType.StringType; nullable = true })
     ) { backStackEntry ->
-        t4ulquiorra.xiaori.ui.screens.settings.EchoBrainScreen(
+        com.xiaori.ui.screens.settings.EchoBrainScreen(
             navController, 
-            (activity as t4ulquiorra.xiaori.MainActivity).echoBrainEngine, 
-            (activity as t4ulquiorra.xiaori.MainActivity).echoBrainRepository,
+            (activity as com.xiaori.MainActivity).echoBrainEngine, 
+            (activity as com.xiaori.MainActivity).echoBrainRepository,
             highlightKey = backStackEntry.arguments?.getString("highlightKey")
         )
     }
@@ -433,7 +433,7 @@ fun NavGraphBuilder.navigationBuilder(
     }
 
     composable("settings/discord") {
-        t4ulquiorra.xiaori.ui.screens.settings.DiscordSettings(navController, scrollBehavior)
+        com.xiaori.ui.screens.settings.DiscordSettings(navController, scrollBehavior)
     }
 
     composable("settings/discord/experimental") {

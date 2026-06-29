@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.menu
+package com.xiaori.ui.menu
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -41,23 +41,23 @@ import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import com.music.innertube.YouTube
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalDownloadUtil
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.LocalSyncUtils
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.db.entities.PlaylistSongMap
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.extensions.toMediaItem
-import t4ulquiorra.xiaori.models.MediaMetadata
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.playback.ExoDownloadService
-import t4ulquiorra.xiaori.playback.queues.ListQueue
-import t4ulquiorra.xiaori.ui.component.DefaultDialog
-import t4ulquiorra.xiaori.ui.component.Material3MenuGroup
-import t4ulquiorra.xiaori.ui.component.Material3MenuItemData
-import t4ulquiorra.xiaori.ui.component.NewAction
-import t4ulquiorra.xiaori.ui.component.NewActionGrid
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalDownloadUtil
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.LocalSyncUtils
+import com.xiaori.R
+import com.xiaori.db.entities.PlaylistSongMap
+import com.xiaori.db.entities.Song
+import com.xiaori.extensions.toMediaItem
+import com.xiaori.models.MediaMetadata
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.playback.ExoDownloadService
+import com.xiaori.playback.queues.ListQueue
+import com.xiaori.ui.component.DefaultDialog
+import com.xiaori.ui.component.Material3MenuGroup
+import com.xiaori.ui.component.Material3MenuItemData
+import com.xiaori.ui.component.NewAction
+import com.xiaori.ui.component.NewActionGrid
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -78,7 +78,7 @@ fun SelectionSongMenu(
     val coroutineScope = rememberCoroutineScope()
     val playerConnection = LocalPlayerConnection.current ?: return
     val syncUtils = LocalSyncUtils.current
-    val listenTogetherManager = t4ulquiorra.xiaori.LocalListenTogetherManager.current
+    val listenTogetherManager = com.xiaori.LocalListenTogetherManager.current
     val isGuest = listenTogetherManager?.isInRoom == true && listenTogetherManager.isHost == false
 
     val allInLibrary by remember {
@@ -533,7 +533,7 @@ fun SelectionMediaMetadataMenu(
     val downloadUtil = LocalDownloadUtil.current
     val coroutineScope = rememberCoroutineScope()
     val playerConnection = LocalPlayerConnection.current ?: return
-    val listenTogetherManager = t4ulquiorra.xiaori.LocalListenTogetherManager.current
+    val listenTogetherManager = com.xiaori.LocalListenTogetherManager.current
     val isGuest = listenTogetherManager?.isInRoom == true && listenTogetherManager.isHost == false
 
     val allLiked by remember(songSelection) {

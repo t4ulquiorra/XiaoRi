@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.artist
+package com.xiaori.ui.screens.artist
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
@@ -34,27 +34,27 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.ArtistSongSortDescendingKey
-import t4ulquiorra.xiaori.constants.ArtistSongSortType
-import t4ulquiorra.xiaori.constants.ArtistSongSortTypeKey
-import t4ulquiorra.xiaori.constants.CONTENT_TYPE_HEADER
-import t4ulquiorra.xiaori.constants.HideExplicitKey
-import t4ulquiorra.xiaori.extensions.toMediaItem
-import t4ulquiorra.xiaori.playback.queues.ListQueue
-import t4ulquiorra.xiaori.ui.component.HideOnScrollFAB
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.component.SongListItem
-import t4ulquiorra.xiaori.ui.component.SortHeader
-import t4ulquiorra.xiaori.ui.menu.SongMenu
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.utils.listItemShape
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.viewmodels.ArtistSongsViewModel
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.ArtistSongSortDescendingKey
+import com.xiaori.constants.ArtistSongSortType
+import com.xiaori.constants.ArtistSongSortTypeKey
+import com.xiaori.constants.CONTENT_TYPE_HEADER
+import com.xiaori.constants.HideExplicitKey
+import com.xiaori.extensions.toMediaItem
+import com.xiaori.playback.queues.ListQueue
+import com.xiaori.ui.component.HideOnScrollFAB
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.component.SongListItem
+import com.xiaori.ui.component.SortHeader
+import com.xiaori.ui.menu.SongMenu
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.utils.listItemShape
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.utils.rememberPreference
+import com.xiaori.viewmodels.ArtistSongsViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable

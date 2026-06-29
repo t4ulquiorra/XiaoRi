@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.utils
+package com.xiaori.utils
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
@@ -11,19 +11,19 @@ import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.utils.completed
 import com.music.innertube.utils.parseCookieString
-import t4ulquiorra.xiaori.constants.InnerTubeCookieKey
-import t4ulquiorra.xiaori.constants.LastFMUseSendLikes
-import t4ulquiorra.xiaori.constants.LastFullSyncKey
-import t4ulquiorra.xiaori.constants.SYNC_COOLDOWN
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.db.entities.ArtistEntity
-import t4ulquiorra.xiaori.db.entities.PlaylistEntity
-import t4ulquiorra.xiaori.db.entities.PlaylistSongMap
-import t4ulquiorra.xiaori.db.entities.SongEntity
-import t4ulquiorra.xiaori.extensions.collectLatest
-import t4ulquiorra.xiaori.extensions.isInternetConnected
-import t4ulquiorra.xiaori.extensions.isSyncEnabled
-import t4ulquiorra.xiaori.models.toMediaMetadata
+import com.xiaori.constants.InnerTubeCookieKey
+import com.xiaori.constants.LastFMUseSendLikes
+import com.xiaori.constants.LastFullSyncKey
+import com.xiaori.constants.SYNC_COOLDOWN
+import com.xiaori.db.MusicDatabase
+import com.xiaori.db.entities.ArtistEntity
+import com.xiaori.db.entities.PlaylistEntity
+import com.xiaori.db.entities.PlaylistSongMap
+import com.xiaori.db.entities.SongEntity
+import com.xiaori.extensions.collectLatest
+import com.xiaori.extensions.isInternetConnected
+import com.xiaori.extensions.isSyncEnabled
+import com.xiaori.models.toMediaMetadata
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineExceptionHandler

@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.screens.equalizer
+package com.xiaori.ui.screens.equalizer
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -49,9 +49,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.eq.data.SavedEQProfile
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.eq.data.SavedEQProfile
 import timber.log.Timber
 
 

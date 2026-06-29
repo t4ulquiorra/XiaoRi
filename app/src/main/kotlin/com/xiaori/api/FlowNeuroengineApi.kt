@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.api
+package com.xiaori.api
 
 import retrofit2.http.Body
 import retrofit2.http.POST

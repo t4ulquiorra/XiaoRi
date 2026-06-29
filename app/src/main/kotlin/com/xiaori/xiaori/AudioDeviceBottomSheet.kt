@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 
-package t4ulquiorra.xiaori.xiaori
+package com.xiaori.xiaori
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -40,7 +40,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.runtime.key
-import t4ulquiorra.xiaori.xiaori.shapes.RoundedStarShape
+import com.xiaori.xiaori.shapes.RoundedStarShape
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -125,11 +125,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.constants.AudioQuality
-import t4ulquiorra.xiaori.constants.AudioQualityKey
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
+import com.xiaori.R
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.constants.AudioQuality
+import com.xiaori.constants.AudioQualityKey
+import com.xiaori.utils.rememberEnumPreference
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
@@ -841,8 +841,8 @@ fun AudioQualitySelector(context: Context) {
 @Composable
 fun DownloadQualitySelector() {
     val (downloadQuality, onDownloadQualityChange) = rememberEnumPreference(
-        key = t4ulquiorra.xiaori.constants.DownloadQualityKey,
-        defaultValue = t4ulquiorra.xiaori.constants.DownloadQuality.YOUTUBE
+        key = com.xiaori.constants.DownloadQualityKey,
+        defaultValue = com.xiaori.constants.DownloadQuality.YOUTUBE
     )
 
     Column(
@@ -863,8 +863,8 @@ fun DownloadQualitySelector() {
             "Lossless"
         )
         val selectedIndex = when (downloadQuality) {
-            t4ulquiorra.xiaori.constants.DownloadQuality.SAAVN -> 1
-            t4ulquiorra.xiaori.constants.DownloadQuality.LOSSLESS -> 2
+            com.xiaori.constants.DownloadQuality.SAAVN -> 1
+            com.xiaori.constants.DownloadQuality.LOSSLESS -> 2
             else -> 0
         }
 
@@ -881,9 +881,9 @@ fun DownloadQualitySelector() {
                     checked = selectedIndex == index,
                     onCheckedChange = {
                         val newQuality = when (index) {
-                            1 -> t4ulquiorra.xiaori.constants.DownloadQuality.SAAVN
-                            2 -> t4ulquiorra.xiaori.constants.DownloadQuality.LOSSLESS
-                            else -> t4ulquiorra.xiaori.constants.DownloadQuality.YOUTUBE
+                            1 -> com.xiaori.constants.DownloadQuality.SAAVN
+                            2 -> com.xiaori.constants.DownloadQuality.LOSSLESS
+                            else -> com.xiaori.constants.DownloadQuality.YOUTUBE
                         }
                         onDownloadQualityChange(newQuality)
                     },

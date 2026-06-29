@@ -1,20 +1,20 @@
 
 
-package t4ulquiorra.xiaori.viewmodels
+package com.xiaori.viewmodels
 
 import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import t4ulquiorra.xiaori.App
-import t4ulquiorra.xiaori.constants.AccountChannelHandleKey
-import t4ulquiorra.xiaori.constants.AccountEmailKey
-import t4ulquiorra.xiaori.constants.AccountNameKey
-import t4ulquiorra.xiaori.constants.DataSyncIdKey
-import t4ulquiorra.xiaori.constants.InnerTubeCookieKey
-import t4ulquiorra.xiaori.constants.VisitorDataKey
-import t4ulquiorra.xiaori.utils.SyncUtils
-import t4ulquiorra.xiaori.utils.dataStore
+import com.xiaori.App
+import com.xiaori.constants.AccountChannelHandleKey
+import com.xiaori.constants.AccountEmailKey
+import com.xiaori.constants.AccountNameKey
+import com.xiaori.constants.DataSyncIdKey
+import com.xiaori.constants.InnerTubeCookieKey
+import com.xiaori.constants.VisitorDataKey
+import com.xiaori.utils.SyncUtils
+import com.xiaori.utils.dataStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

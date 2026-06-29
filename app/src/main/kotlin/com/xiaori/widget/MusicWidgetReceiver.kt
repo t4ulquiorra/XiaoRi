@@ -3,7 +3,7 @@
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package t4ulquiorra.xiaori.widget
+package com.xiaori.widget
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
@@ -11,7 +11,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import t4ulquiorra.xiaori.playback.MusicService
+import com.xiaori.playback.MusicService
 
 class MusicWidgetReceiver : AppWidgetProvider() {
 
@@ -80,10 +80,10 @@ class MusicWidgetReceiver : AppWidgetProvider() {
     }
 
     companion object {
-        const val ACTION_PLAY_PAUSE = "t4ulquiorra.xiaori.widget.PLAY_PAUSE"
-        const val ACTION_LIKE = "t4ulquiorra.xiaori.widget.LIKE"
-        const val ACTION_NEXT = "t4ulquiorra.xiaori.widget.NEXT"
-        const val ACTION_PREVIOUS = "t4ulquiorra.xiaori.widget.PREVIOUS"
-        const val ACTION_UPDATE_WIDGET = "t4ulquiorra.xiaori.widget.UPDATE_WIDGET"
+        const val ACTION_PLAY_PAUSE = "com.xiaori.widget.PLAY_PAUSE"
+        const val ACTION_LIKE = "com.xiaori.widget.LIKE"
+        const val ACTION_NEXT = "com.xiaori.widget.NEXT"
+        const val ACTION_PREVIOUS = "com.xiaori.widget.PREVIOUS"
+        const val ACTION_UPDATE_WIDGET = "com.xiaori.widget.UPDATE_WIDGET"
     }
 }

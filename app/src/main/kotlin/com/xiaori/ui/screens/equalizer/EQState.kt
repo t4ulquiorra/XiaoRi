@@ -1,6 +1,6 @@
-package t4ulquiorra.xiaori.ui.screens.equalizer
+package com.xiaori.ui.screens.equalizer
 
-import t4ulquiorra.xiaori.eq.data.SavedEQProfile
+import com.xiaori.eq.data.SavedEQProfile
 
 
 data class EQState(

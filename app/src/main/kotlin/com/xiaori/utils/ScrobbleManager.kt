@@ -1,6 +1,6 @@
-package t4ulquiorra.xiaori.utils
+package com.xiaori.utils
 
-import t4ulquiorra.xiaori.models.MediaMetadata
+import com.xiaori.models.MediaMetadata
 import kotlinx.coroutines.CoroutineScope
 
 class ScrobbleManager(

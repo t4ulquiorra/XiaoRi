@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.di
+package com.xiaori.di
 
 import android.content.Context
 import androidx.media3.database.DatabaseProvider
@@ -9,13 +9,13 @@ import androidx.media3.datasource.cache.LeastRecentlyUsedCacheEvictor
 import androidx.media3.datasource.cache.NoOpCacheEvictor
 import androidx.media3.datasource.cache.SimpleCache
 import androidx.room.Room
-import t4ulquiorra.xiaori.constants.MaxSongCacheSizeKey
-import t4ulquiorra.xiaori.db.InternalDatabase
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.listentogether.ListenTogetherClient
-import t4ulquiorra.xiaori.listentogether.ListenTogetherManager
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
+import com.xiaori.constants.MaxSongCacheSizeKey
+import com.xiaori.db.InternalDatabase
+import com.xiaori.db.MusicDatabase
+import com.xiaori.listentogether.ListenTogetherClient
+import com.xiaori.listentogether.ListenTogetherManager
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -62,14 +62,14 @@ object AppModule {
     ): InternalDatabase = Room
         .databaseBuilder(context, InternalDatabase::class.java, InternalDatabase.DB_NAME)
         .addMigrations(
-            t4ulquiorra.xiaori.db.MIGRATION_1_2,
-            t4ulquiorra.xiaori.db.MIGRATION_21_24,
-            t4ulquiorra.xiaori.db.MIGRATION_22_24,
-            t4ulquiorra.xiaori.db.MIGRATION_24_25,
-            t4ulquiorra.xiaori.db.MIGRATION_27_28,
-            t4ulquiorra.xiaori.db.MIGRATION_36_37,
-            t4ulquiorra.xiaori.db.MIGRATION_37_38,
-            t4ulquiorra.xiaori.db.MIGRATION_38_39,
+            com.xiaori.db.MIGRATION_1_2,
+            com.xiaori.db.MIGRATION_21_24,
+            com.xiaori.db.MIGRATION_22_24,
+            com.xiaori.db.MIGRATION_24_25,
+            com.xiaori.db.MIGRATION_27_28,
+            com.xiaori.db.MIGRATION_36_37,
+            com.xiaori.db.MIGRATION_37_38,
+            com.xiaori.db.MIGRATION_38_39,
         )
 
         .setJournalMode(androidx.room.RoomDatabase.JournalMode.WRITE_AHEAD_LOGGING)

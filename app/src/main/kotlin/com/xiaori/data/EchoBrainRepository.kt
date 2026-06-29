@@ -1,13 +1,13 @@
-package t4ulquiorra.xiaori.data
+package com.xiaori.data
 
-import t4ulquiorra.xiaori.BuildConfig
-import t4ulquiorra.xiaori.api.FlowNeuroengineApi
-import t4ulquiorra.xiaori.api.NeuroengineRequest
-import t4ulquiorra.xiaori.api.NeuroengineResponse
-import t4ulquiorra.xiaori.db.daos.EchoBrainDao
-import t4ulquiorra.xiaori.db.entities.BrainActivityLogEntity
-import t4ulquiorra.xiaori.db.entities.PlayEventEntity
-import t4ulquiorra.xiaori.db.entities.TasteProfileEntity
+import com.xiaori.BuildConfig
+import com.xiaori.api.FlowNeuroengineApi
+import com.xiaori.api.NeuroengineRequest
+import com.xiaori.api.NeuroengineResponse
+import com.xiaori.db.daos.EchoBrainDao
+import com.xiaori.db.entities.BrainActivityLogEntity
+import com.xiaori.db.entities.PlayEventEntity
+import com.xiaori.db.entities.TasteProfileEntity
 import kotlinx.coroutines.flow.Flow
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

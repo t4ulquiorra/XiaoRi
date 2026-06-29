@@ -2,7 +2,7 @@
 
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
 import android.content.Intent
 import android.net.Uri
@@ -40,26 +40,26 @@ import coil3.request.allowHardware
 import coil3.toBitmap
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collectLatest
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.*
-import t4ulquiorra.xiaori.db.entities.Song
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.*
+import com.xiaori.db.entities.Song
 import com.xiaori.discord.DiscordAuthCoordinator
 import com.xiaori.discord.DiscordOAuthRepository
-import t4ulquiorra.xiaori.ui.component.EditTextPreference
-import t4ulquiorra.xiaori.ui.component.EnumListPreference
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.ListPreference
-import t4ulquiorra.xiaori.ui.component.PreferenceEntry
+import com.xiaori.ui.component.EditTextPreference
+import com.xiaori.ui.component.EnumListPreference
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.ListPreference
+import com.xiaori.ui.component.PreferenceEntry
 
-import t4ulquiorra.xiaori.ui.component.SwitchPreference
-import t4ulquiorra.xiaori.ui.theme.PlayerColorExtractor
-import t4ulquiorra.xiaori.ui.theme.extractThemeColor
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.utils.makeTimeString
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.ui.component.SwitchPreference
+import com.xiaori.ui.theme.PlayerColorExtractor
+import com.xiaori.ui.theme.extractThemeColor
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.utils.makeTimeString
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.utils.rememberPreference
 import timber.log.Timber
 
 enum class ActivitySource { ARTIST, ALBUM, SONG, APP }

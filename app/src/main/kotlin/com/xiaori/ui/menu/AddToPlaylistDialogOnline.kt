@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.menu
+package com.xiaori.ui.menu
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -10,7 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
-import t4ulquiorra.xiaori.utils.listItemShape
+import com.xiaori.utils.listItemShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -44,26 +44,26 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.AddToPlaylistSortDescendingKey
-import t4ulquiorra.xiaori.constants.AddToPlaylistSortTypeKey
-import t4ulquiorra.xiaori.constants.ListThumbnailSize
-import t4ulquiorra.xiaori.constants.PlaylistSortType
-import t4ulquiorra.xiaori.db.entities.Playlist
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.models.ItemsPage
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.ui.component.CreatePlaylistDialog
-import t4ulquiorra.xiaori.ui.component.DefaultDialog
-import t4ulquiorra.xiaori.ui.component.ListDialog
-import t4ulquiorra.xiaori.ui.component.ListItem
-import t4ulquiorra.xiaori.ui.component.PlaylistListItem
-import t4ulquiorra.xiaori.ui.component.SortHeader
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.utils.reportException
-import t4ulquiorra.xiaori.viewmodels.PlaylistsViewModel
+import com.xiaori.LocalDatabase
+import com.xiaori.R
+import com.xiaori.constants.AddToPlaylistSortDescendingKey
+import com.xiaori.constants.AddToPlaylistSortTypeKey
+import com.xiaori.constants.ListThumbnailSize
+import com.xiaori.constants.PlaylistSortType
+import com.xiaori.db.entities.Playlist
+import com.xiaori.db.entities.Song
+import com.xiaori.models.ItemsPage
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.ui.component.CreatePlaylistDialog
+import com.xiaori.ui.component.DefaultDialog
+import com.xiaori.ui.component.ListDialog
+import com.xiaori.ui.component.ListItem
+import com.xiaori.ui.component.PlaylistListItem
+import com.xiaori.ui.component.SortHeader
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.utils.rememberPreference
+import com.xiaori.utils.reportException
+import com.xiaori.viewmodels.PlaylistsViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

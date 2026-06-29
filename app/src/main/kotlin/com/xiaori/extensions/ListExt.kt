@@ -1,10 +1,10 @@
 
 
-package t4ulquiorra.xiaori.extensions
+package com.xiaori.extensions
 
-import t4ulquiorra.xiaori.db.entities.Album
-import t4ulquiorra.xiaori.db.entities.Playlist
-import t4ulquiorra.xiaori.db.entities.Song
+import com.xiaori.db.entities.Album
+import com.xiaori.db.entities.Playlist
+import com.xiaori.db.entities.Song
 
 fun <T> List<T>.reversed(reversed: Boolean) = if (reversed) asReversed() else this
 

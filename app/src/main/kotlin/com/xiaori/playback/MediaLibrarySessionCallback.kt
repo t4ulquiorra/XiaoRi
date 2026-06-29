@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.playback
+package com.xiaori.playback
 
 import android.content.ContentResolver
 import android.content.Context
@@ -31,20 +31,20 @@ import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.filterExplicit
 import com.music.innertube.models.filterVideoSongs
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.HideExplicitKey
-import t4ulquiorra.xiaori.constants.HideVideoSongsKey
-import t4ulquiorra.xiaori.constants.MediaSessionConstants
-import t4ulquiorra.xiaori.constants.SongSortType
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.db.entities.PlaylistEntity
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.extensions.toMediaItem
-import t4ulquiorra.xiaori.extensions.toggleRepeatMode
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
-import t4ulquiorra.xiaori.utils.reportException
+import com.xiaori.R
+import com.xiaori.constants.HideExplicitKey
+import com.xiaori.constants.HideVideoSongsKey
+import com.xiaori.constants.MediaSessionConstants
+import com.xiaori.constants.SongSortType
+import com.xiaori.db.MusicDatabase
+import com.xiaori.db.entities.PlaylistEntity
+import com.xiaori.db.entities.Song
+import com.xiaori.extensions.toMediaItem
+import com.xiaori.extensions.toggleRepeatMode
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
+import com.xiaori.utils.reportException
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -798,7 +798,7 @@ constructor(
         singleItemStyle = MediaConstants.EXTRAS_VALUE_CONTENT_STYLE_CATEGORY_LIST_ITEM,
     )
 
-    private fun t4ulquiorra.xiaori.db.entities.Playlist.toBrowsableMediaItem() = browsableMediaItem(
+    private fun com.xiaori.db.entities.Playlist.toBrowsableMediaItem() = browsableMediaItem(
         "${MusicService.PLAYLIST}/$id",
         playlist.name,
         context.resources.getQuantityString(

@@ -1,21 +1,21 @@
 
 
-package t4ulquiorra.xiaori.viewmodels
+package com.xiaori.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.media3.datasource.cache.SimpleCache
-import t4ulquiorra.xiaori.constants.HideExplicitKey
-import t4ulquiorra.xiaori.constants.HideVideoSongsKey
-import t4ulquiorra.xiaori.db.MusicDatabase
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.di.DownloadCache
-import t4ulquiorra.xiaori.di.PlayerCache
-import t4ulquiorra.xiaori.extensions.filterExplicit
-import t4ulquiorra.xiaori.extensions.filterVideoSongs
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
+import com.xiaori.constants.HideExplicitKey
+import com.xiaori.constants.HideVideoSongsKey
+import com.xiaori.db.MusicDatabase
+import com.xiaori.db.entities.Song
+import com.xiaori.di.DownloadCache
+import com.xiaori.di.PlayerCache
+import com.xiaori.extensions.filterExplicit
+import com.xiaori.extensions.filterVideoSongs
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.delay

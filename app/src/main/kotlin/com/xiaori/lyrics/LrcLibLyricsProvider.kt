@@ -1,12 +1,12 @@
 
 
-package t4ulquiorra.xiaori.lyrics
+package com.xiaori.lyrics
 
 import android.content.Context
 import com.music.lrclib.LrcLib
-import t4ulquiorra.xiaori.constants.EnableLrcLibKey
-import t4ulquiorra.xiaori.utils.dataStore
-import t4ulquiorra.xiaori.utils.get
+import com.xiaori.constants.EnableLrcLibKey
+import com.xiaori.utils.dataStore
+import com.xiaori.utils.get
 
 object LrcLibLyricsProvider : LyricsProvider {
     override val name = "LrcLib"

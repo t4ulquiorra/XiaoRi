@@ -1,11 +1,11 @@
 
 
-package t4ulquiorra.xiaori.ui.screens
+package com.xiaori.ui.screens
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Immutable
-import t4ulquiorra.xiaori.R
+import com.xiaori.R
 
 @Immutable
 sealed class Screens(

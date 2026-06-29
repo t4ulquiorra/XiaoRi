@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.utils.cipher
+package com.xiaori.utils.cipher
 
 import com.music.innertube.YouTube
 import kotlinx.coroutines.Dispatchers

@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.theme
+package com.xiaori.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

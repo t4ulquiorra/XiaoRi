@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens
+package com.xiaori.ui.screens
 
 import android.content.res.Configuration.ORIENTATION_LANDSCAPE
 import androidx.compose.foundation.background
@@ -33,14 +33,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.NavigationTitle
-import t4ulquiorra.xiaori.ui.component.shimmer.ListItemPlaceHolder
-import t4ulquiorra.xiaori.ui.component.shimmer.ShimmerHost
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.viewmodels.MoodAndGenresViewModel
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.NavigationTitle
+import com.xiaori.ui.component.shimmer.ListItemPlaceHolder
+import com.xiaori.ui.component.shimmer.ShimmerHost
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.viewmodels.MoodAndGenresViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

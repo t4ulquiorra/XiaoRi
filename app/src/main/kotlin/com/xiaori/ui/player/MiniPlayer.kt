@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.player
+package com.xiaori.ui.player
 
 import android.content.res.Configuration
 import android.os.Build
@@ -101,35 +101,35 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalListenTogetherManager
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.CropAlbumArtKey
-import t4ulquiorra.xiaori.constants.DarkModeKey
-import t4ulquiorra.xiaori.constants.MiniPlayerBackgroundStyleKey
-import t4ulquiorra.xiaori.constants.MiniPlayerHeight
-import t4ulquiorra.xiaori.constants.PlayerBackgroundStyle
-import t4ulquiorra.xiaori.constants.PureBlackMiniPlayerKey
-import t4ulquiorra.xiaori.constants.SwipeSensitivityKey
-import t4ulquiorra.xiaori.constants.SwipeThumbnailKey
-import t4ulquiorra.xiaori.constants.ThumbnailCornerRadius
-import t4ulquiorra.xiaori.constants.UseNewMiniPlayerDesignKey
-import t4ulquiorra.xiaori.db.entities.ArtistEntity
-import t4ulquiorra.xiaori.listentogether.ListenTogetherManager
-import t4ulquiorra.xiaori.models.MediaMetadata
-import t4ulquiorra.xiaori.playback.CastConnectionHandler
-import t4ulquiorra.xiaori.playback.PlayerConnection
-import t4ulquiorra.xiaori.ui.screens.settings.DarkMode
-import t4ulquiorra.xiaori.ui.theme.PlayerColorExtractor
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.xiaori.AudioDeviceBottomSheet
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalListenTogetherManager
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.CropAlbumArtKey
+import com.xiaori.constants.DarkModeKey
+import com.xiaori.constants.MiniPlayerBackgroundStyleKey
+import com.xiaori.constants.MiniPlayerHeight
+import com.xiaori.constants.PlayerBackgroundStyle
+import com.xiaori.constants.PureBlackMiniPlayerKey
+import com.xiaori.constants.SwipeSensitivityKey
+import com.xiaori.constants.SwipeThumbnailKey
+import com.xiaori.constants.ThumbnailCornerRadius
+import com.xiaori.constants.UseNewMiniPlayerDesignKey
+import com.xiaori.db.entities.ArtistEntity
+import com.xiaori.listentogether.ListenTogetherManager
+import com.xiaori.models.MediaMetadata
+import com.xiaori.playback.CastConnectionHandler
+import com.xiaori.playback.PlayerConnection
+import com.xiaori.ui.screens.settings.DarkMode
+import com.xiaori.ui.theme.PlayerColorExtractor
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.utils.rememberPreference
+import com.xiaori.xiaori.AudioDeviceBottomSheet
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.math.roundToInt
-import t4ulquiorra.xiaori.xiaori.isBluetoothHeadphoneConnected
+import com.xiaori.xiaori.isBluetoothHeadphoneConnected
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Headphones
 import androidx.compose.material.icons.filled.Speaker
@@ -142,7 +142,7 @@ import androidx.compose.ui.res.stringResource
 import kotlinx.coroutines.launch
 import kotlin.math.absoluteValue
 import kotlin.math.roundToInt
-import t4ulquiorra.xiaori.ui.component.Icon as MIcon
+import com.xiaori.ui.component.Icon as MIcon
 
 import androidx.compose.ui.graphics.Outline
 import androidx.compose.ui.graphics.Path

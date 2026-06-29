@@ -1,9 +1,9 @@
 
 
-package t4ulquiorra.xiaori.ui.utils
+package com.xiaori.ui.utils
 
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.ui.screens.Screens
+import com.xiaori.ui.screens.Screens
 
 fun NavController.backToMain() {
     val mainRoutes = Screens.MainScreens.map { it.route }

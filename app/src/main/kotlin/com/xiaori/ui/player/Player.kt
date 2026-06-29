@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.player
+package com.xiaori.ui.player
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -150,65 +150,65 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalDownloadUtil
-import t4ulquiorra.xiaori.LocalListenTogetherManager
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.AudioQuality
-import t4ulquiorra.xiaori.constants.AudioQualityKey
-import t4ulquiorra.xiaori.constants.CropAlbumArtKey
-import t4ulquiorra.xiaori.constants.DarkModeKey
-import t4ulquiorra.xiaori.constants.HidePlayerThumbnailKey
-import t4ulquiorra.xiaori.constants.HideStatusBarOnFullscreenKey
-import t4ulquiorra.xiaori.constants.EnableLyricsThumbnailPlayPauseKey
-import t4ulquiorra.xiaori.constants.KeepScreenOn
-import t4ulquiorra.xiaori.constants.PlayerBackgroundStyle
-import t4ulquiorra.xiaori.constants.PlayerBackgroundStyleKey
-import t4ulquiorra.xiaori.constants.PlayerButtonsStyle
-import t4ulquiorra.xiaori.constants.PlayerButtonsStyleKey
-import t4ulquiorra.xiaori.constants.PlayerHorizontalPadding
-import t4ulquiorra.xiaori.constants.QueuePeekHeight
-import t4ulquiorra.xiaori.constants.SliderStyle
-import t4ulquiorra.xiaori.constants.SliderStyleKey
-import t4ulquiorra.xiaori.constants.SquigglySliderKey
-import t4ulquiorra.xiaori.constants.SwipeLyricsKey
-import t4ulquiorra.xiaori.constants.ThumbnailCornerRadius
-import t4ulquiorra.xiaori.constants.UseNewPlayerDesignKey
-import t4ulquiorra.xiaori.db.entities.LyricsEntity
-import t4ulquiorra.xiaori.extensions.SwipeGesture
-import t4ulquiorra.xiaori.extensions.togglePlayPause
-import t4ulquiorra.xiaori.extensions.toggleRepeatMode
-import t4ulquiorra.xiaori.listentogether.RoomRole
-import t4ulquiorra.xiaori.models.MediaMetadata
-import t4ulquiorra.xiaori.playback.ExoDownloadService
-import t4ulquiorra.xiaori.xiaori.getConnectedBluetoothDeviceName
-import t4ulquiorra.xiaori.xiaori.isBuds
-import t4ulquiorra.xiaori.xiaori.isSpeaker
-import t4ulquiorra.xiaori.xiaori.AudioDeviceBottomSheet
-import t4ulquiorra.xiaori.ui.component.BottomSheet
-import t4ulquiorra.xiaori.ui.component.BottomSheetState
-import t4ulquiorra.xiaori.ui.component.CastButton
-import t4ulquiorra.xiaori.ui.component.LocalBottomSheetPageState
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.component.Lyrics
-import t4ulquiorra.xiaori.ui.component.PlayerSliderTrack
-import t4ulquiorra.xiaori.ui.component.ResizableIconButton
-import t4ulquiorra.xiaori.ui.component.SquigglySlider
-import t4ulquiorra.xiaori.ui.component.WavySlider
-import t4ulquiorra.xiaori.ui.component.rememberBottomSheetState
-import t4ulquiorra.xiaori.ui.menu.OldPlayerMenu
-import t4ulquiorra.xiaori.ui.menu.PlayerMenu
-import t4ulquiorra.xiaori.ui.component.VolumeSlider
-import t4ulquiorra.xiaori.ui.screens.settings.DarkMode
-import t4ulquiorra.xiaori.ui.theme.PlayerColorExtractor
-import t4ulquiorra.xiaori.ui.theme.PlayerSliderColors
-import t4ulquiorra.xiaori.ui.utils.ShowMediaInfo
-import t4ulquiorra.xiaori.ui.utils.ShowOffsetDialog
-import t4ulquiorra.xiaori.utils.makeTimeString
-import t4ulquiorra.xiaori.utils.isLocalMediaId
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalDownloadUtil
+import com.xiaori.LocalListenTogetherManager
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.AudioQuality
+import com.xiaori.constants.AudioQualityKey
+import com.xiaori.constants.CropAlbumArtKey
+import com.xiaori.constants.DarkModeKey
+import com.xiaori.constants.HidePlayerThumbnailKey
+import com.xiaori.constants.HideStatusBarOnFullscreenKey
+import com.xiaori.constants.EnableLyricsThumbnailPlayPauseKey
+import com.xiaori.constants.KeepScreenOn
+import com.xiaori.constants.PlayerBackgroundStyle
+import com.xiaori.constants.PlayerBackgroundStyleKey
+import com.xiaori.constants.PlayerButtonsStyle
+import com.xiaori.constants.PlayerButtonsStyleKey
+import com.xiaori.constants.PlayerHorizontalPadding
+import com.xiaori.constants.QueuePeekHeight
+import com.xiaori.constants.SliderStyle
+import com.xiaori.constants.SliderStyleKey
+import com.xiaori.constants.SquigglySliderKey
+import com.xiaori.constants.SwipeLyricsKey
+import com.xiaori.constants.ThumbnailCornerRadius
+import com.xiaori.constants.UseNewPlayerDesignKey
+import com.xiaori.db.entities.LyricsEntity
+import com.xiaori.extensions.SwipeGesture
+import com.xiaori.extensions.togglePlayPause
+import com.xiaori.extensions.toggleRepeatMode
+import com.xiaori.listentogether.RoomRole
+import com.xiaori.models.MediaMetadata
+import com.xiaori.playback.ExoDownloadService
+import com.xiaori.xiaori.getConnectedBluetoothDeviceName
+import com.xiaori.xiaori.isBuds
+import com.xiaori.xiaori.isSpeaker
+import com.xiaori.xiaori.AudioDeviceBottomSheet
+import com.xiaori.ui.component.BottomSheet
+import com.xiaori.ui.component.BottomSheetState
+import com.xiaori.ui.component.CastButton
+import com.xiaori.ui.component.LocalBottomSheetPageState
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.component.Lyrics
+import com.xiaori.ui.component.PlayerSliderTrack
+import com.xiaori.ui.component.ResizableIconButton
+import com.xiaori.ui.component.SquigglySlider
+import com.xiaori.ui.component.WavySlider
+import com.xiaori.ui.component.rememberBottomSheetState
+import com.xiaori.ui.menu.OldPlayerMenu
+import com.xiaori.ui.menu.PlayerMenu
+import com.xiaori.ui.component.VolumeSlider
+import com.xiaori.ui.screens.settings.DarkMode
+import com.xiaori.ui.theme.PlayerColorExtractor
+import com.xiaori.ui.theme.PlayerSliderColors
+import com.xiaori.ui.utils.ShowMediaInfo
+import com.xiaori.ui.utils.ShowOffsetDialog
+import com.xiaori.utils.makeTimeString
+import com.xiaori.utils.isLocalMediaId
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.utils.rememberPreference
 import dagger.hilt.android.EntryPointAccessors
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.firstOrNull
@@ -218,7 +218,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.math.max
 import kotlin.math.roundToInt
-import t4ulquiorra.xiaori.ui.component.Icon as MIcon
+import com.xiaori.ui.component.Icon as MIcon
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import androidx.media3.exoplayer.DefaultLoadControl
 import android.view.TextureView
@@ -233,15 +233,15 @@ import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import t4ulquiorra.xiaori.applecanvas.AppleMusicCanvasProvider
-import t4ulquiorra.xiaori.canvas.CanvasArtwork
-import t4ulquiorra.xiaori.canvas.TidalCanvasProvider
-import t4ulquiorra.xiaori.constants.CanvasThumbnailAnimationKey
-import t4ulquiorra.xiaori.extensions.metadata
-import t4ulquiorra.xiaori.ui.player.CanvasArtworkPlaybackCache
-import t4ulquiorra.xiaori.ui.player.normalizeCanvasArtistName
-import t4ulquiorra.xiaori.ui.player.normalizeCanvasSongTitle
-import t4ulquiorra.xiaori.xiaoricanvas.xiaoriCanvasProvider
+import com.xiaori.applecanvas.AppleMusicCanvasProvider
+import com.xiaori.canvas.CanvasArtwork
+import com.xiaori.canvas.TidalCanvasProvider
+import com.xiaori.constants.CanvasThumbnailAnimationKey
+import com.xiaori.extensions.metadata
+import com.xiaori.ui.player.CanvasArtworkPlaybackCache
+import com.xiaori.ui.player.normalizeCanvasArtistName
+import com.xiaori.ui.player.normalizeCanvasSongTitle
+import com.xiaori.xiaoricanvas.xiaoriCanvasProvider
 import java.util.Locale
 import kotlin.math.cos
 import kotlin.math.sin
@@ -304,8 +304,8 @@ fun BottomSheetPlayer(
         UseNewPlayerDesignKey,
         defaultValue = true
     )
-    val showCodecOnPlayer by rememberPreference(t4ulquiorra.xiaori.constants.ShowCodecOnPlayerKey, false)
-    val hidePlayerSlider by rememberPreference(t4ulquiorra.xiaori.constants.HidePlayerSliderKey, false)
+    val showCodecOnPlayer by rememberPreference(com.xiaori.constants.ShowCodecOnPlayerKey, false)
+    val hidePlayerSlider by rememberPreference(com.xiaori.constants.HidePlayerSliderKey, false)
     val (hidePlayerThumbnail, onHidePlayerThumbnailChange) = rememberPreference(HidePlayerThumbnailKey, false)
     val cropAlbumArt by rememberPreference(CropAlbumArtKey, false)
     val mediaMetadata by playerConnection.mediaMetadata.collectAsState()
@@ -1696,7 +1696,7 @@ fun BottomSheetPlayer(
                                 FilledIconButton(
                                     onClick = {
                                         menuState.show {
-                                            t4ulquiorra.xiaori.ui.menu.LyricsMenu(
+                                            com.xiaori.ui.menu.LyricsMenu(
                                                 lyricsProvider = { currentLyrics },
                                                 songProvider = { currentSong?.song },
                                                 mediaMetadataProvider = { mediaMetadata },
@@ -1814,7 +1814,7 @@ fun BottomSheetPlayer(
                                     .background(textButtonColor.copy(alpha = 0.2f))
                                     .clickable {
                                         menuState.show {
-                                            t4ulquiorra.xiaori.ui.menu.LyricsMenu(
+                                            com.xiaori.ui.menu.LyricsMenu(
                                                 lyricsProvider = { currentLyrics },
                                                 songProvider = { currentSong?.song },
                                                 mediaMetadataProvider = { mediaMetadata },
@@ -2772,7 +2772,7 @@ fun InlineLyricsView(
                     if (existing != null) return@launch
                     val entryPoint = EntryPointAccessors.fromApplication(
                         context.applicationContext,
-                        t4ulquiorra.xiaori.di.LyricsHelperEntryPoint::class.java
+                        com.xiaori.di.LyricsHelperEntryPoint::class.java
                     )
                     val lyricsHelper = entryPoint.lyricsHelper()
                     val fetchedLyricsWithProvider = lyricsHelper.getLyrics(mediaMetadata)

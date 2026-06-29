@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens
+package com.xiaori.ui.screens
 
 import android.content.Intent
 import android.os.Bundle
@@ -39,9 +39,9 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.FileProvider
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.ui.theme.xiaoriTheme
-import t4ulquiorra.xiaori.utils.CrashHandler
+import com.xiaori.R
+import com.xiaori.ui.theme.xiaoriTheme
+import com.xiaori.utils.CrashHandler
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date

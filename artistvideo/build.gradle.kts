@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "t4ulquiorra.com.xiaori.artistvideo"
+    namespace = "com.xiaori.artistvideo"
     compileSdk = 36
 
     defaultConfig {

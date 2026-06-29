@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.utils
+package com.xiaori.ui.utils
 
 import java.text.DecimalFormat
 import kotlin.math.absoluteValue

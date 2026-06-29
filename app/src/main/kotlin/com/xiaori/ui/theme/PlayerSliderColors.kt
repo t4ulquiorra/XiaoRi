@@ -1,13 +1,13 @@
 
 
-package t4ulquiorra.xiaori.ui.theme
+package com.xiaori.ui.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SliderColors
 import androidx.compose.material3.SliderDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import t4ulquiorra.xiaori.constants.PlayerBackgroundStyle
+import com.xiaori.constants.PlayerBackgroundStyle
 
 
 object PlayerSliderColors {

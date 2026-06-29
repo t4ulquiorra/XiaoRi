@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.xiaori.commitscreen
+package com.xiaori.xiaori.commitscreen
 
 import android.content.Intent
 import android.net.Uri
@@ -60,8 +60,8 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

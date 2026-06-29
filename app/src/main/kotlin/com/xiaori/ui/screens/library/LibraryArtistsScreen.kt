@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.library
+package com.xiaori.ui.screens.library
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
@@ -49,30 +49,30 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.ArtistFilter
-import t4ulquiorra.xiaori.constants.ArtistFilterKey
-import t4ulquiorra.xiaori.constants.ArtistSortDescendingKey
-import t4ulquiorra.xiaori.constants.ArtistSortType
-import t4ulquiorra.xiaori.constants.ArtistSortTypeKey
-import t4ulquiorra.xiaori.constants.ArtistViewTypeKey
-import t4ulquiorra.xiaori.constants.CONTENT_TYPE_ARTIST
-import t4ulquiorra.xiaori.constants.CONTENT_TYPE_HEADER
-import t4ulquiorra.xiaori.constants.GridItemSize
-import t4ulquiorra.xiaori.constants.GridItemsSizeKey
-import t4ulquiorra.xiaori.constants.GridThumbnailHeight
-import t4ulquiorra.xiaori.constants.LibraryViewType
-import t4ulquiorra.xiaori.constants.YtmSyncKey
-import t4ulquiorra.xiaori.ui.component.ChipsRow
-import t4ulquiorra.xiaori.ui.component.EmptyPlaceholder
-import t4ulquiorra.xiaori.ui.component.LibraryArtistGridItem
-import t4ulquiorra.xiaori.ui.component.LibraryArtistListItem
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.component.SortHeader
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.viewmodels.LibraryArtistsViewModel
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.constants.ArtistFilter
+import com.xiaori.constants.ArtistFilterKey
+import com.xiaori.constants.ArtistSortDescendingKey
+import com.xiaori.constants.ArtistSortType
+import com.xiaori.constants.ArtistSortTypeKey
+import com.xiaori.constants.ArtistViewTypeKey
+import com.xiaori.constants.CONTENT_TYPE_ARTIST
+import com.xiaori.constants.CONTENT_TYPE_HEADER
+import com.xiaori.constants.GridItemSize
+import com.xiaori.constants.GridItemsSizeKey
+import com.xiaori.constants.GridThumbnailHeight
+import com.xiaori.constants.LibraryViewType
+import com.xiaori.constants.YtmSyncKey
+import com.xiaori.ui.component.ChipsRow
+import com.xiaori.ui.component.EmptyPlaceholder
+import com.xiaori.ui.component.LibraryArtistGridItem
+import com.xiaori.ui.component.LibraryArtistListItem
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.component.SortHeader
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.utils.rememberPreference
+import com.xiaori.viewmodels.LibraryArtistsViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

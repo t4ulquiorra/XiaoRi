@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.screens.recognition
+package com.xiaori.ui.screens.recognition
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -77,27 +77,27 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.db.entities.RecognitionHistory
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.utils.backToMain
+import com.xiaori.LocalDatabase
+import com.xiaori.R
+import com.xiaori.db.entities.RecognitionHistory
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.utils.backToMain
 import com.music.shazamkit.models.RecognitionResult
 import com.music.shazamkit.models.RecognitionStatus
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.LocalPlayerAwareWindowInsets
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.systemBars
-import t4ulquiorra.xiaori.LocalPlayerConnection
+import com.xiaori.LocalPlayerConnection
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import t4ulquiorra.xiaori.models.toMediaMetadata
-import t4ulquiorra.xiaori.playback.queues.YouTubeQueue
+import com.xiaori.models.toMediaMetadata
+import com.xiaori.playback.queues.YouTubeQueue
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -109,16 +109,16 @@ fun RecognitionScreen(
     val coroutineScope = rememberCoroutineScope()
     
     LaunchedEffect(Unit) {
-        t4ulquiorra.xiaori.recognition.MusicRecognitionService.reset()
+        com.xiaori.recognition.MusicRecognitionService.reset()
     }
     
     DisposableEffect(Unit) {
         onDispose {
-            t4ulquiorra.xiaori.recognition.MusicRecognitionService.reset()
+            com.xiaori.recognition.MusicRecognitionService.reset()
         }
     }
     
-    val recognitionStatus by t4ulquiorra.xiaori.recognition.MusicRecognitionService.recognitionStatus.collectAsState()
+    val recognitionStatus by com.xiaori.recognition.MusicRecognitionService.recognitionStatus.collectAsState()
     
     var hasPermission by remember {
         mutableStateOf(
@@ -133,7 +133,7 @@ fun RecognitionScreen(
         hasPermission = isGranted
         if (isGranted) {
             coroutineScope.launch {
-                t4ulquiorra.xiaori.recognition.MusicRecognitionService.recognize(context)
+                com.xiaori.recognition.MusicRecognitionService.recognize(context)
             }
         }
     }
@@ -141,7 +141,7 @@ fun RecognitionScreen(
     fun startRecognition() {
         if (hasPermission) {
             coroutineScope.launch {
-                t4ulquiorra.xiaori.recognition.MusicRecognitionService.recognize(context)
+                com.xiaori.recognition.MusicRecognitionService.recognize(context)
             }
         } else {
             permissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
@@ -149,7 +149,7 @@ fun RecognitionScreen(
     }
     
     fun resetToReady() {
-        t4ulquiorra.xiaori.recognition.MusicRecognitionService.reset()
+        com.xiaori.recognition.MusicRecognitionService.reset()
     }
 
     fun saveToHistory(result: RecognitionResult) {
@@ -269,7 +269,7 @@ fun RecognitionScreen(
                                 }
                                 is RecognitionStatus.Listening -> {
                                     ListeningState(
-                                        onCancel = { t4ulquiorra.xiaori.recognition.MusicRecognitionService.reset() }
+                                        onCancel = { com.xiaori.recognition.MusicRecognitionService.reset() }
                                     )
                                 }
                                 is RecognitionStatus.Processing -> {

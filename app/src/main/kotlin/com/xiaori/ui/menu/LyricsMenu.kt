@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.menu
+package com.xiaori.ui.menu
 
 import android.app.SearchManager
 import android.content.Intent
@@ -56,29 +56,29 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.db.entities.LyricsEntity
-import t4ulquiorra.xiaori.db.entities.SongEntity
-import t4ulquiorra.xiaori.models.MediaMetadata
-import t4ulquiorra.xiaori.ui.component.DefaultDialog
-import t4ulquiorra.xiaori.ui.component.ListDialog
-import t4ulquiorra.xiaori.ui.component.Material3MenuGroup
-import t4ulquiorra.xiaori.ui.component.Material3MenuItemData
-import t4ulquiorra.xiaori.ui.component.NewAction
-import t4ulquiorra.xiaori.ui.component.NewActionGrid
-import t4ulquiorra.xiaori.ui.component.TextFieldDialog
-import t4ulquiorra.xiaori.viewmodels.LyricsMenuViewModel
-import t4ulquiorra.xiaori.constants.OpenRouterApiKey
-import t4ulquiorra.xiaori.constants.DeeplApiKey
-import t4ulquiorra.xiaori.constants.AiProviderKey
-import t4ulquiorra.xiaori.constants.TranslateLanguageKey
-import t4ulquiorra.xiaori.constants.TranslateModeKey
-import t4ulquiorra.xiaori.constants.OpenRouterBaseUrlKey
-import t4ulquiorra.xiaori.constants.OpenRouterModelKey
-import t4ulquiorra.xiaori.constants.DeeplFormalityKey
-import t4ulquiorra.xiaori.lyrics.LyricsTranslationHelper
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.LocalDatabase
+import com.xiaori.R
+import com.xiaori.db.entities.LyricsEntity
+import com.xiaori.db.entities.SongEntity
+import com.xiaori.models.MediaMetadata
+import com.xiaori.ui.component.DefaultDialog
+import com.xiaori.ui.component.ListDialog
+import com.xiaori.ui.component.Material3MenuGroup
+import com.xiaori.ui.component.Material3MenuItemData
+import com.xiaori.ui.component.NewAction
+import com.xiaori.ui.component.NewActionGrid
+import com.xiaori.ui.component.TextFieldDialog
+import com.xiaori.viewmodels.LyricsMenuViewModel
+import com.xiaori.constants.OpenRouterApiKey
+import com.xiaori.constants.DeeplApiKey
+import com.xiaori.constants.AiProviderKey
+import com.xiaori.constants.TranslateLanguageKey
+import com.xiaori.constants.TranslateModeKey
+import com.xiaori.constants.OpenRouterBaseUrlKey
+import com.xiaori.constants.OpenRouterModelKey
+import com.xiaori.constants.DeeplFormalityKey
+import com.xiaori.lyrics.LyricsTranslationHelper
+import com.xiaori.utils.rememberPreference
 import androidx.compose.runtime.collectAsState
 
 @OptIn(ExperimentalMaterial3Api::class)

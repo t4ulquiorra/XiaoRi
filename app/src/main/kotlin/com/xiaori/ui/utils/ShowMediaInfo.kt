@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.utils
+package com.xiaori.ui.utils
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -48,14 +48,14 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
 import com.music.innertube.models.MediaInfo
-import t4ulquiorra.xiaori.LocalDatabase
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.db.entities.FormatEntity
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.ui.component.LocalBottomSheetPageState
-import t4ulquiorra.xiaori.ui.component.shimmer.ShimmerHost
-import t4ulquiorra.xiaori.ui.component.shimmer.TextPlaceholder
+import com.xiaori.LocalDatabase
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.db.entities.FormatEntity
+import com.xiaori.db.entities.Song
+import com.xiaori.ui.component.LocalBottomSheetPageState
+import com.xiaori.ui.component.shimmer.ShimmerHost
+import com.xiaori.ui.component.shimmer.TextPlaceholder
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable

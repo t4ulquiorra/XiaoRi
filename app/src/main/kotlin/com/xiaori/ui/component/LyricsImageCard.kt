@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.component
+package com.xiaori.ui.component
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -48,8 +48,8 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.rememberAsyncImagePainter
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.models.MediaMetadata
+import com.xiaori.R
+import com.xiaori.models.MediaMetadata
 
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.graphics.Brush

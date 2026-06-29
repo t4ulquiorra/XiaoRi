@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.player
+package com.xiaori.ui.player
 
 import android.annotation.SuppressLint
 import androidx.activity.compose.BackHandler
@@ -110,33 +110,33 @@ import androidx.media3.common.Player
 import androidx.media3.common.Timeline
 import androidx.media3.exoplayer.source.ShuffleOrder.DefaultShuffleOrder
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.LocalListenTogetherManager
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.ListItemHeight
-import t4ulquiorra.xiaori.constants.PlayerBackgroundStyle
-import t4ulquiorra.xiaori.constants.QueueEditLockKey
-import t4ulquiorra.xiaori.constants.ShowCommentButtonKey
-import t4ulquiorra.xiaori.constants.UseNewPlayerDesignKey
-import t4ulquiorra.xiaori.extensions.metadata
-import t4ulquiorra.xiaori.extensions.move
-import t4ulquiorra.xiaori.extensions.toggleRepeatMode
-import t4ulquiorra.xiaori.listentogether.RoomRole
-import t4ulquiorra.xiaori.models.MediaMetadata
-import t4ulquiorra.xiaori.ui.component.ActionPromptDialog
-import t4ulquiorra.xiaori.ui.component.BottomSheet
-import t4ulquiorra.xiaori.ui.component.BottomSheetState
-import t4ulquiorra.xiaori.ui.component.LocalBottomSheetPageState
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.component.MediaMetadataListItem
-import t4ulquiorra.xiaori.ui.menu.PlayerMenu
-import t4ulquiorra.xiaori.ui.menu.QueueMenu
-import t4ulquiorra.xiaori.ui.menu.SelectionMediaMetadataMenu
-import t4ulquiorra.xiaori.ui.screens.CommentSheet
-import t4ulquiorra.xiaori.ui.utils.ShowMediaInfo
-import t4ulquiorra.xiaori.utils.listItemShape
-import t4ulquiorra.xiaori.utils.makeTimeString
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.LocalListenTogetherManager
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.ListItemHeight
+import com.xiaori.constants.PlayerBackgroundStyle
+import com.xiaori.constants.QueueEditLockKey
+import com.xiaori.constants.ShowCommentButtonKey
+import com.xiaori.constants.UseNewPlayerDesignKey
+import com.xiaori.extensions.metadata
+import com.xiaori.extensions.move
+import com.xiaori.extensions.toggleRepeatMode
+import com.xiaori.listentogether.RoomRole
+import com.xiaori.models.MediaMetadata
+import com.xiaori.ui.component.ActionPromptDialog
+import com.xiaori.ui.component.BottomSheet
+import com.xiaori.ui.component.BottomSheetState
+import com.xiaori.ui.component.LocalBottomSheetPageState
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.component.MediaMetadataListItem
+import com.xiaori.ui.menu.PlayerMenu
+import com.xiaori.ui.menu.QueueMenu
+import com.xiaori.ui.menu.SelectionMediaMetadataMenu
+import com.xiaori.ui.screens.CommentSheet
+import com.xiaori.ui.utils.ShowMediaInfo
+import com.xiaori.utils.listItemShape
+import com.xiaori.utils.makeTimeString
+import com.xiaori.utils.rememberPreference
 import androidx.compose.material.icons.Icons
 import androidx.compose.runtime.produceState
 import android.content.IntentFilter
@@ -148,8 +148,8 @@ import android.bluetooth.BluetoothDevice
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
-import t4ulquiorra.xiaori.xiaori.isBluetoothHeadphoneConnected
-import t4ulquiorra.xiaori.xiaori.AudioDeviceBottomSheet
+import com.xiaori.xiaori.isBluetoothHeadphoneConnected
+import com.xiaori.xiaori.AudioDeviceBottomSheet
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -228,7 +228,7 @@ fun Queue(
 
     
     val listenTogetherManager = LocalListenTogetherManager.current
-    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsState(initial = t4ulquiorra.xiaori.listentogether.RoomRole.NONE)
+    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsState(initial = com.xiaori.listentogether.RoomRole.NONE)
     val isListenTogetherGuest = listenTogetherRoleState?.value == RoomRole.GUEST
 
     val playerConnection = LocalPlayerConnection.current ?: return

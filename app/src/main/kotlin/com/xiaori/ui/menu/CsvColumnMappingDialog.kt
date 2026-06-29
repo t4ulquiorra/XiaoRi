@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.menu
+package com.xiaori.ui.menu
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
@@ -36,9 +36,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.viewmodels.ConvertedSongLog
-import t4ulquiorra.xiaori.viewmodels.CsvImportState
+import com.xiaori.R
+import com.xiaori.viewmodels.ConvertedSongLog
+import com.xiaori.viewmodels.CsvImportState
 
 @Composable
 fun CsvColumnMappingDialog(

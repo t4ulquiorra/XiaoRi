@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.component
+package com.xiaori.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -32,8 +32,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import t4ulquiorra.xiaori.lyrics.LyricsEntry
-import t4ulquiorra.xiaori.lyrics.WordTimestamp
+import com.xiaori.lyrics.LyricsEntry
+import com.xiaori.lyrics.WordTimestamp
 import kotlin.math.PI
 import kotlin.math.sin
 

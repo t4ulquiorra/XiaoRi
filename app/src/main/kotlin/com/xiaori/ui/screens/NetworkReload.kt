@@ -1,11 +1,11 @@
 
 
-package t4ulquiorra.xiaori.ui.screens
+package com.xiaori.ui.screens
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
-import t4ulquiorra.xiaori.utils.NetworkConnectivityObserver
+import com.xiaori.utils.NetworkConnectivityObserver
 
 @Composable
 fun NetworkReload(

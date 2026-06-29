@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.search
+package com.xiaori.ui.screens.search
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -42,28 +42,28 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.CONTENT_TYPE_LIST
-import t4ulquiorra.xiaori.constants.ListItemHeight
-import t4ulquiorra.xiaori.db.entities.Album
-import t4ulquiorra.xiaori.db.entities.Artist
-import t4ulquiorra.xiaori.db.entities.Playlist
-import t4ulquiorra.xiaori.db.entities.Song
-import t4ulquiorra.xiaori.extensions.toMediaItem
-import t4ulquiorra.xiaori.playback.queues.ListQueue
-import t4ulquiorra.xiaori.ui.component.AlbumListItem
-import t4ulquiorra.xiaori.ui.component.ArtistListItem
-import t4ulquiorra.xiaori.ui.component.ChipsRow
-import t4ulquiorra.xiaori.ui.component.EmptyPlaceholder
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.component.PlaylistListItem
-import t4ulquiorra.xiaori.ui.component.SongListItem
-import t4ulquiorra.xiaori.ui.menu.SongMenu
-import t4ulquiorra.xiaori.utils.listItemShape
-import t4ulquiorra.xiaori.viewmodels.LocalFilter
-import t4ulquiorra.xiaori.viewmodels.LocalSearchViewModel
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.CONTENT_TYPE_LIST
+import com.xiaori.constants.ListItemHeight
+import com.xiaori.db.entities.Album
+import com.xiaori.db.entities.Artist
+import com.xiaori.db.entities.Playlist
+import com.xiaori.db.entities.Song
+import com.xiaori.extensions.toMediaItem
+import com.xiaori.playback.queues.ListQueue
+import com.xiaori.ui.component.AlbumListItem
+import com.xiaori.ui.component.ArtistListItem
+import com.xiaori.ui.component.ChipsRow
+import com.xiaori.ui.component.EmptyPlaceholder
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.component.PlaylistListItem
+import com.xiaori.ui.component.SongListItem
+import com.xiaori.ui.menu.SongMenu
+import com.xiaori.utils.listItemShape
+import com.xiaori.viewmodels.LocalFilter
+import com.xiaori.viewmodels.LocalSearchViewModel
 import kotlinx.coroutines.flow.drop
 
 @OptIn(ExperimentalFoundationApi::class)

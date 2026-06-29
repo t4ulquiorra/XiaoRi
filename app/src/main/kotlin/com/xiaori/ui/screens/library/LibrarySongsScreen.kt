@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens.library
+package com.xiaori.ui.screens.library
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
@@ -38,30 +38,30 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.LocalPlayerConnection
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.CONTENT_TYPE_HEADER
-import t4ulquiorra.xiaori.constants.CONTENT_TYPE_SONG
-import t4ulquiorra.xiaori.constants.HideExplicitKey
-import t4ulquiorra.xiaori.constants.SongFilter
-import t4ulquiorra.xiaori.constants.SongFilterKey
-import t4ulquiorra.xiaori.constants.SongSortDescendingKey
-import t4ulquiorra.xiaori.constants.SongSortType
-import t4ulquiorra.xiaori.constants.SongSortTypeKey
-import t4ulquiorra.xiaori.constants.YtmSyncKey
-import t4ulquiorra.xiaori.extensions.toMediaItem
-import t4ulquiorra.xiaori.playback.queues.ListQueue
-import t4ulquiorra.xiaori.ui.component.ChipsRow
-import t4ulquiorra.xiaori.ui.component.HideOnScrollFAB
-import t4ulquiorra.xiaori.ui.component.LocalMenuState
-import t4ulquiorra.xiaori.ui.component.SongListItem
-import t4ulquiorra.xiaori.ui.component.SortHeader
-import t4ulquiorra.xiaori.ui.menu.SongMenu
-import t4ulquiorra.xiaori.utils.listItemShape
-import t4ulquiorra.xiaori.utils.rememberEnumPreference
-import t4ulquiorra.xiaori.utils.rememberPreference
-import t4ulquiorra.xiaori.viewmodels.LibrarySongsViewModel
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.LocalPlayerConnection
+import com.xiaori.R
+import com.xiaori.constants.CONTENT_TYPE_HEADER
+import com.xiaori.constants.CONTENT_TYPE_SONG
+import com.xiaori.constants.HideExplicitKey
+import com.xiaori.constants.SongFilter
+import com.xiaori.constants.SongFilterKey
+import com.xiaori.constants.SongSortDescendingKey
+import com.xiaori.constants.SongSortType
+import com.xiaori.constants.SongSortTypeKey
+import com.xiaori.constants.YtmSyncKey
+import com.xiaori.extensions.toMediaItem
+import com.xiaori.playback.queues.ListQueue
+import com.xiaori.ui.component.ChipsRow
+import com.xiaori.ui.component.HideOnScrollFAB
+import com.xiaori.ui.component.LocalMenuState
+import com.xiaori.ui.component.SongListItem
+import com.xiaori.ui.component.SortHeader
+import com.xiaori.ui.menu.SongMenu
+import com.xiaori.utils.listItemShape
+import com.xiaori.utils.rememberEnumPreference
+import com.xiaori.utils.rememberPreference
+import com.xiaori.viewmodels.LibrarySongsViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable

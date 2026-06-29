@@ -19,19 +19,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.DiscordActivityButton1CustomUrlKey
-import t4ulquiorra.xiaori.constants.DiscordActivityButton1EnabledKey
-import t4ulquiorra.xiaori.constants.DiscordActivityButton1LabelKey
-import t4ulquiorra.xiaori.constants.DiscordActivityButton1UrlSourceKey
-import t4ulquiorra.xiaori.constants.DiscordActivityButton2CustomUrlKey
-import t4ulquiorra.xiaori.constants.DiscordActivityButton2EnabledKey
-import t4ulquiorra.xiaori.constants.DiscordActivityButton2LabelKey
-import t4ulquiorra.xiaori.constants.DiscordActivityButton2UrlSourceKey
-import t4ulquiorra.xiaori.ui.component.EditTextPreference
-import t4ulquiorra.xiaori.ui.component.ListPreference
-import t4ulquiorra.xiaori.ui.component.SwitchPreference
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.R
+import com.xiaori.constants.DiscordActivityButton1CustomUrlKey
+import com.xiaori.constants.DiscordActivityButton1EnabledKey
+import com.xiaori.constants.DiscordActivityButton1LabelKey
+import com.xiaori.constants.DiscordActivityButton1UrlSourceKey
+import com.xiaori.constants.DiscordActivityButton2CustomUrlKey
+import com.xiaori.constants.DiscordActivityButton2EnabledKey
+import com.xiaori.constants.DiscordActivityButton2LabelKey
+import com.xiaori.constants.DiscordActivityButton2UrlSourceKey
+import com.xiaori.ui.component.EditTextPreference
+import com.xiaori.ui.component.ListPreference
+import com.xiaori.ui.component.SwitchPreference
+import com.xiaori.utils.rememberPreference
 
 private val DiscordExperimentalButtonUrlOptions =
     listOf("songurl", "artisturl", "albumurl", "custom")

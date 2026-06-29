@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.playback
+package com.xiaori.playback
 
 import android.app.Notification
 import android.app.PendingIntent
@@ -15,7 +15,7 @@ import androidx.media3.exoplayer.offline.DownloadNotificationHelper
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.media3.exoplayer.scheduler.PlatformScheduler
 import androidx.media3.exoplayer.scheduler.Scheduler
-import t4ulquiorra.xiaori.R
+import com.xiaori.R
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

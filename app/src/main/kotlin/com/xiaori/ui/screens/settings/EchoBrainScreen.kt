@@ -1,4 +1,4 @@
-package t4ulquiorra.xiaori.ui.screens.settings
+package com.xiaori.ui.screens.settings
 
 import android.net.Uri
 import android.widget.Toast
@@ -17,7 +17,7 @@ import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.datastore.preferences.core.edit
-import t4ulquiorra.xiaori.utils.dataStore
+import com.xiaori.utils.dataStore
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
@@ -25,13 +25,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.data.EchoBrainRepository
-import t4ulquiorra.xiaori.engine.EchoBrainEngine
-import t4ulquiorra.xiaori.engine.brain.*
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.Material3SettingsItem
-import t4ulquiorra.xiaori.ui.component.Material3SettingsGroup
+import com.xiaori.R
+import com.xiaori.data.EchoBrainRepository
+import com.xiaori.engine.EchoBrainEngine
+import com.xiaori.engine.brain.*
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.Material3SettingsItem
+import com.xiaori.ui.component.Material3SettingsGroup
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -118,7 +118,7 @@ fun EchoBrainScreen(
                                             engine.isEnabled.value = isChecked
                                             coroutineScope.launch {
                                                 context.dataStore.edit { prefs ->
-                                                    prefs[t4ulquiorra.xiaori.constants.EchoBrainEnabledKey] = isChecked
+                                                    prefs[com.xiaori.constants.EchoBrainEnabledKey] = isChecked
                                                 }
                                             }
                                         }
@@ -128,7 +128,7 @@ fun EchoBrainScreen(
                                     engine.isEnabled.value = !isEnabled 
                                     scope.launch {
                                         context.dataStore.edit { prefs ->
-                                            prefs[t4ulquiorra.xiaori.constants.EchoBrainEnabledKey] = !isEnabled
+                                            prefs[com.xiaori.constants.EchoBrainEnabledKey] = !isEnabled
                                         }
                                     }
                                 }

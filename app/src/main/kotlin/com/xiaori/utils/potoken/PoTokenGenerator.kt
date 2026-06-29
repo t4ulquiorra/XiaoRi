@@ -1,7 +1,7 @@
-package t4ulquiorra.xiaori.utils.potoken
+package com.xiaori.utils.potoken
 
 import android.webkit.CookieManager
-import t4ulquiorra.xiaori.utils.cipher.CipherDeobfuscator
+import com.xiaori.utils.cipher.CipherDeobfuscator
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.sync.Mutex

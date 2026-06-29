@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.db.entities
+package com.xiaori.db.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.DatabaseView

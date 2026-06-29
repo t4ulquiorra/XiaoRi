@@ -1,6 +1,6 @@
 
 
-package t4ulquiorra.xiaori.ui.screens
+package com.xiaori.ui.screens
 
 import android.content.Context
 import android.widget.Toast
@@ -40,7 +40,7 @@ import androidx.compose.foundation.relocation.bringIntoViewRequester
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import t4ulquiorra.xiaori.ui.component.DefaultDialog
+import com.xiaori.ui.component.DefaultDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -82,24 +82,24 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import t4ulquiorra.xiaori.LocalListenTogetherManager
-import t4ulquiorra.xiaori.LocalPlayerAwareWindowInsets
-import t4ulquiorra.xiaori.R
-import t4ulquiorra.xiaori.constants.AppBarHeight
-import t4ulquiorra.xiaori.constants.ListenTogetherInTopBarKey
-import t4ulquiorra.xiaori.constants.ListenTogetherUsernameKey
-import t4ulquiorra.xiaori.listentogether.ConnectionState
-import t4ulquiorra.xiaori.listentogether.JoinRequestPayload
-import t4ulquiorra.xiaori.listentogether.ListenTogetherEvent
-import t4ulquiorra.xiaori.listentogether.SuggestionReceivedPayload
-import t4ulquiorra.xiaori.listentogether.UserInfo
-import t4ulquiorra.xiaori.ui.component.ListDialog
-import t4ulquiorra.xiaori.ui.component.Material3SettingsGroup
-import t4ulquiorra.xiaori.ui.component.Material3SettingsItem
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.component.IconButton
-import t4ulquiorra.xiaori.ui.utils.backToMain
-import t4ulquiorra.xiaori.utils.rememberPreference
+import com.xiaori.LocalListenTogetherManager
+import com.xiaori.LocalPlayerAwareWindowInsets
+import com.xiaori.R
+import com.xiaori.constants.AppBarHeight
+import com.xiaori.constants.ListenTogetherInTopBarKey
+import com.xiaori.constants.ListenTogetherUsernameKey
+import com.xiaori.listentogether.ConnectionState
+import com.xiaori.listentogether.JoinRequestPayload
+import com.xiaori.listentogether.ListenTogetherEvent
+import com.xiaori.listentogether.SuggestionReceivedPayload
+import com.xiaori.listentogether.UserInfo
+import com.xiaori.ui.component.ListDialog
+import com.xiaori.ui.component.Material3SettingsGroup
+import com.xiaori.ui.component.Material3SettingsItem
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.component.IconButton
+import com.xiaori.ui.utils.backToMain
+import com.xiaori.utils.rememberPreference
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)

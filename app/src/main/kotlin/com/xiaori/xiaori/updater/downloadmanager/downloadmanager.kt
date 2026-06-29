@@ -1,8 +1,8 @@
-package t4ulquiorra.xiaori.xiaori.updater.downloadmanager
+package com.xiaori.xiaori.updater.downloadmanager
 
 import android.content.Context
 import android.os.Environment
-import t4ulquiorra.xiaori.R
+import com.xiaori.R
 import kotlinx.coroutines.*
 import java.io.File
 import java.io.FileOutputStream
