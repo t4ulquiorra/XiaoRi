@@ -1,6 +1,6 @@
 # Echo Brain Documentation
 
-**Echo Brain** is an intelligent, on-device contextual music engine integrated into Echo Music. Designed to maintain the momentum and vibe of your current listening session, it continually analyzes your queue and proactively injects seamless, personalized track recommendations. 
+**Echo Brain** is an intelligent, on-device contextual music engine integrated into XiaoRi. Designed to maintain the momentum and vibe of your current listening session, it continually analyzes your queue and proactively injects seamless, personalized track recommendations. 
 
 ---
 
@@ -36,7 +36,7 @@ All fetched candidate tracks are merged into a single pool and deduplicated. The
 The remaining candidates are passed into the `neuroEngine.rank()` function. This function scores each track against your personal `EchoBrainPersona`—a locally-stored profile built from your historical genre affinities, artist scores, and total interaction counts. 
 
 ### 3. Queue Injection
-The top 3 highest-ranked tracks are selected to form the "Runway." The engine waits for a brief 1.5-second buffer (to avoid interrupting the Media3 player transition state) and seamlessly injects these items into the `Player` queue immediately after the current playing index. These items are tagged with the `QueueItemSource.ECHO_BRAIN` source, ensuring the UI can badge them appropriately.
+The top 3 highest-ranked tracks are selected to form the "Runway." The engine waits for a brief 1.5-second buffer (to avoid interrupting the Media3 player transition state) and seamlessly injects these items into the `Player` queue immediately after the current playing index. These items are tagged with the `QueueItemSource.XIAORI_BRAIN` source, ensuring the UI can badge them appropriately.
 
 ### 4. Listening Duration Tracking
 To continually learn, Echo Brain monitors your active listening sessions. Rather than resetting every time you pause or buffer, the engine accumulates the `totalDurationPlayed`. If a track is skipped before passing a 15-second threshold, the engine registers a "skip penalty" to adapt future recommendations.

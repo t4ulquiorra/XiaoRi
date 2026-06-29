@@ -1,4 +1,4 @@
-package iad1tya.echo.music.betterlyrics
+package com.xiaori.betterlyrics
 
 import org.w3c.dom.Element
 import org.w3c.dom.Node

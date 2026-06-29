@@ -1,4 +1,4 @@
-package iad1tya.echo.music.cast
+package com.xiaori.cast
 
 import android.content.Context
 import com.google.android.gms.cast.CastMediaControlIntent

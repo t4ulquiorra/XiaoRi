@@ -1,6 +1,6 @@
-package iad1tya.echo.music.echomusiccanvas
+package com.xiaori.xiaoricanvas
 
-import iad1tya.echo.music.canvas.CanvasArtwork
+import com.xiaori.canvas.CanvasArtwork
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.okhttp.OkHttp
@@ -15,19 +15,19 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 
 @Serializable
-data class echomusicCanvasManifest(
-    val items: List<echomusicCanvasItem> = emptyList()
+data class xiaoriCanvasManifest(
+    val items: List<xiaoriCanvasItem> = emptyList()
 )
 
 @Serializable
-data class echomusicCanvasItem(
+data class xiaoriCanvasItem(
     val song: String,
     val artist: String,
     val url: String
 )
 
-object echomusicCanvasProvider {
-    private const val BASE_URL = "https://canvas.echomusic.fun/canvas.json"
+object xiaoriCanvasProvider {
+    private const val BASE_URL = "https://canvas.xiaori.fun/canvas.json"
 
     private val json = Json {
         ignoreUnknownKeys = true
@@ -53,7 +53,7 @@ object echomusicCanvasProvider {
     }
 
     private data class CacheEntry(
-        val value: echomusicCanvasManifest?,
+        val value: xiaoriCanvasManifest?,
         val expiresAtMs: Long,
     )
 
@@ -61,14 +61,14 @@ object echomusicCanvasProvider {
     // Cache TTL 1 minute (re-fetches json index every minute max for instant updates)
     private val ttlMs = 60_000L
 
-    private suspend fun fetchManifest(): echomusicCanvasManifest? {
+    private suspend fun fetchManifest(): xiaoriCanvasManifest? {
         val currentCache = manifestCache
         if (currentCache != null && currentCache.expiresAtMs > System.currentTimeMillis()) {
             return currentCache.value
         }
 
         return try {
-            val manifest: echomusicCanvasManifest = client.get(BASE_URL).body()
+            val manifest: xiaoriCanvasManifest = client.get(BASE_URL).body()
             
             manifestCache = CacheEntry(
                 value = manifest,

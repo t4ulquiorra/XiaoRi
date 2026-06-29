@@ -1,5 +1,5 @@
 {
-  "name": "Echo Music Server",
-  "region": "Global - Echo Music",
-  "serverUrl": "wss://iad1tya-echomusic.hf.space/ws"
+  "name": "XiaoRi Server",
+  "region": "Global - XiaoRi",
+  "serverUrl": "wss://t4ulquiorra-xiaori.hf.space/ws"
 }

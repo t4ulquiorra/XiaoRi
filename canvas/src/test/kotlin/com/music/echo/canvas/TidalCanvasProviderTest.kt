@@ -1,4 +1,4 @@
-package iad1tya.echo.music.canvas
+package com.xiaori.canvas
 
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals

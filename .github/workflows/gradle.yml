@@ -142,9 +142,9 @@ jobs:
           <b>Support the Project</b>
           If you'd like to support ongoing development, you can do so through any of the following:
 
-          • Buy Me a Coffee: https://buymeacoffee.com/iad1tya
-          • GitHub Sponsors: https://github.com/sponsors/iad1tya
-          • Support Page: https://support.iad1tya.cyou/
+          • Buy Me a Coffee: https://buymeacoffee.com/t4ulquiorra
+          • GitHub Sponsors: https://github.com/sponsors/t4ulquiorra
+          • Support Page: https://support.t4ulquiorra.cyou/
 
           Every contribution helps support continued development, maintenance, and future improvements.
 
@@ -190,7 +190,7 @@ jobs:
                 title: "Release Changelog",
                 description: $desc,
                 color: 16738660,
-                footer: { text: "Echo Music Automation System" }
+                footer: { text: "XiaoRi Automation System" }
               }]
             }' > discord-release-payload.json
 
@@ -239,7 +239,7 @@ jobs:
                 fields: [
                   { name: "Download APK", value: ("[" + $label + "](" + $link + ")"), inline: false }
                 ],
-                footer: { text: "Echo Music Automation System" }
+                footer: { text: "XiaoRi Automation System" }
               }]
             }' > discord-payload.json
 

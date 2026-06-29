@@ -24,13 +24,13 @@ if (hasGoogleServicesConfig) {
 }
 
 android {
-    namespace = "iad1tya.echo.music"
+    namespace = "t4ulquiorra.xiaori"
     compileSdk = 36
     ndkVersion = "27.0.12077973"
 
 
     defaultConfig {
-        applicationId = "iad1tya.echo.music"
+        applicationId = "t4ulquiorra.xiaori"
         minSdk = 26
         targetSdk = 36
         versionCode = 516
@@ -321,7 +321,7 @@ dependencies {
     implementation(project(":shazamkit"))
     implementation(project(":artistvideo"))
     implementation(project(":applecanvas"))
-    implementation(project(":echomusiccanvas"))
+    implementation(project(":xiaoricanvas"))
     implementation(project(":paxsenixlyrics"))
     implementation(project(":jiosaavn"))
     implementation(project(":unison"))

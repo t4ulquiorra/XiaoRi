@@ -1,4 +1,4 @@
-package iad1tya.echo.music.artistvideo
+package com.xiaori.artistvideo
 
 import android.view.TextureView
 import android.view.ViewGroup

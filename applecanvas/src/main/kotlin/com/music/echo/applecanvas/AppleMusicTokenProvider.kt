@@ -1,4 +1,4 @@
-package iad1tya.echo.music.applecanvas
+package com.xiaori.applecanvas
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
