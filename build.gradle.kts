@@ -10,6 +10,7 @@ buildscript {
         google()
         mavenCentral()
         maven { setUrl("https://jitpack.io") }
+        maven { setUrl("https://mirrors.cloud.tencent.com/nexus/repository/maven-public/") }
     }
     dependencies {
         classpath(libs.gradle)
