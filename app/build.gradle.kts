@@ -16,13 +16,6 @@ plugins {
     alias(libs.plugins.protobufPlugin)
 }
 
-val hasGoogleServicesConfig = file("google-services.json").exists()
-
-if (hasGoogleServicesConfig) {
-    apply(plugin = "com.google.gms.google-services")
-    apply(plugin = "com.google.firebase.crashlytics")
-}
-
 android {
     namespace = "echo.music.iad1tya"
     compileSdk = 36
@@ -30,7 +23,7 @@ android {
 
 
     defaultConfig {
-        applicationId = "echo.music.iad1tya"
+        applicationId = "com.xiaori.music"
         minSdk = 26
         targetSdk = 36
         versionCode = 151
@@ -119,10 +112,10 @@ android {
             keyPassword = "android"
         }
         create("release") {
-            storeFile = file("keystore/release.keystore")
-            storePassword = System.getenv("STORE_PASSWORD")
+            storeFile = (System.getenv("KEYSTORE_PATH") ?: System.getenv("STORE_FILE"))?.let { file(it) } ?: file("keystore/release.keystore")
+            storePassword = System.getenv("KEYSTORE_PASSWORD") ?: System.getenv("STORE_PASSWORD")
             keyAlias = System.getenv("KEY_ALIAS")
-            keyPassword = System.getenv("KEY_PASSWORD")
+            keyPassword = System.getenv("KEY_PASSWORD") ?: System.getenv("KEYSTORE_PASSWORD") ?: System.getenv("STORE_PASSWORD")
         }
         getByName("debug") {
             keyAlias = "androiddebugkey"
@@ -240,11 +233,6 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
 }
 
 dependencies {
-    // Firebase - GMS flavor only (excluded from F-Droid / FOSS builds)
-    "gmsImplementation"(platform("com.google.firebase:firebase-bom:33.1.0"))
-    "gmsImplementation"("com.google.firebase:firebase-analytics")
-    "gmsImplementation"("com.google.firebase:firebase-crashlytics")
-
     // Google Drive Sync - GMS flavor only
     "gmsImplementation"(libs.play.services.auth)
     "gmsImplementation"(libs.google.api.client.android)
