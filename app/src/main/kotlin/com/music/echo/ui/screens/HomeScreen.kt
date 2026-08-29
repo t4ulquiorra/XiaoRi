@@ -1,7 +1,7 @@
 package echo.music.iad1tya.ui.screens
 
 import androidx.compose.animation.*
-import androidx.compose.animation.core.animateColorAsState
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -176,7 +176,7 @@ fun HomeScreen(
 
     PullToRefreshBox(
         isRefreshing = isRefreshing,
-        onRefresh = { viewModel.load() },
+        onRefresh = { viewModel.refresh() },
         state = pullRefreshState,
         indicator = {
             PullToRefreshDefaults.Indicator(

@@ -128,6 +128,7 @@ fun HomeItem(
     if (items.isEmpty()) return
 
     val menuState = LocalMenuState.current
+    val coroutineScope = rememberCoroutineScope()
     val lazyListState = rememberLazyListState()
     val snapperFlingBehavior = rememberSnapFlingBehavior(SnapLayoutInfoProvider(lazyListState = lazyListState, snapPosition = SnapPosition.Start))
 
@@ -206,7 +207,7 @@ fun HomeItem(
                                     else menuState.show {
                                         YouTubePlaylistMenu(
                                             playlist = item,
-                                            navController = navController,
+                                            coroutineScope = coroutineScope,
                                             onDismiss = menuState::dismiss,
                                         )
                                     }
@@ -235,7 +236,7 @@ fun HomeItem(
                                     }
                                 },
                                 title = item.title,
-                                subtitle = item.authors?.joinToString { it.name } ?: stringResource(R.string.album),
+                                subtitle = item.artists?.joinToString { it.name } ?: stringResource(R.string.album),
                                 thumbnailUrl = item.thumbnail,
                                 thumbSize = dynamicThumbSize,
                             )
@@ -248,7 +249,6 @@ fun HomeItem(
                                     else navController.navigate("artist/${item.id}")
                                 },
                                 name = item.title,
-                                subscribers = item.subscribers,
                                 thumbnailUrl = item.thumbnail,
                                 thumbSize = dynamicThumbSize,
                             )
