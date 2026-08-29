@@ -431,9 +431,9 @@ private fun NewMiniPlayer(
                 .then(if (isTabletLandscape) Modifier.width(480.dp).align(Alignment.Center) else Modifier.fillMaxWidth())
                 .height(MiniPlayerHeight)
                 .offset { IntOffset(offsetXAnimatable.value.roundToInt(), 0) }
-                .clip(RoundedCornerShape(32.dp))
+                .clip(RoundedCornerShape(16.dp))
                 .background(color = backgroundColor)
-                .border(1.dp, outlineColor.copy(alpha = 0.3f), RoundedCornerShape(32.dp))
+                .border(1.dp, outlineColor.copy(alpha = 0.3f), RoundedCornerShape(16.dp))
         ) {
             
             MiniPlayerBackgroundLayer(
@@ -558,9 +558,9 @@ private fun NewMiniPlayerThumbnail(
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
-                .size(40.dp)
-                .clip(CircleShape)
-                .border(1.dp, outlineColor.copy(alpha = 0.3f), CircleShape)
+                .size(44.dp)
+                .clip(RoundedCornerShape(12.dp))
+                .border(1.dp, outlineColor.copy(alpha = 0.3f), RoundedCornerShape(12.dp))
         ) {
             mediaMetadata?.let { metadata ->
                 AsyncImage(
@@ -569,7 +569,7 @@ private fun NewMiniPlayerThumbnail(
                         .build(),
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
-                    modifier = Modifier.fillMaxSize().clip(CircleShape)
+                    modifier = Modifier.fillMaxSize().clip(RoundedCornerShape(12.dp))
                 )
             }
         }
