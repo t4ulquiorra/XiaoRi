@@ -272,6 +272,8 @@ Because we do not host any media files, we cannot process DMCA takedown requests
 
 ---
 
+Xiaori is a fork of Echo-Music (https://github.com/EchoMusicApp/Echo-Music), licensed under GPL-3.0.
+
 <div align="center">
   <p>Licensed under <a href="LICENSE">GPL-3.0</a></p>
 </div>
