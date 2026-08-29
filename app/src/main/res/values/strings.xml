@@ -13,7 +13,9 @@
     <string name="songs">Songs</string>
     <string name="artists">Artists</string>
     <string name="albums">Albums</string>
+    <string name="album">Album</string>
     <string name="playlists">Playlists</string>
+    <string name="playlist">Playlist</string>
 
     <!-- Top bar -->
     <plurals name="n_selected">
