@@ -223,7 +223,7 @@ fun CommunityPlaylistCard(
         colors = CardDefaults.cardColors(
             containerColor = containerColor
         ),
-        shape = RoundedCornerShape(28.dp),
+        shape = RoundedCornerShape(15.dp),
         onClick = onClick
     ) {
         Column(
@@ -461,7 +461,7 @@ fun DailyDiscoverCard(
     Card(
         modifier = modifier
             .fillMaxSize()
-            .clip(RoundedCornerShape(28.dp))
+            .clip(RoundedCornerShape(15.dp))
             .combinedClickable(
                 onClick = onClick,
                 onLongClick = {
@@ -480,7 +480,7 @@ fun DailyDiscoverCard(
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surfaceVariant,
         ),
-        shape = RoundedCornerShape(28.dp)
+        shape = RoundedCornerShape(15.dp)
     ) {
         BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
             AsyncImage(
@@ -1218,10 +1218,10 @@ fun HomeScreen(
                                         Box(
                                             modifier = Modifier
                                                 .fillMaxSize()
-                                                .maskClip(MaterialTheme.shapes.extraLarge)
+                                                .maskClip(RoundedCornerShape(15.dp))
                                                 .maskBorder(
                                                     BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-                                                    MaterialTheme.shapes.extraLarge
+                                                    RoundedCornerShape(15.dp)
                                                 )
                                                 .focusable()
                                                 .combinedClickable(

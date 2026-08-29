@@ -58,10 +58,10 @@ fun IntegrationCard(
         ) {
             items.forEachIndexed { index, item ->
                 val shape = when {
-                    items.size == 1 -> RoundedCornerShape(24.dp)
-                    index == 0 -> RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp, bottomStart = 6.dp, bottomEnd = 6.dp)
-                    index == items.size - 1 -> RoundedCornerShape(topStart = 6.dp, topEnd = 6.dp, bottomStart = 24.dp, bottomEnd = 24.dp)
-                    else -> RoundedCornerShape(6.dp)
+                    items.size == 1 -> RoundedCornerShape(15.dp)
+                    index == 0 -> RoundedCornerShape(topStart = 15.dp, topEnd = 15.dp, bottomStart = 4.dp, bottomEnd = 4.dp)
+                    index == items.size - 1 -> RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp, bottomStart = 15.dp, bottomEnd = 15.dp)
+                    else -> RoundedCornerShape(4.dp)
                 }
 
                 Card(

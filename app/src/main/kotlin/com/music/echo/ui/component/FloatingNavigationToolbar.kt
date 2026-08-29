@@ -293,7 +293,7 @@ private fun FloatingToolbarOverflowMenuButton(
         DropdownMenu(
             expanded = menuExpanded,
             onDismissRequest = { menuExpanded = false },
-            shape = RoundedCornerShape(24.dp),
+            shape = RoundedCornerShape(15.dp),
             containerColor = if (pureBlack) Color.Black.copy(alpha = 0.92f) else MaterialTheme.colorScheme.surfaceContainerHigh.copy(alpha = 0.96f),
             tonalElevation = 8.dp,
         ) {

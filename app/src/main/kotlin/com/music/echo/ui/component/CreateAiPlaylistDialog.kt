@@ -44,7 +44,7 @@ fun CreateAiPlaylistDialog(
             modifier = Modifier
                 .fillMaxWidth(0.9f)
                 .wrapContentHeight(),
-            shape = RoundedCornerShape(24.dp),
+            shape = RoundedCornerShape(15.dp),
             color = MaterialTheme.colorScheme.surface,
             tonalElevation = 6.dp
         ) {
@@ -67,7 +67,7 @@ fun CreateAiPlaylistDialog(
                         modifier = Modifier.fillMaxWidth(),
                         singleLine = false,
                         maxLines = 3,
-                        shape = RoundedCornerShape(12.dp)
+                        shape = RoundedCornerShape(15.dp)
                     )
                     
                     Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {

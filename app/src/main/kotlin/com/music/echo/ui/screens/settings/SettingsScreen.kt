@@ -137,7 +137,7 @@ highlightKey: String? = null) {
                     }
                 }
             },
-            shape = RoundedCornerShape(24.dp),
+            shape = RoundedCornerShape(15.dp),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 8.dp, end = 8.dp, bottom = 16.dp)
