@@ -713,6 +713,9 @@ class MainActivity : ComponentActivity() {
                     label = "navBarHeight",
                 )
 
+                val (useFloatingNavBar) = rememberPreference(UseFloatingNavBarKey, defaultValue = false)
+                val floatingNavBarScrollConnection = rememberFloatingTabBarScrollConnection()
+
                 val playerBottomSheetState = rememberBottomSheetState(
                     dismissedBound = 0.dp,
                     collapsedBound = bottomInset +
@@ -745,6 +748,8 @@ class MainActivity : ComponentActivity() {
                 }
 
                 val playerMediaMetadata = playerConnection?.player?.currentMediaItem?.mediaMetadata
+                val hasDockedPlayerAccessory =
+                    useFloatingNavBar && playerMediaMetadata != null && shouldShowNavigationBar
 
                 val playerAwareWindowInsets = remember(
                     bottomInset,
@@ -1134,84 +1139,23 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier
                             .fillMaxSize()
                             .nestedScroll(topAppBarScrollBehavior.nestedScrollConnection)
+                            .then(
+                                if (useFloatingNavBar) {
+                                    Modifier.nestedScroll(floatingNavBarScrollConnection)
+                                } else {
+                                    Modifier
+                                }
+                            )
                     ) {
                         Box(Modifier.fillMaxSize()) {
-                            NavHost(
-                                navController = navController,
-                                startDestination = when (tabOpenedFromShortcut ?: defaultOpenTab) {
-                                    NavigationTab.HOME -> Screens.Home
-                                    NavigationTab.LIBRARY -> Screens.Library
-                                    else -> Screens.Home
-                                }.route,
                                 
-                                enterTransition = {
-                                    val currentRouteIndex = navigationItems.indexOfFirst {
-                                        it.route == targetState.destination.route
-                                    }
-                                    val previousRouteIndex = navigationItems.indexOfFirst {
-                                        it.route == initialState.destination.route
-                                    }
-
-                                    if (currentRouteIndex == -1 || currentRouteIndex > previousRouteIndex)
-                                        slideInHorizontally { it / 8 } + fadeIn(tween(200))
-                                    else
-                                        slideInHorizontally { -it / 8 } + fadeIn(tween(200))
-                                },
-                                
-                                exitTransition = {
-                                    val currentRouteIndex = navigationItems.indexOfFirst {
-                                        it.route == initialState.destination.route
-                                    }
-                                    val targetRouteIndex = navigationItems.indexOfFirst {
-                                        it.route == targetState.destination.route
-                                    }
-
-                                    if (targetRouteIndex == -1 || targetRouteIndex > currentRouteIndex)
-                                        slideOutHorizontally { -it / 8 } + fadeOut(tween(200))
-                                    else
-                                        slideOutHorizontally { it / 8 } + fadeOut(tween(200))
-                                },
-                                
-                                popEnterTransition = {
-                                    val currentRouteIndex = navigationItems.indexOfFirst {
-                                        it.route == targetState.destination.route
-                                    }
-                                    val previousRouteIndex = navigationItems.indexOfFirst {
-                                        it.route == initialState.destination.route
-                                    }
-
-                                    if (previousRouteIndex != -1 && previousRouteIndex < currentRouteIndex)
-                                        slideInHorizontally { it / 8 } + fadeIn(tween(200))
-                                    else
-                                        slideInHorizontally { -it / 8 } + fadeIn(tween(200))
-                                },
-                                
-                                popExitTransition = {
-                                    val currentRouteIndex = navigationItems.indexOfFirst {
-                                        it.route == initialState.destination.route
-                                    }
-                                    val targetRouteIndex = navigationItems.indexOfFirst {
-                                        it.route == targetState.destination.route
-                                    }
-
-                                    if (currentRouteIndex != -1 && currentRouteIndex < targetRouteIndex)
-                                        slideOutHorizontally { -it / 8 } + fadeOut(tween(200))
-                                    else
-                                        slideOutHorizontally { it / 8 } + fadeOut(tween(200))
-                                },
-                                modifier = Modifier
-                                    .layerBackdrop(appBackdrop)
-                                    .nestedScroll(topAppBarScrollBehavior.nestedScrollConnection)
-                            ) {
-                                navigationBuilder(
+                                NavHost(
                                     navController = navController,
-                                    scrollBehavior = topAppBarScrollBehavior,
-                                    activity = this@MainActivity,
-                                    snackbarHostState = snackbarHostState
-                                )
-                            }
-                        }
-                    }
+                                    startDestination = when (tabOpenedFromShortcut ?: defaultOpenTab) {
+                                        NavigationTab.HOME -> Screens.Home
+                                        NavigationTab.LIBRARY -> Screens.Library
+                                        else -> Screens.Home
+                                    }.route,
                                     
                                     enterTransition = {
                                         val currentRouteIndex = navigationItems.indexOfFirst {
@@ -1281,7 +1225,6 @@ class MainActivity : ComponentActivity() {
                                 }
                             }
                         }
-                    }
 
                     BottomSheetMenu(
                         state = LocalMenuState.current,

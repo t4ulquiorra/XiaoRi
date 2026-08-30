@@ -18,6 +18,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import echo.music.iad1tya.ui.screens.Screens
 
+fun isRouteSelected(currentRoute: String?, screenRoute: String, navigationItems: List<Screens>): Boolean {
+    if (currentRoute == null) return false
+    if (currentRoute == screenRoute) return true
+    return navigationItems.any { it.route == screenRoute } && 
+           currentRoute.startsWith("$screenRoute/")
+}
+
 /**
  * Xevrae Navigation Bar ported for portrait and landscape orientations.
  */
