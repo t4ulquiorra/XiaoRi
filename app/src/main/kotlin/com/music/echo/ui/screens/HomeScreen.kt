@@ -611,28 +611,25 @@ fun HomeScreen(
                         modifier = Modifier
                             .horizontalScroll(chipRowState)
                             .padding(horizontal = 16.dp, vertical = 6.dp),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        verticalAlignment = Alignment.CenterVertically,
                     ) {
+                        // "All" chip
+                        Chip(
+                            isSelected = selectedChip == null,
+                            text = "All",
+                            onClick = {
+                                if (selectedChip != null) {
+                                    viewModel.toggleChip(null)
+                                }
+                            }
+                        )
+
                         chips.forEach { chip ->
-                            val isSelected = selectedChip == chip
-                            FilterChip(
-                                selected = isSelected,
-                                onClick = { viewModel.toggleChip(chip) },
-                                label = {
-                                    Text(
-                                        text = chip.title,
-                                        style = MaterialTheme.typography.labelMedium,
-                                        fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
-                                    )
-                                },
-                                colors = FilterChipDefaults.filterChipColors(
-                                    containerColor = Color(0xFF242424),
-                                    labelColor = Color(0xFFA8A8A8),
-                                    selectedContainerColor = MaterialTheme.colorScheme.primary,
-                                    selectedLabelColor = Color.Black,
-                                ),
-                                border = null,
-                                shape = RoundedCornerShape(20.dp),
+                            Chip(
+                                isSelected = selectedChip == chip,
+                                text = chip.title,
+                                onClick = { viewModel.toggleChip(chip) }
                             )
                         }
                     }

@@ -19,9 +19,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Done
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -674,5 +674,55 @@ fun ItemArtistChart(
                 }
             }
         }
+    }
+}
+
+/**
+ * Xevrae Filter Chip (with animated checkmark and subtle circular border)
+ */
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun Chip(
+    isAnimated: Boolean = false,
+    isSelected: Boolean = false,
+    text: String,
+    onClick: () -> Unit,
+) {
+    CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides Dp.Unspecified) {
+        ElevatedFilterChip(
+            shape = CircleShape,
+            colors = FilterChipDefaults.elevatedFilterChipColors(
+                containerColor = Color.Transparent,
+                iconColor = Color.White,
+                selectedContainerColor = Color(0xFF2A2A2A),
+                labelColor = Color(0xFFA8A8A8),
+                selectedLabelColor = Color.White,
+            ),
+            onClick = onClick,
+            label = {
+                Text(
+                    text = text,
+                    maxLines = 1,
+                    style = MaterialTheme.typography.labelMedium,
+                )
+            },
+            border = FilterChipDefaults.filterChipBorder(
+                enabled = true,
+                selected = isSelected,
+                selectedBorderColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.8f),
+                borderColor = Color(0xFF3E3E3E),
+            ),
+            selected = isSelected,
+            leadingIcon = {
+                AnimatedVisibility(visible = isSelected) {
+                    Icon(
+                        imageVector = Icons.Filled.Done,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.size(16.dp),
+                    )
+                }
+            },
+        )
     }
 }
