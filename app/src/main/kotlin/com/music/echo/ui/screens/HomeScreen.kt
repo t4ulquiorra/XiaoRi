@@ -288,7 +288,7 @@ fun HomeScreen(
                                             horizontalArrangement = Arrangement.spacedBy(4.dp),
                                             verticalArrangement = Arrangement.spacedBy(4.dp),
                                         ) {
-                                            items(picks, key = { it.song.id }) { song ->
+                                            itemsIndexed(picks, key = { index, song -> "${song.song.id}_$index" }) { _, song ->
                                                 QuickPicksItem(
                                                     title = song.song.title,
                                                     artist = song.artists.joinToString { it.name },
@@ -303,8 +303,8 @@ fun HomeScreen(
                                                         } else {
                                                             playerConnection.playQueue(
                                                                 YouTubeQueue(
-                                                                    endpoint = WatchEndpoint(videoId = song.song.id),
-                                                                    preloadItem = song.toMediaMetadata()
+                                                                    WatchEndpoint(videoId = song.song.id),
+                                                                    song.toMediaMetadata()
                                                                 )
                                                             )
                                                         }
@@ -334,17 +334,11 @@ fun HomeScreen(
                             }
                         }
 
-                        // Daily Discover Card
-                        dailyDiscover?.firstOrNull()?.let { discover ->
-                            item(key = "xevrae_daily_discover_section") {
-                                val rec = discover.recommendation
-                                val recSong = rec as? SongItem
-                                val recId = rec.id
-                                val recTitle = rec.title
                         // Daily Discover Carousel / Banner
-                        if (dailyDiscover != null) {
-                            val discover = dailyDiscover
-                            if (discover != null) {
+                        val discoverItem = dailyDiscover?.firstOrNull()
+                        if (discoverItem != null) {
+                            val recSong = discoverItem.recommendation as? SongItem
+                            if (recSong != null) {
                                 item(key = "xevrae_daily_discover_section") {
                                     Column(modifier = Modifier.fillMaxWidth()) {
                                         Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 8.dp)) {
@@ -364,13 +358,13 @@ fun HomeScreen(
 
                                         ItemSongFullWidth(
                                             onClick = {
-                                                if (discover.song.id == mediaMetadata?.id) {
+                                                if (recSong.id == mediaMetadata?.id) {
                                                     playerConnection.togglePlayPause()
                                                 } else {
                                                     playerConnection.playQueue(
                                                         YouTubeQueue(
-                                                            endpoint = WatchEndpoint(videoId = discover.song.id),
-                                                            preloadItem = discover.toMediaMetadata()
+                                                            endpoint = recSong.endpoint ?: WatchEndpoint(videoId = recSong.id),
+                                                            preloadItem = recSong.toMediaMetadata()
                                                         )
                                                     )
                                                 }
@@ -378,26 +372,18 @@ fun HomeScreen(
                                             onMoreClick = {
                                                 menuState.show {
                                                     YouTubeSongMenu(
-                                                        song = SongItem(
-                                                            id = discover.song.id,
-                                                            title = discover.song.title,
-                                                            artists = discover.artists.map { com.music.innertube.models.Artist(id = it.id, name = it.name) },
-                                                            album = null,
-                                                            duration = null,
-                                                            thumbnail = discover.song.thumbnailUrl.orEmpty(),
-                                                            explicit = discover.song.explicit
-                                                        ),
+                                                        song = recSong,
                                                         navController = navController,
                                                         onDismiss = menuState::dismiss
                                                     )
                                                 }
                                             },
-                                            title = discover.song.title,
-                                            artists = discover.artists.map { com.music.innertube.models.Artist(id = it.id, name = it.name) },
-                                            thumbnailUrl = discover.song.thumbnailUrl,
-                                            album = null,
-                                            duration = null,
-                                            explicit = discover.song.explicit,
+                                            title = recSong.title,
+                                            artists = recSong.artists,
+                                            thumbnailUrl = recSong.thumbnail,
+                                            album = recSong.album,
+                                            duration = recSong.duration,
+                                            explicit = recSong.explicit,
                                         )
                                     }
                                 }
