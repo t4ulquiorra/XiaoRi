@@ -77,6 +77,7 @@ import echo.music.iad1tya.ui.menu.YouTubePlaylistMenu
 import echo.music.iad1tya.ui.menu.YouTubeSongMenu
 import echo.music.iad1tya.viewmodels.DailyDiscoverItem
 import echo.music.iad1tya.viewmodels.HomeViewModel
+import echo.music.iad1tya.utils.makeTimeString
 import kotlinx.coroutines.flow.distinctUntilChanged
 import java.time.LocalTime
 import kotlin.math.*
@@ -379,11 +380,12 @@ fun HomeScreen(
                                                 }
                                             },
                                             title = recSong.title,
-                                            artists = recSong.artists,
+                                            artist = recSong.artists.joinToString { it.name },
                                             thumbnailUrl = recSong.thumbnail,
-                                            album = recSong.album,
-                                            duration = recSong.duration,
+                                            duration = recSong.duration?.let { makeTimeString(it * 1000L) },
                                             explicit = recSong.explicit,
+                                            isActive = recSong.id == mediaMetadata?.id,
+                                            isPlaying = isPlaying,
                                         )
                                     }
                                 }
