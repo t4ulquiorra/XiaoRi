@@ -223,7 +223,7 @@ fun HomeScreen(
             }
 
             // 2. Content gated behind Loading / Refreshing state via Crossfade
-            val isContentLoading = isRefreshing || (isLoading && homePage == null && quickPicks == null)
+            val isContentLoading = isRefreshing || (isLoading && homePage == null)
 
             Crossfade(
                 targetState = isContentLoading,

@@ -257,9 +257,8 @@ class HomeViewModel @Inject constructor(
         val likedSongs = database.likedSongsByCreateDateAsc().first()
         if (likedSongs.isEmpty()) return
 
-        val seeds = likedSongs.shuffled().distinctBy { it.id }.take(5)
+        val seeds = likedSongs.shuffled().distinctBy { it.id }.take(2)
 
-        
         val items = java.util.Collections.synchronizedList(mutableListOf<DailyDiscoverItem>())
 
         kotlinx.coroutines.coroutineScope {
@@ -276,7 +275,6 @@ class HomeViewModel @Inject constructor(
                                 }
                                 .shuffled()
 
-                            
                             val recommendation = recommendations.firstOrNull { rec ->
                                 rec.id != seed.id
                             }
@@ -296,7 +294,6 @@ class HomeViewModel @Inject constructor(
             }.forEach { it.join() }
         }
 
-        
         dailyDiscover.value = items.toList().distinctBy { it.recommendation.id }.shuffled()
     }
 
@@ -307,28 +304,7 @@ class HomeViewModel @Inject constructor(
                 val relatedSongs = database.quickPicks().first().filterVideoSongs(hideVideoSongs)
                 val forgotten = database.forgottenFavorites().first().filterVideoSongs(hideVideoSongs).take(8)
 
-                
-                val recentSong = database.events().first().firstOrNull()?.song
-                val ytSimilarSongs = mutableListOf<Song>()
-
-                if (recentSong != null) {
-                    val endpoint = YouTube.next(WatchEndpoint(videoId = recentSong.id)).getOrNull()?.relatedEndpoint
-                    if (endpoint != null) {
-                        YouTube.related(endpoint).onSuccess { page ->
-                            
-                            page.songs.take(10).forEach { ytSong ->
-                                database.song(ytSong.id).first()?.let { localSong ->
-                                    if (!hideVideoSongs || !localSong.song.isVideo) {
-                                        ytSimilarSongs.add(localSong)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                
-                val combined = (relatedSongs + forgotten + ytSimilarSongs)
+                val combined = (relatedSongs + forgotten)
                     .distinctBy { it.id }
                     .shuffled()
                     .take(20)
@@ -533,8 +509,6 @@ class HomeViewModel @Inject constructor(
 
         coroutineScope {
             launch(Dispatchers.IO) { getDailyDiscover() }
-            launch(Dispatchers.IO) { getCommunityPlaylists() }
-            launch(Dispatchers.IO) { loadSimilarRecommendations() }
             launch(Dispatchers.IO) {
                 YouTube.home().onSuccess { page ->
                     homePage.value = page.copy(
@@ -560,9 +534,7 @@ class HomeViewModel @Inject constructor(
             }
         }
 
-        
-        allYtItems.value = similarRecommendations.value?.flatMap { it.items }.orEmpty() +
-                homePage.value?.sections?.flatMap { it.items }.orEmpty()
+        allYtItems.value = homePage.value?.sections?.flatMap { it.items }.orEmpty()
     }
 
     private suspend fun load() {
