@@ -16,15 +16,15 @@ sealed class Screens(
 ) {
     object Home : Screens(
         titleId = R.string.home,
-        iconIdInactive = R.drawable.home_outlined,
+        iconIdInactive = R.drawable.home_lined,
         iconIdActive = R.drawable.home_filled,
         route = "home"
     )
 
     object Search : Screens(
         titleId = R.string.search,
-        iconIdInactive = R.drawable.search,
-        iconIdActive = R.drawable.search,
+        iconIdInactive = R.drawable.search_lined,
+        iconIdActive = R.drawable.search_filled,
         route = "search_input"
     )
 
@@ -37,8 +37,8 @@ sealed class Screens(
 
     object Library : Screens(
         titleId = R.string.filter_library,
-        iconIdInactive = R.drawable.library_music_outlined,
-        iconIdActive = R.drawable.library_music_filled,
+        iconIdInactive = R.drawable.library_lined,
+        iconIdActive = R.drawable.library_filled,
         route = "library"
     )
 

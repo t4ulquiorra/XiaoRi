@@ -2,217 +2,111 @@
 
 package echo.music.iad1tya.ui.component
 
-import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.interaction.PressInteraction
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
-import androidx.compose.material3.NavigationRail
-import androidx.compose.material3.NavigationRailItem
-import androidx.compose.material3.Text
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.Immutable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.hapticfeedback.HapticFeedbackType
-import androidx.compose.ui.platform.LocalHapticFeedback
-import androidx.compose.ui.platform.LocalViewConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
 import echo.music.iad1tya.ui.screens.Screens
-import echo.music.iad1tya.ui.component.LocalGlassEffectConfig
-import echo.music.iad1tya.ui.component.liquidGlass
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collectLatest
 
-@Immutable
-private data class NavItemState(
-    val isSelected: Boolean,
-    val iconRes: Int
-)
-
-@Stable
-fun isRouteSelected(currentRoute: String?, screenRoute: String, navigationItems: List<Screens>): Boolean {
-    if (currentRoute == null) return false
-    if (currentRoute == screenRoute) return true
-    return navigationItems.any { it.route == screenRoute } && 
-           currentRoute.startsWith("$screenRoute/")
-}
-
+/**
+ * Xevrae Navigation Bar ported for portrait and landscape orientations.
+ */
 @Composable
-fun AppNavigationRail(
+fun AppBottomNavigationBar(
     navigationItems: List<Screens>,
     currentRoute: String?,
+    isLandscape: Boolean = false,
+    isTranslucentBackground: Boolean = false,
+    containerColor: Color? = null,
+    showLabels: Boolean = true,
     onItemClick: (Screens, Boolean) -> Unit,
-    modifier: Modifier = Modifier,
-    pureBlack: Boolean = false,
-    onSearchLongClick: (() -> Unit)? = null
 ) {
-    val containerColor = if (pureBlack) Color.Black else MaterialTheme.colorScheme.surfaceContainer
-    val haptics = LocalHapticFeedback.current
-    val viewConfiguration = LocalViewConfiguration.current
-    
-    NavigationRail(
-        modifier = modifier,
-        containerColor = containerColor
-    ) {
-        Spacer(modifier = Modifier.weight(1f))
-        
-        navigationItems.forEach { screen ->
-            val isSelected = remember(currentRoute, screen.route) {
-                isRouteSelected(currentRoute, screen.route, navigationItems)
-            }
-            val iconRes = remember(isSelected, screen) {
-                if (isSelected) screen.iconIdActive else screen.iconIdInactive
-            }
-            
-            val isSearchItem = screen == Screens.Search && onSearchLongClick != null
-            val interactionSource = remember { MutableInteractionSource() }
-            
-            
-            if (isSearchItem) {
-                LaunchedEffect(interactionSource) {
-                    var isLongClick = false
-                    interactionSource.interactions.collectLatest { interaction ->
-                        when (interaction) {
-                            is PressInteraction.Press -> {
-                                isLongClick = false
-                                delay(viewConfiguration.longPressTimeoutMillis)
-                                isLongClick = true
-                                haptics.performHapticFeedback(HapticFeedbackType.LongPress)
-                                onSearchLongClick.invoke()
-                            }
-                            is PressInteraction.Release -> {
-                                if (!isLongClick) {
-                                    onItemClick(screen, isSelected)
-                                }
-                            }
-                            is PressInteraction.Cancel -> {
-                                isLongClick = false
-                            }
-                        }
-                    }
-                }
-            }
-            
-            NavigationRailItem(
-                selected = isSelected,
-                onClick = { 
-                    if (!isSearchItem) {
-                        onItemClick(screen, isSelected)
-                    }
-                    
-                },
-                interactionSource = interactionSource,
-                icon = {
-                    Icon(
-                        painter = painterResource(id = iconRes),
-                        contentDescription = stringResource(screen.titleId)
-                    )
-                }
-            )
-        }
-        
-        Spacer(modifier = Modifier.weight(1f))
-    }
-}
-
-@Composable
-fun AppNavigationBar(
-    navigationItems: List<Screens>,
-    currentRoute: String?,
-    onItemClick: (Screens, Boolean) -> Unit,
-    modifier: Modifier = Modifier,
-    pureBlack: Boolean = false,
-    slimNav: Boolean = false,
-    glassEnabled: Boolean = false,
-    onSearchLongClick: (() -> Unit)? = null
-) {
-    val glassConfig = LocalGlassEffectConfig.current
-    val containerColor = if (glassEnabled && glassConfig.globalEnabled && glassConfig.navBarEnabled) Color.Transparent else if (pureBlack) Color.Black else MaterialTheme.colorScheme.surfaceContainer
-    val contentColor = if (glassEnabled && glassConfig.globalEnabled && glassConfig.navBarEnabled) glassConfig.textColor else if (pureBlack) Color.White else MaterialTheme.colorScheme.onSurfaceVariant
-    val haptics = LocalHapticFeedback.current
-    val viewConfiguration = LocalViewConfiguration.current
-    
-    val navModifier = if (glassEnabled && glassConfig.globalEnabled && glassConfig.navBarEnabled) {
-        modifier.liquidGlass(config = glassConfig)
+    val resolvedContainerColor = containerColor ?: if (isLandscape) {
+        Color(0xFF1F1F1F)
+    } else if (isTranslucentBackground) {
+        Color.Transparent
     } else {
-        modifier
+        Color(0xFF121212)
     }
-    
-    NavigationBar(
-        modifier = navModifier,
-        containerColor = containerColor,
-        contentColor = contentColor
-    ) {
-        navigationItems.forEach { screen ->
-            val isSelected = remember(currentRoute, screen.route) {
-                isRouteSelected(currentRoute, screen.route, navigationItems)
-            }
-            val iconRes = remember(isSelected, screen) {
-                if (isSelected) screen.iconIdActive else screen.iconIdInactive
-            }
-            
-            val isSearchItem = screen == Screens.Search && onSearchLongClick != null
-            val interactionSource = remember { MutableInteractionSource() }
-            
-            
-            if (isSearchItem) {
-                LaunchedEffect(interactionSource) {
-                    var isLongClick = false
-                    interactionSource.interactions.collectLatest { interaction ->
-                        when (interaction) {
-                            is PressInteraction.Press -> {
-                                isLongClick = false
-                                delay(viewConfiguration.longPressTimeoutMillis)
-                                isLongClick = true
-                                haptics.performHapticFeedback(HapticFeedbackType.LongPress)
-                                onSearchLongClick.invoke()
-                            }
-                            is PressInteraction.Release -> {
-                                if (!isLongClick) {
-                                    onItemClick(screen, isSelected)
-                                }
-                            }
-                            is PressInteraction.Cancel -> {
-                                isLongClick = false
-                            }
-                        }
-                    }
-                }
-            }
-            
-            NavigationBarItem(
-                selected = isSelected,
-                onClick = { 
-                    if (!isSearchItem) {
-                        onItemClick(screen, isSelected)
-                    }
-                    
-                },
-                interactionSource = interactionSource,
-                icon = {
-                    Icon(
-                        painter = painterResource(id = iconRes),
-                        contentDescription = stringResource(screen.titleId)
-                    )
-                },
-                label = if (!slimNav) {
-                    {
-                        Text(
-                            text = stringResource(screen.titleId),
-                            maxLines = 1,
-                            overflow = TextOverflow.Ellipsis
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .then(
+                if (isLandscape) {
+                    Modifier
+                        .padding(horizontal = 48.dp, vertical = 8.dp)
+                        .clip(RoundedCornerShape(16.dp))
+                } else if (isTranslucentBackground) {
+                    Modifier.background(
+                        Brush.verticalGradient(
+                            listOf(
+                                Color.Transparent,
+                                Color(0xFF121212).copy(alpha = 0.6f),
+                                Color(0xFF121212).copy(alpha = 0.9f),
+                                Color(0xFF121212),
+                            )
                         )
-                    }
-                } else null
-            )
+                    )
+                } else {
+                    Modifier.background(Color(0xFF121212))
+                }
+            ),
+        contentAlignment = Alignment.Center,
+    ) {
+        NavigationBar(
+            windowInsets = WindowInsets(0, 0, 0, 0),
+            containerColor = resolvedContainerColor,
+            modifier = Modifier.fillMaxWidth(),
+        ) {
+            navigationItems.forEach { screen ->
+                val isSelected = remember(currentRoute, screen.route) {
+                    currentRoute == screen.route ||
+                        (currentRoute?.startsWith("${screen.route}/") == true &&
+                            navigationItems.any { it.route == screen.route })
+                }
+
+                val iconRes = if (isSelected) screen.iconIdActive else screen.iconIdInactive
+
+                NavigationBarItem(
+                    selected = isSelected,
+                    colors = NavigationBarItemDefaults.colors(
+                        indicatorColor = Color.Transparent,
+                        selectedIconColor = Color.White,
+                        unselectedIconColor = Color.White.copy(alpha = 0.5f),
+                    ),
+                    onClick = {
+                        onItemClick(screen, isSelected)
+                    },
+                    label = if (showLabels) {
+                        {
+                            Text(
+                                text = stringResource(screen.titleId),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = if (isSelected) Color.White else Color.White.copy(alpha = 0.5f),
+                            )
+                        }
+                    } else null,
+                    icon = {
+                        Icon(
+                            painter = painterResource(id = iconRes),
+                            contentDescription = stringResource(screen.titleId),
+                            modifier = Modifier.size(24.dp),
+                            tint = if (isSelected) Color.White else Color.White.copy(alpha = 0.5f),
+                        )
+                    },
+                )
+            }
         }
     }
 }
