@@ -17,8 +17,10 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
@@ -339,118 +341,191 @@ fun HomeScreen(
                                 val recSong = rec as? SongItem
                                 val recId = rec.id
                                 val recTitle = rec.title
-                                val recThumb = rec.thumbnail
-                                val recArtists = (rec as? SongItem)?.artists?.joinToString { it.name }
-                                    ?: (rec as? PlaylistItem)?.author?.name
-                                    ?: ""
-                                val lifetimeCount by database.getLifetimePlayCount(recId).collectAsState(initial = 0)
+                        // Daily Discover Carousel / Banner
+                        if (dailyDiscover != null) {
+                            val discover = dailyDiscover
+                            if (discover != null) {
+                                item(key = "xevrae_daily_discover_section") {
+                                    Column(modifier = Modifier.fillMaxWidth()) {
+                                        Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 8.dp)) {
+                                            Text(
+                                                text = "Hand-picked for today",
+                                                style = MaterialTheme.typography.bodySmall,
+                                                color = Color(0xFFA8A8A8),
+                                            )
+                                            Spacer(modifier = Modifier.height(2.dp))
+                                            Text(
+                                                text = "Daily Discover",
+                                                style = MaterialTheme.typography.headlineMedium,
+                                                fontWeight = FontWeight.Bold,
+                                                color = Color.White,
+                                            )
+                                        }
 
+                                        ItemSongFullWidth(
+                                            onClick = {
+                                                if (discover.song.id == mediaMetadata?.id) {
+                                                    playerConnection.togglePlayPause()
+                                                } else {
+                                                    playerConnection.playQueue(
+                                                        YouTubeQueue(
+                                                            endpoint = WatchEndpoint(videoId = discover.song.id),
+                                                            preloadItem = discover.toMediaMetadata()
+                                                        )
+                                                    )
+                                                }
+                                            },
+                                            onMoreClick = {
+                                                menuState.show {
+                                                    YouTubeSongMenu(
+                                                        song = SongItem(
+                                                            id = discover.song.id,
+                                                            title = discover.song.title,
+                                                            artists = discover.artists.map { com.music.innertube.models.Artist(id = it.id, name = it.name) },
+                                                            album = null,
+                                                            duration = null,
+                                                            thumbnail = discover.song.thumbnailUrl.orEmpty(),
+                                                            explicit = discover.song.explicit
+                                                        ),
+                                                        navController = navController,
+                                                        onDismiss = menuState::dismiss
+                                                    )
+                                                }
+                                            },
+                                            title = discover.song.title,
+                                            artists = discover.artists.map { com.music.innertube.models.Artist(id = it.id, name = it.name) },
+                                            thumbnailUrl = discover.song.thumbnailUrl,
+                                            album = null,
+                                            duration = null,
+                                            explicit = discover.song.explicit,
+                                        )
+                                    }
+                                }
+                            }
+                        }
+
+                        // Speed Dial / Keep Listening Recommendations
+                        if (!speedDialItems.isNullOrEmpty()) {
+                            item(key = "xevrae_speed_dial_section") {
+                                val speedDials = speedDialItems ?: emptyList()
                                 Column(modifier = Modifier.fillMaxWidth()) {
-                                    Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 10.dp)) {
+                                    Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 8.dp)) {
                                         Text(
-                                            text = "Picked automatically based on your taste",
+                                            text = "Jump back in",
                                             style = MaterialTheme.typography.bodySmall,
                                             color = Color(0xFFA8A8A8),
                                         )
                                         Spacer(modifier = Modifier.height(2.dp))
                                         Text(
-                                            text = "Daily Discover",
+                                            text = "Keep Listening",
                                             style = MaterialTheme.typography.headlineMedium,
                                             fontWeight = FontWeight.Bold,
                                             color = Color.White,
                                         )
                                     }
 
-                                    Row(
-                                        modifier = Modifier
-                                            .fillMaxWidth()
-                                            .padding(horizontal = 16.dp)
-                                            .clip(RoundedCornerShape(16.dp))
-                                            .background(Color(0xFF242424))
-                                            .clickable {
-                                                if (recSong != null) {
-                                                    playerConnection.playQueue(
-                                                        YouTubeQueue(
-                                                            recSong.endpoint ?: WatchEndpoint(videoId = recSong.id),
-                                                            recSong.toMediaMetadata()
-                                                        )
-                                                    )
-                                                }
-                                            }
-                                            .padding(14.dp),
-                                        verticalAlignment = Alignment.CenterVertically
+                                    Column(
+                                        modifier = Modifier.fillMaxWidth(),
+                                        verticalArrangement = Arrangement.spacedBy(4.dp),
                                     ) {
-                                        AsyncImage(
-                                            model = ImageRequest.Builder(LocalContext.current)
-                                                .data(recThumb)
-                                                .crossfade(true)
-                                                .build(),
-                                            placeholder = ColorPainter(Color(0xFF2A2A2A)),
-                                            error = ColorPainter(Color(0xFF2A2A2A)),
-                                            contentDescription = null,
-                                            contentScale = ContentScale.Crop,
-                                            modifier = Modifier
-                                                .size(72.dp)
-                                                .clip(RoundedCornerShape(12.dp))
-                                        )
+                                        speedDials.take(5).forEach { rec ->
+                                            val recSong = rec as? SongItem
+                                            val recAlbum = rec as? AlbumItem
+                                            val recArtist = rec as? ArtistItem
+                                            val recPlaylist = rec as? PlaylistItem
 
-                                        Spacer(modifier = Modifier.width(14.dp))
+                                            val recTitle = recSong?.title ?: recAlbum?.title ?: recArtist?.title ?: recPlaylist?.title ?: ""
+                                            val recSubtitle = recSong?.artists?.joinToString { it.name }
+                                                ?: recAlbum?.artists?.joinToString { it.name }
+                                                ?: recPlaylist?.author?.name
+                                                ?: "Artist"
+                                            val recThumb = rec.thumbnail
+                                            val recId = rec.id
 
-                                        Column(modifier = Modifier.weight(1f)) {
-                                            Text(
-                                                text = recTitle,
-                                                style = MaterialTheme.typography.titleMedium,
-                                                fontWeight = FontWeight.Bold,
-                                                color = Color.White,
-                                                maxLines = 1,
-                                                overflow = TextOverflow.Ellipsis,
-                                                modifier = Modifier.basicMarquee()
-                                            )
-                                            Spacer(modifier = Modifier.height(2.dp))
-                                            Text(
-                                                text = recArtists,
-                                                style = MaterialTheme.typography.bodyMedium,
-                                                color = Color(0xFFA8A8A8),
-                                                maxLines = 1,
-                                                overflow = TextOverflow.Ellipsis
-                                            )
-                                            if (lifetimeCount > 0) {
-                                                Spacer(modifier = Modifier.height(4.dp))
-                                                Text(
-                                                    text = "Played $lifetimeCount times",
-                                                    style = MaterialTheme.typography.labelSmall,
-                                                    color = MaterialTheme.colorScheme.primary
+                                            Row(
+                                                modifier = Modifier
+                                                    .fillMaxWidth()
+                                                    .clickable {
+                                                        when (rec) {
+                                                            is SongItem -> {
+                                                                playerConnection.playQueue(
+                                                                    YouTubeQueue(
+                                                                        rec.endpoint ?: WatchEndpoint(videoId = rec.id),
+                                                                        rec.toMediaMetadata()
+                                                                    )
+                                                                )
+                                                            }
+                                                            is AlbumItem -> navController.navigate("album/${rec.id}")
+                                                            is ArtistItem -> navController.navigate("artist/${rec.id}")
+                                                            is PlaylistItem -> navController.navigate("online_playlist/${rec.id}")
+                                                        }
+                                                    }
+                                                    .padding(horizontal = 16.dp, vertical = 6.dp),
+                                                verticalAlignment = Alignment.CenterVertically,
+                                            ) {
+                                                AsyncImage(
+                                                    model = ImageRequest.Builder(LocalContext.current)
+                                                        .data(recThumb)
+                                                        .crossfade(true)
+                                                        .build(),
+                                                    placeholder = ColorPainter(Color(0xFF2A2A2A)),
+                                                    error = ColorPainter(Color(0xFF2A2A2A)),
+                                                    contentDescription = null,
+                                                    contentScale = ContentScale.Crop,
+                                                    modifier = Modifier
+                                                        .size(52.dp)
+                                                        .clip(if (rec is ArtistItem) CircleShape else RoundedCornerShape(8.dp)),
                                                 )
-                                            }
-                                        }
 
-                                        Box(
-                                            modifier = Modifier
-                                                .size(44.dp)
-                                                .clip(CircleShape)
-                                                .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.15f))
-                                            .clickable {
-                                                if (recId == mediaMetadata?.id) {
-                                                    playerConnection.togglePlayPause()
-                                                } else if (recSong != null) {
-                                                    playerConnection.playQueue(
-                                                        YouTubeQueue(
-                                                            recSong.endpoint ?: WatchEndpoint(videoId = recSong.id),
-                                                            recSong.toMediaMetadata()
-                                                        )
+                                                Spacer(modifier = Modifier.width(12.dp))
+
+                                                Column(modifier = Modifier.weight(1f)) {
+                                                    Text(
+                                                        text = recTitle,
+                                                        style = MaterialTheme.typography.bodyLarge,
+                                                        fontWeight = FontWeight.SemiBold,
+                                                        color = Color.White,
+                                                        maxLines = 1,
+                                                        overflow = TextOverflow.Ellipsis,
+                                                    )
+                                                    Text(
+                                                        text = recSubtitle,
+                                                        style = MaterialTheme.typography.bodyMedium,
+                                                        color = Color(0xFFA8A8A8),
+                                                        maxLines = 1,
+                                                        overflow = TextOverflow.Ellipsis,
                                                     )
                                                 }
-                                            },
-                                            contentAlignment = Alignment.Center
-                                        ) {
-                                            Icon(
-                                                painter = painterResource(
-                                                    if (recId == mediaMetadata?.id && isPlaying) R.drawable.pause else R.drawable.play
-                                                ),
-                                                contentDescription = "Play",
-                                                tint = MaterialTheme.colorScheme.primary,
-                                                modifier = Modifier.size(22.dp)
-                                            )
+
+                                                Box(
+                                                    modifier = Modifier
+                                                        .size(40.dp)
+                                                        .clip(CircleShape)
+                                                        .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.15f))
+                                                    .clickable {
+                                                        if (recId == mediaMetadata?.id) {
+                                                            playerConnection.togglePlayPause()
+                                                        } else if (recSong != null) {
+                                                            playerConnection.playQueue(
+                                                                YouTubeQueue(
+                                                                    recSong.endpoint ?: WatchEndpoint(videoId = recSong.id),
+                                                                    recSong.toMediaMetadata()
+                                                                )
+                                                            )
+                                                        }
+                                                    },
+                                                    contentAlignment = Alignment.Center
+                                                ) {
+                                                    Icon(
+                                                        painter = painterResource(
+                                                            if (recId == mediaMetadata?.id && isPlaying) R.drawable.pause else R.drawable.play
+                                                        ),
+                                                        contentDescription = "Play",
+                                                        tint = MaterialTheme.colorScheme.primary,
+                                                        modifier = Modifier.size(22.dp)
+                                                    )
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -488,7 +563,7 @@ fun HomeScreen(
                                         contentPadding = PaddingValues(start = 12.dp, end = 12.dp),
                                         horizontalArrangement = Arrangement.spacedBy(4.dp),
                                     ) {
-                                        items(favs, key = { it.song.id }) { song ->
+                                        itemsIndexed(favs, key = { index, song -> "${song.song.id}_$index" }) { _, song ->
                                             HomeItemContent(
                                                 onClick = {
                                                     if (song.song.id == mediaMetadata?.id) {
@@ -531,32 +606,33 @@ fun HomeScreen(
                         }
 
                         // Dynamic YouTube Music Home Sections (excluding Station / TV / Listen Together)
-                        filteredSections.forEach { section ->
-                            item(key = "section_${section.title}") {
-                                HomeItem(
-                                    title = section.title,
-                                    subtitle = null,
-                                    channelId = null,
-                                    thumbnailUrl = null,
-                                    items = section.items,
-                                    navController = navController,
-                                    onItemClick = { item ->
-                                        when (item) {
-                                            is SongItem -> {
-                                                playerConnection.playQueue(
-                                                    YouTubeQueue(
-                                                        item.endpoint ?: WatchEndpoint(videoId = item.id),
-                                                        item.toMediaMetadata()
-                                                    )
+                        itemsIndexed(
+                            items = filteredSections,
+                            key = { index, section -> "section_${section.title}_${section.endpoint?.params.orEmpty()}_${section.items.firstOrNull()?.id.orEmpty()}_$index" }
+                        ) { _, section ->
+                            HomeItem(
+                                title = section.title,
+                                subtitle = null,
+                                channelId = null,
+                                thumbnailUrl = null,
+                                items = section.items,
+                                navController = navController,
+                                onItemClick = { item ->
+                                    when (item) {
+                                        is SongItem -> {
+                                            playerConnection.playQueue(
+                                                YouTubeQueue(
+                                                    item.endpoint ?: WatchEndpoint(videoId = item.id),
+                                                    item.toMediaMetadata()
                                                 )
-                                            }
-                                            is AlbumItem -> navController.navigate("album/${item.id}")
-                                            is ArtistItem -> navController.navigate("artist/${item.id}")
-                                            is PlaylistItem -> navController.navigate("online_playlist/${item.id}")
+                                            )
                                         }
+                                        is AlbumItem -> navController.navigate("album/${item.id}")
+                                        is ArtistItem -> navController.navigate("artist/${item.id}")
+                                        is PlaylistItem -> navController.navigate("online_playlist/${item.id}")
                                     }
-                                )
-                            }
+                                }
+                            )
                         }
 
                         // Pagination Spinner

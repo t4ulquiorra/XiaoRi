@@ -16,6 +16,7 @@ import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -194,7 +195,7 @@ fun HomeItem(
                 contentPadding = PaddingValues(start = 12.dp, end = 12.dp),
                 horizontalArrangement = Arrangement.spacedBy(4.dp),
             ) {
-                items(items, key = { it.id + it.title }) { item ->
+                itemsIndexed(items, key = { index, item -> "${item.id}_${item.title}_$index" }) { _, item ->
                     when (item) {
                         is PlaylistItem -> {
                             HomeItemContentPlaylist(
