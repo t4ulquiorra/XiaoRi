@@ -705,11 +705,6 @@ class MainActivity : ComponentActivity() {
                     0.dp
                 }
 
-                val navigationBarHeight by animateDpAsState(
-                    targetValue = if (shouldShowNavigationBar) NavigationBarHeight else 0.dp,
-                    animationSpec = NavigationBarAnimationSpec,
-                    label = "navBarHeight",
-                )
 
                 val playerBottomSheetState = rememberBottomSheetState(
                     dismissedBound = 0.dp,
@@ -983,124 +978,79 @@ class MainActivity : ComponentActivity() {
                                 }
                             }
 
-                            if (currentRoute != "update" && currentRoute != "listen_together/chat" && currentRoute != "ambient_mode" && currentRoute != "uptime" && currentRoute?.startsWith("settings") != true) {
-                                Box {
-                                    BottomSheetPlayer(
-                                        state = playerBottomSheetState,
-                                        navController = navController,
-                                        pureBlack = pureBlack
-                                    )
-
-                                    val navSlideDistance = NavigationBarHeight
-
-                                    val navOffsetY = if (navigationBarHeight == 0.dp) {
-                                        navSlideDistance
-                                    } else {
-                                        val slideOffset =
-                                            navSlideDistance * playerBottomSheetState.progress.coerceIn(0f, 1f)
-                                        val hideOffset =
-                                            navSlideDistance * (1 - navigationBarHeight.coerceAtMost(NavigationBarHeight) / NavigationBarHeight)
-                                        slideOffset + hideOffset
-                                    }
-
-                                    if (shouldShowNavigationBar) {
-                                        Box(
-                                            modifier = Modifier
-                                                .align(Alignment.BottomCenter)
-                                                .offset(y = navOffsetY)
-                                        ) {
-                                            AppBottomNavigationBar(
-                                                navigationItems = navigationItems,
-                                                currentRoute = currentRoute,
-                                                isLandscape = isLandscape,
-                                                isTranslucentBackground = !pureBlack,
-                                                onItemClick = onNavItemClick,
-                                            )
-                                        }
-                                    }
-                                }
+                            AnimatedVisibility(
+                                visible = shouldShowNavigationBar,
+                                enter = fadeIn() + slideInHorizontally(),
+                                exit = fadeOut(),
+                            ) {
+                                AppBottomNavigationBar(
+                                    navigationItems = navigationItems,
+                                    currentRoute = currentRoute,
+                                    isLandscape = isLandscape,
+                                    isTranslucentBackground = !pureBlack,
+                                    onItemClick = onNavItemClick,
+                                )
                             }
                         },
                         modifier = Modifier.fillMaxSize()
                     ) {
                         Box(Modifier.fillMaxSize()) {
-                                
-                                NavHost(
+                            NavHost(
+                                navController = navController,
+                                startDestination = when (tabOpenedFromShortcut ?: defaultOpenTab) {
+                                    NavigationTab.HOME -> Screens.Home
+                                    NavigationTab.LIBRARY -> Screens.Library
+                                    else -> Screens.Home
+                                }.route,
+                                enterTransition = {
+                                    fadeIn() + slideInHorizontally { -it }
+                                },
+                                exitTransition = {
+                                    fadeOut() + slideOutHorizontally { it }
+                                },
+                                popEnterTransition = {
+                                    fadeIn() + slideInHorizontally { -it }
+                                },
+                                popExitTransition = {
+                                    fadeOut() + slideOutHorizontally { it }
+                                },
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .layerBackdrop(appBackdrop)
+                            ) {
+                                navigationBuilder(
                                     navController = navController,
-                                    startDestination = when (tabOpenedFromShortcut ?: defaultOpenTab) {
-                                        NavigationTab.HOME -> Screens.Home
-                                        NavigationTab.LIBRARY -> Screens.Library
-                                        else -> Screens.Home
-                                    }.route,
-                                    
-                                    enterTransition = {
-                                        val currentRouteIndex = navigationItems.indexOfFirst {
-                                            it.route == targetState.destination.route
-                                        }
-                                        val previousRouteIndex = navigationItems.indexOfFirst {
-                                            it.route == initialState.destination.route
-                                        }
-
-                                        if (currentRouteIndex == -1 || currentRouteIndex > previousRouteIndex)
-                                            slideInHorizontally { it / 8 } + fadeIn(tween(200))
-                                        else
-                                            slideInHorizontally { -it / 8 } + fadeIn(tween(200))
-                                    },
-                                    
-                                    exitTransition = {
-                                        val currentRouteIndex = navigationItems.indexOfFirst {
-                                            it.route == initialState.destination.route
-                                        }
-                                        val targetRouteIndex = navigationItems.indexOfFirst {
-                                            it.route == targetState.destination.route
-                                        }
-
-                                        if (targetRouteIndex == -1 || targetRouteIndex > currentRouteIndex)
-                                            slideOutHorizontally { -it / 8 } + fadeOut(tween(200))
-                                        else
-                                            slideOutHorizontally { it / 8 } + fadeOut(tween(200))
-                                    },
-                                    
-                                    popEnterTransition = {
-                                        val currentRouteIndex = navigationItems.indexOfFirst {
-                                            it.route == targetState.destination.route
-                                        }
-                                        val previousRouteIndex = navigationItems.indexOfFirst {
-                                            it.route == initialState.destination.route
-                                        }
-
-                                        if (previousRouteIndex != -1 && previousRouteIndex < currentRouteIndex)
-                                            slideInHorizontally { it / 8 } + fadeIn(tween(200))
-                                        else
-                                            slideInHorizontally { -it / 8 } + fadeIn(tween(200))
-                                    },
-                                    
-                                    popExitTransition = {
-                                        val currentRouteIndex = navigationItems.indexOfFirst {
-                                            it.route == initialState.destination.route
-                                        }
-                                        val targetRouteIndex = navigationItems.indexOfFirst {
-                                            it.route == targetState.destination.route
-                                        }
-
-                                        if (currentRouteIndex != -1 && currentRouteIndex < targetRouteIndex)
-                                            slideOutHorizontally { -it / 8 } + fadeOut(tween(200))
-                                        else
-                                            slideOutHorizontally { it / 8 } + fadeOut(tween(200))
-                                    },
-                                    modifier = Modifier
-                                        .layerBackdrop(appBackdrop)
-                                        .nestedScroll(topAppBarScrollBehavior.nestedScrollConnection)
-                                ) {
-                                    navigationBuilder(
-                                        navController = navController,
-                                        scrollBehavior = topAppBarScrollBehavior,
-                                        activity = this@MainActivity,
-                                        snackbarHostState = snackbarHostState
-                                    )
-                                }
+                                    scrollBehavior = topAppBarScrollBehavior,
+                                    activity = this@MainActivity,
+                                    snackbarHostState = snackbarHostState
+                                )
                             }
                         }
+                    }
+
+                    if (playerBottomSheetState.progress > 0f) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .background(
+                                    Color.Black.copy(
+                                        alpha = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                                            0.35f * playerBottomSheetState.progress
+                                        } else {
+                                            0.65f * playerBottomSheetState.progress
+                                        }
+                                    )
+                                )
+                        )
+                    }
+
+                    if (currentRoute != "update" && currentRoute != "listen_together/chat" && currentRoute != "ambient_mode" && currentRoute != "uptime" && currentRoute?.startsWith("settings") != true) {
+                        BottomSheetPlayer(
+                            state = playerBottomSheetState,
+                            navController = navController,
+                            pureBlack = pureBlack
+                        )
+                    }
 
                     BottomSheetMenu(
                         state = LocalMenuState.current,
