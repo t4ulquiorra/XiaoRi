@@ -68,11 +68,10 @@ import coil3.compose.AsyncImage
 import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
+import coil3.request.crossfade
 import coil3.toBitmap
-import echo.music.iad1tya.LocalDatabase
 import echo.music.iad1tya.LocalPlayerConnection
 import echo.music.iad1tya.extensions.metadata
-import echo.music.iad1tya.extensions.toggleLike
 import echo.music.iad1tya.ui.component.DimIconButton
 import echo.music.iad1tya.ui.component.PlayerControlLayout
 import echo.music.iad1tya.ui.component.PlayerControlState
@@ -95,7 +94,6 @@ fun NowPlayingScreenContent(
     onShowMenu: () -> Unit = {},
 ) {
     val context = LocalContext.current
-    val database = LocalDatabase.current
     val playerConnection = LocalPlayerConnection.current ?: return
     val coroutineScope = rememberCoroutineScope()
 
@@ -273,7 +271,7 @@ fun NowPlayingScreenContent(
                             ),
                             color = Color.White.copy(alpha = 0.7f),
                         )
-                        val subtitleText = mediaMetadata?.album?.name ?: "Echo Music"
+                        val subtitleText = mediaMetadata?.album?.title ?: "Echo Music"
                         Text(
                             text = subtitleText,
                             style = MaterialTheme.typography.labelSmall,
@@ -384,9 +382,7 @@ fun NowPlayingScreenContent(
                             .focusable(),
                     )
                     Spacer(modifier = Modifier.height(4.dp))
-                    val artistNames = mediaMetadata?.artists?.joinToString { it.name }
-                        ?: mediaMetadata?.artist
-                        ?: ""
+                    val artistNames = mediaMetadata?.artists?.joinToString { it.name }.orEmpty()
                     Text(
                         text = artistNames,
                         style = MaterialTheme.typography.bodyMedium.copy(
@@ -417,12 +413,7 @@ fun NowPlayingScreenContent(
                         .size(36.dp)
                         .padding(start = 8.dp),
                     onClick = {
-                        val meta = mediaMetadata ?: return@DimIconButton
-                        database.query {
-                            currentSong?.song?.let { song ->
-                                update(song.toggleLike())
-                            }
-                        }
+                        playerConnection.toggleLike()
                     },
                 ) {
                     Icon(
