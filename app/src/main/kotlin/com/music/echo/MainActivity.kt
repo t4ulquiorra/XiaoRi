@@ -618,6 +618,7 @@ class MainActivity : ComponentActivity() {
                 val density = LocalDensity.current
                 val configuration = LocalWindowInfo.current
                 val cutoutInsets = WindowInsets.displayCutout
+                val statusBarsInsets = WindowInsets.statusBars
 
                 val navController = rememberNavController()
                 val homeViewModel: HomeViewModel = hiltViewModel()
@@ -741,6 +742,7 @@ class MainActivity : ComponentActivity() {
                 }
 
                 val playerAwareWindowInsets = remember(
+                    statusBarsInsets,
                     shouldShowNavigationBar,
                     playerBottomSheetState.isDismissed,
                 ) {
@@ -749,7 +751,7 @@ class MainActivity : ComponentActivity() {
                         bottom += NavigationBarHeight
                     }
                     if (!playerBottomSheetState.isDismissed) bottom += MiniPlayerHeight
-                    WindowInsets.statusBars
+                    statusBarsInsets
                         .only(WindowInsetsSides.Top)
                         .add(WindowInsets(top = AppBarHeight, bottom = bottom))
                 }
