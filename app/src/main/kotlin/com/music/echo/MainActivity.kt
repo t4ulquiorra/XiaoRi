@@ -57,7 +57,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.systemBars
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -618,9 +618,6 @@ class MainActivity : ComponentActivity() {
                 val density = LocalDensity.current
                 val configuration = LocalWindowInfo.current
                 val cutoutInsets = WindowInsets.displayCutout
-                val windowsInsets = WindowInsets.systemBars
-                val bottomInset = with(density) { windowsInsets.getBottom(density).toDp() }
-                val bottomInsetDp = WindowInsets.systemBars.asPaddingValues().calculateBottomPadding()
 
                 val navController = rememberNavController()
                 val homeViewModel: HomeViewModel = hiltViewModel()
@@ -718,8 +715,7 @@ class MainActivity : ComponentActivity() {
 
                 val playerBottomSheetState = rememberBottomSheetState(
                     dismissedBound = 0.dp,
-                    collapsedBound = bottomInset +
-                        (if (shouldShowNavigationBar) navPadding else 0.dp) +
+                    collapsedBound = (if (shouldShowNavigationBar) navPadding else 0.dp) +
                         (if (useNewMiniPlayerDesign) MiniPlayerBottomSpacing else 0.dp) +
                         MiniPlayerHeight,
                     expandedBound = maxHeight,
@@ -752,17 +748,16 @@ class MainActivity : ComponentActivity() {
                     useFloatingNavBar && playerMediaMetadata != null && shouldShowNavigationBar
 
                 val playerAwareWindowInsets = remember(
-                    bottomInset,
                     shouldShowNavigationBar,
                     playerBottomSheetState.isDismissed,
                 ) {
-                    var bottom = bottomInset
+                    var bottom = 0.dp
                     if (shouldShowNavigationBar) {
                         bottom += NavigationBarHeight
                     }
                     if (!playerBottomSheetState.isDismissed) bottom += MiniPlayerHeight
-                    windowsInsets
-                        .only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top)
+                    WindowInsets.statusBars
+                        .only(WindowInsetsSides.Top)
                         .add(WindowInsets(top = AppBarHeight, bottom = bottom))
                 }
                 appBarScrollBehavior(
@@ -1053,7 +1048,7 @@ class MainActivity : ComponentActivity() {
                                             actionIconContentColor = MaterialTheme.colorScheme.onSurfaceVariant,
                                             navigationIconContentColor = MaterialTheme.colorScheme.onSurfaceVariant
                                         ),
-                                        windowInsets = WindowInsets.systemBars.only(WindowInsetsSides.Top),
+                                        windowInsets = WindowInsets.statusBars.only(WindowInsetsSides.Top),
                                         modifier = Modifier
                                             .windowInsetsPadding(
                                                 cutoutInsets.only(WindowInsetsSides.Start + WindowInsetsSides.End)
@@ -1094,7 +1089,7 @@ class MainActivity : ComponentActivity() {
                                         pureBlack = pureBlack
                                     )
 
-                                    val navSlideDistance = bottomInset + NavigationBarHeight
+                                    val navSlideDistance = NavigationBarHeight
 
                                     val navOffsetY = if (navigationBarHeight == 0.dp) {
                                         navSlideDistance
@@ -1121,18 +1116,6 @@ class MainActivity : ComponentActivity() {
                                             )
                                         }
                                     }
-
-                                    Box(
-                                        modifier = Modifier
-                                            .fillMaxWidth()
-                                            .align(Alignment.BottomCenter)
-                                            .height(bottomInsetDp)
-                                            .graphicsLayer {
-                                                val progress = playerBottomSheetState.progress
-                                                alpha = if (progress > 0f || (useNewMiniPlayerDesign && !shouldShowNavigationBar)) 0f else 1f
-                                            }
-                                            .background(baseBg)
-                                    )
                                 }
                             }
                         },
